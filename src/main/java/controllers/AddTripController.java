@@ -87,24 +87,13 @@ public class AddTripController extends Controller {
                 stopPointNameList.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Address"));
                 stopPointTimeList.setCellValueFactory(new PropertyValueFactory<StopPoint, Integer>("Time"));
                 stopPointTable.setItems(FXCollections.observableArrayList(generalData.getRoutes().get(newValue).getRouteStops()));
-//                stopPointTable.setCellFactory(param -> new ListCell<StopPoint>() {
-//                    @Override
-//                    protected void updateItem(StopPoint stopPoint, boolean empty) {
-//                        super.updateItem(stopPoint, empty);
-//
-//                        if (empty || stopPoint == null || stopPoint.getAddress() == null) {
-//                            setText(null);
-//                        } else {
-//                            setText(stopPoint.getNumber() + " " + stopPoint.getAddress());
-//                        }
-//                    }
-//                });
             }
         });
 
-        stopPointTable.getSelectionModel().selectedItemProperty().addListener((ov, oldValue, newValue) -> {
-//                System.out.println(" The new value is: " + newValue.getNumber() + " " + newValue.getAddress());
-
+        stopPointTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                createPopUpStage("timeSetterTrip.fxml", 300, 200);
+            }
         });
     }
 

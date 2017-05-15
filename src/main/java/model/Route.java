@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,11 +18,20 @@ public class Route {
      */
     public Route(String name, List<StopPoint> routeStops) {
         this.name = name;
+        List<StopPoint> tempRouteSP = new ArrayList<>();
+        for(int i = 0; i < routeStops.size(); i++) {
+            StopPoint copy = routeStops.get(i).copy();
+            tempRouteSP.add(copy);
+        }
         this.routeStops = routeStops;
     }
 
     public List<StopPoint> getRouteStops() {
-        return routeStops;
+        List<StopPoint> tempRouteSP = new ArrayList<>();
+        for(int i = 0; i < routeStops.size(); i++) {
+            tempRouteSP.add(routeStops.get(i).copy());
+        }
+        return tempRouteSP;
     }
 
     public String getName() {

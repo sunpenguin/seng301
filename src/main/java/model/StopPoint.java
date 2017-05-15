@@ -31,7 +31,7 @@ public class StopPoint {
         this.number = number;
         address = street;
         this.suburb = suburb;
-        time = null;
+        time = LocalTime.parse("00:00:00");
     }
 
     /**
