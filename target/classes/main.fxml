@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="1000.0">
+         <children>
+            <MenuBar prefHeight="38.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openHome" text="Home" />
+                        <MenuItem mnemonicParsing="false" onAction="#showTrips" text="Show Trips" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" onAction="#openSearchStopPoints" text="Add">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openAddVehicle" text="Add Vehicle" />
+                        <MenuItem mnemonicParsing="false" onAction="#openAddSP" text="Add Stop Point" />
+                        <MenuItem mnemonicParsing="false" onAction="#openAddRoute" text="Add Route" />
+                        <MenuItem mnemonicParsing="false" onAction="#openAddTrip" text="Add Trip" />
+                        <MenuItem mnemonicParsing="false" onAction="#openShareRide" text="Share Ride" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Search">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#openSearchStopPoints" text="Search Stop Points" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#killMe" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+               <padding>
+                  <Insets left="5.0" top="5.0" />
+               </padding>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" />
+   </children>
+</VBox>
