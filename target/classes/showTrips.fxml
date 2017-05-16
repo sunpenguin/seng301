@@ -5,8 +5,9 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -42,12 +43,7 @@
             <Insets />
          </GridPane.margin>
       </Button>
-      <ListView fx:id="stopPointList" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4" GridPane.rowSpan="3">
-         <GridPane.margin>
-            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-         </GridPane.margin>
-      </ListView>
-      <Label text="All Stop Points in Route" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+      <Label text="All Stop Points in Route" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
       <Label text="Selected Route for Trip" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
       <Label text="Direction" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
       <Separator prefHeight="0.0" prefWidth="532.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" GridPane.valignment="TOP" />
@@ -142,6 +138,15 @@
             <Insets right="40.0" />
          </GridPane.margin>
       </TextField>
+      <TableView fx:id="stopPointTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.rowSpan="3">
+         <columns>
+            <TableColumn fx:id="stopPointNameList" prefWidth="305.0" resizable="false" sortable="false" text="Stop Point" />
+            <TableColumn fx:id="stopPointTimeList" minWidth="0.0" prefWidth="143.0" resizable="false" sortable="false" text="Time to Arrive" />
+         </columns>
+         <GridPane.margin>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </GridPane.margin>
+      </TableView>
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" top="15.0" />

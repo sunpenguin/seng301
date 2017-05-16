@@ -33,6 +33,12 @@ public class Trip {
      */
     public Trip(String name, Route route, int direction, Vehicle vehicle, int stopTimes) {
         this.name = name;
+//        List<StopPoint> tempRouteSP = new ArrayList<>();
+//        for(int i = 0; i < route.getRouteStops().size(); i++) {
+//            tempRouteSP.add(route.getRouteStops().get(i).copy());
+////            System.out.println(route.getRouteStops().get(i).getTime());
+//        }
+//        this.route = new Route(new String(route.getName()), tempRouteSP);
         this.route = route;
         this.direction = direction;
         this.recurrent = false;
@@ -61,6 +67,7 @@ public class Trip {
             tempRouteSP.add(route.getRouteStops().get(i).copy());
         }
         this.route = new Route(new String(route.getName()), tempRouteSP);
+//        this.route = route;
         this.direction = direction;
         this.recurrent = true;
         this.days = days;

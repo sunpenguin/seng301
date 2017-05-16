@@ -5,7 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.GeneralData;
+import utils.Session;
 
 
 /**
@@ -16,10 +16,7 @@ public class TimeSetterTripController extends Controller {
     @FXML private TextField timeText;
     @FXML private Button confirmButton;
 
-    private GeneralData generalData;
-
     public void load() {
-        generalData = getParent().getGeneralData();
     }
 
     public void setTime() {
@@ -30,6 +27,7 @@ public class TimeSetterTripController extends Controller {
             alert.setContentText("H is an hour number, M is a minute number.");
             alert.showAndWait();
         } else {
+            Session.getInstance().setTime(timeText.getText());
             //Closes the popup.
             Stage stage = (Stage) confirmButton.getScene().getWindow();
             stage.close();

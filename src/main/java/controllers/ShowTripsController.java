@@ -1,54 +1,38 @@
 package controllers;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.Account;
 import model.GeneralData;
 import model.StopPoint;
 import model.Trip;
-
-import java.util.List;
 
 
 /**
  * Created by sungu on 19/04/2017.
  */
 public class ShowTripsController extends Controller {
-    @FXML
-    private ComboBox tripsComboBox;
-    @FXML
-    private TextField nameBox;
-    @FXML
-    private TextField vehicleBox;
-    @FXML
-    private TextField routeBox;
-    @FXML
-    private ListView stopPointList;
-    @FXML
-    private TextField directionBox;
-    @FXML
-    private TextField stopTimeText;
-    @FXML
-    private CheckBox recurrentBox;
-    @FXML
-    private CheckBox mondayBox;
-    @FXML
-    private CheckBox tuesdayBox;
-    @FXML
-    private CheckBox wednesdayBox;
-    @FXML
-    private CheckBox thursdayBox;
-    @FXML
-    private CheckBox fridayBox;
-    @FXML
-    private CheckBox saturdayBox;
-    @FXML
-    private CheckBox sundayBox;
-    @FXML
-    private TextField dateText;
+
+    @FXML private ComboBox tripsComboBox;
+    @FXML private TextField nameBox;
+    @FXML private TextField vehicleBox;
+    @FXML private TextField routeBox;
+    @FXML private TableView stopPointTable;
+    @FXML private TableColumn stopPointNameList;
+    @FXML private TableColumn stopPointTimeList;
+    @FXML private TextField directionBox;
+    @FXML private TextField stopTimeText;
+    @FXML private CheckBox recurrentBox;
+    @FXML private CheckBox mondayBox;
+    @FXML private CheckBox tuesdayBox;
+    @FXML private CheckBox wednesdayBox;
+    @FXML private CheckBox thursdayBox;
+    @FXML private CheckBox fridayBox;
+    @FXML private CheckBox saturdayBox;
+    @FXML private CheckBox sundayBox;
+    @FXML private TextField dateText;
 
     private GeneralData generalData;
     private Account account;
@@ -67,32 +51,16 @@ public class ShowTripsController extends Controller {
     }
 
     private void setListeners() {
-        // When the value from the ComboBox changes, the list displays the selected route's stop points.
-        routeBox.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue ov, String oldValue, String newValue) {
-                stopPointList.setItems(FXCollections.observableArrayList(generalData.getRoutes().get(newValue).getRouteStops()));
-                stopPointList.setCellFactory(param -> new ListCell<StopPoint>() {
-                    @Override
-                    protected void updateItem(StopPoint stopPoint, boolean empty) {
-                        super.updateItem(stopPoint, empty);
-
-                        if (empty || stopPoint == null || stopPoint.getAddress() == null) {
-                            setText(null);
-                        } else {
-                            setText(stopPoint.getNumber() + " " + stopPoint.getAddress());
-                        }
-                    }
-                });
-            }
-        });
-
         tripsComboBox.valueProperty().addListener((ov, oldValue, newValue) -> {
             String temporaryString;
             currentTrip = account.getTrips().get(newValue);
             nameBox.setText(currentTrip.getName());
             routeBox.setText(currentTrip.getRoute().getName());
             vehicleBox.setText(currentTrip.getVehicle().getLicensePlate());
+
+            stopPointNameList.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Address"));
+            stopPointTimeList.setCellValueFactory(new PropertyValueFactory<StopPoint, Integer>("Time"));
+            stopPointTable.setItems(FXCollections.observableArrayList(currentTrip.getRoute().getRouteStops()));
 
             if (currentTrip.getDirection() == 0) { temporaryString = "To University"; }
             else { temporaryString = "From University"; }

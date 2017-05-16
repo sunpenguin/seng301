@@ -1,5 +1,8 @@
 package model;
 
+import utils.Copy;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +10,7 @@ import java.util.List;
  * The model class that defines a route.
  * Created by Sunguin Peng.
  */
-public class Route {
+public class Route implements Serializable {
     private String name;
     private List<StopPoint> routeStops;
 
@@ -20,18 +23,19 @@ public class Route {
         this.name = name;
         List<StopPoint> tempRouteSP = new ArrayList<>();
         for(int i = 0; i < routeStops.size(); i++) {
-            StopPoint copy = routeStops.get(i).copy();
+            StopPoint copy = Copy.copy(routeStops.get(i));
             tempRouteSP.add(copy);
         }
         this.routeStops = routeStops;
     }
 
     public List<StopPoint> getRouteStops() {
-        List<StopPoint> tempRouteSP = new ArrayList<>();
-        for(int i = 0; i < routeStops.size(); i++) {
-            tempRouteSP.add(routeStops.get(i).copy());
-        }
-        return tempRouteSP;
+//        List<StopPoint> tempRouteSP = new ArrayList<>();
+//        for(int i = 0; i < routeStops.size(); i++) {
+//            tempRouteSP.add(Copy.copy(routeStops.get(i)));
+//        }
+//        return tempRouteSP;
+        return routeStops;
     }
 
     public String getName() {

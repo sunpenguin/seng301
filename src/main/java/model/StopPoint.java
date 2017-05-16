@@ -1,12 +1,13 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 
 /**
  * The model for a stop point
  * @author Sunguin Peng
  */
-public class StopPoint {
+public class StopPoint implements Serializable {
     private Integer number;
     private String address;
     private String suburb;
@@ -31,7 +32,7 @@ public class StopPoint {
         this.number = number;
         address = street;
         this.suburb = suburb;
-        time = LocalTime.parse("00:00:00");
+        time = LocalTime.parse("00:00");
     }
 
     /**

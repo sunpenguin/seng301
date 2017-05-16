@@ -6,10 +6,9 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.Account;
-import model.GeneralData;
-import model.StopPoint;
-import model.Trip;
+import model.*;
+import utils.Copy;
+import utils.Session;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,46 +19,33 @@ import java.util.List;
  * @see controllers.Controller
  */
 public class AddTripController extends Controller {
-    @FXML
-    private TextField nameBox;
-    @FXML
-    private ComboBox vehicleComboBox;
-    @FXML
-    private ComboBox routeComboBox;
-    @FXML
-    private TableView stopPointTable;
-    @FXML
-    private TableColumn stopPointNameList;
-    @FXML
-    private TableColumn stopPointTimeList;
-    @FXML
-    private ComboBox directionComboBox;
-    @FXML
-    private TextField stopTimeText;
-    @FXML
-    private CheckBox recurrentBox;
-    @FXML
-    private CheckBox mondayBox;
-    @FXML
-    private CheckBox tuesdayBox;
-    @FXML
-    private CheckBox wednesdayBox;
-    @FXML
-    private CheckBox thursdayBox;
-    @FXML
-    private CheckBox fridayBox;
-    @FXML
-    private CheckBox saturdayBox;
-    @FXML
-    private CheckBox sundayBox;
-    @FXML
-    private TextField dateText;
+
+    @FXML private TextField nameBox;
+    @FXML private ComboBox vehicleComboBox;
+    @FXML private ComboBox routeComboBox;
+    @FXML private TableView stopPointTable;
+    @FXML private TableColumn stopPointNameList;
+    @FXML private TableColumn stopPointTimeList;
+    @FXML private ComboBox directionComboBox;
+    @FXML private TextField stopTimeText;
+    @FXML private CheckBox recurrentBox;
+    @FXML private CheckBox mondayBox;
+    @FXML private CheckBox tuesdayBox;
+    @FXML private CheckBox wednesdayBox;
+    @FXML private CheckBox thursdayBox;
+    @FXML private CheckBox fridayBox;
+    @FXML private CheckBox saturdayBox;
+    @FXML private CheckBox sundayBox;
+    @FXML private TextField dateText;
 
     private GeneralData generalData;
     private Account account;
 
     private List<Boolean> days;
     private List<CheckBox> dayCheckBox;
+
+    private Route routeCopy;
+    private List<StopPoint> stopPoints;
 
     /**
      * The method to load files from the abstract class.
@@ -86,28 +72,21 @@ public class AddTripController extends Controller {
             public void changed(ObservableValue ov, String oldValue, String newValue) {
                 stopPointNameList.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Address"));
                 stopPointTimeList.setCellValueFactory(new PropertyValueFactory<StopPoint, Integer>("Time"));
-                stopPointTable.setItems(FXCollections.observableArrayList(generalData.getRoutes().get(newValue).getRouteStops()));
+                routeCopy = Copy.copy(generalData.getRoutes().get(newValue));
+                stopPoints = Copy.copy(routeCopy.getRouteStops());
+                stopPointTable.setItems(FXCollections.observableArrayList(stopPoints));
             }
         });
 
         stopPointTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 createPopUpStage("timeSetterTrip.fxml", 300, 200);
+                StopPoint sp = (StopPoint) newSelection;
+                sp.setTime(Session.getInstance().getTime());
+                stopPointTable.refresh();
             }
         });
     }
-
-    public void setTime(TableColumn.CellEditEvent<?,?> event) {
-
-//    public void onEditCommitSelectedProductTable(){
-//        Object newValue = event.getNewValue();
-//        // other data that might be helpful:
-//        TablePosition<?,?> position = event.getTablePosition();
-//        int row = position.getRow();
-//        // etc ...
-//    }
-    }
-
 
 
     /**
@@ -134,16 +113,18 @@ public class AddTripController extends Controller {
             Trip newTrip;
             if (recurrentBox.isSelected()) {
                 allDaysCheck();
+//                System.out.println(routeCopy.getRouteStops().get(0).getTime());
                 newTrip = new Trip(nameBox.getText(),
-                        generalData.getRoutes().get(routeComboBox.getValue()),
+                        new Route(routeCopy.getName(), stopPoints),
                         direction,
                         days,
                         dateText.getText(),
                         account.getVehicles().get(vehicleComboBox.getValue()),
                         Integer.parseInt(stopTimeText.getText()));
             } else {
+                System.out.println(stopPoints.get(0).getTime());
                 newTrip = new Trip(nameBox.getText(),
-                        generalData.getRoutes().get(routeComboBox.getValue()),
+                        new Route(routeCopy.getName(), stopPoints),
                         direction,
                         account.getVehicles().get(vehicleComboBox.getValue()),
                         Integer.parseInt(stopTimeText.getText()));
