@@ -12,7 +12,7 @@ import model.Ride;
 /**
  * The controller class xD
  */
-public class ShareRideController extends Controller {
+public class CreateRideController extends Controller {
     @FXML
     private TextField nameText;
     @FXML
@@ -31,22 +31,21 @@ public class ShareRideController extends Controller {
         tripComboBox.getSelectionModel().select(0);
     }
 
-    public void shareRide() {
+    public void createRide() {
         if (nameText.getText() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Share Ride Error");
+            alert.setTitle("Ride Creation Error");
             alert.setHeaderText("You need to name your ride!");
             alert.showAndWait();
         } else if (passengerNumberText.getText() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Share Ride Error");
+            alert.setTitle("Ride Creation Error");
             alert.setHeaderText("You need to specify the number of passengers!");
             alert.showAndWait();
         } else {
             Ride newRide = new Ride(account.getTrips().get(tripComboBox.getSelectionModel().getSelectedItem()),
                     Integer.parseInt(passengerNumberText.getText()));
             generalData.getRides().put(nameText.getText(), newRide);
-
         }
     }
 }

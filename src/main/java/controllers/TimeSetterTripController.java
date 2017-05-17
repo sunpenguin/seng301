@@ -9,7 +9,7 @@ import utils.Session;
 
 
 /**
- * Created by sungu on 15/05/2017.
+ * Sets a time for a selected Stop Point for a Route during Trip creation.
  */
 public class TimeSetterTripController extends Controller {
 

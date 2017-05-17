@@ -35,17 +35,22 @@ public class MainController extends Controller {
     }
 
     public void openShareRide() {
-        replaceSceneContent("shareRide.fxml");
+        replaceSceneContent("createRide.fxml");
     }
 
     public void showTrips() {
         replaceSceneContent("showTrips.fxml");
     }
 
-    public void openSearchStopPoints() {
+    public void openStopPoints() {
         replaceSceneContent("searchStopPoints.fxml");
     }
 
+    public void openViewRides() {
+        replaceSceneContent("availableRides.fxml");
+    }
+
     public void killMe() {
+        System.out.println("HA! You think I would die? Hell no! Enjoy this you sucker!");
     }
 }

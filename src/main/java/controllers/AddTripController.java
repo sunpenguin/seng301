@@ -27,7 +27,6 @@ public class AddTripController extends Controller {
     @FXML private TableColumn stopPointNameList;
     @FXML private TableColumn stopPointTimeList;
     @FXML private ComboBox directionComboBox;
-    @FXML private TextField stopTimeText;
     @FXML private CheckBox recurrentBox;
     @FXML private CheckBox mondayBox;
     @FXML private CheckBox tuesdayBox;
@@ -36,7 +35,7 @@ public class AddTripController extends Controller {
     @FXML private CheckBox fridayBox;
     @FXML private CheckBox saturdayBox;
     @FXML private CheckBox sundayBox;
-    @FXML private TextField dateText;
+    @FXML private DatePicker dateText;
 
     private GeneralData generalData;
     private Account account;
@@ -118,19 +117,22 @@ public class AddTripController extends Controller {
                         new Route(routeCopy.getName(), stopPoints),
                         direction,
                         days,
-                        dateText.getText(),
-                        account.getVehicles().get(vehicleComboBox.getValue()),
-                        Integer.parseInt(stopTimeText.getText()));
+                        dateText.getValue(),
+                        account.getVehicles().get(vehicleComboBox.getValue()));
             } else {
-                System.out.println(stopPoints.get(0).getTime());
+//                System.out.println(stopPoints.get(0).getTime());
                 newTrip = new Trip(nameBox.getText(),
                         new Route(routeCopy.getName(), stopPoints),
                         direction,
-                        account.getVehicles().get(vehicleComboBox.getValue()),
-                        Integer.parseInt(stopTimeText.getText()));
+                        account.getVehicles().get(vehicleComboBox.getValue()));
             }
             account.addTrip(nameBox.getText(), newTrip);
             generalData.setCurrentTrip(nameBox.getText());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Trip Creation");
+            alert.setHeaderText("Your trip has been successfully created!");
+            alert.setContentText("You will now be taken to your new trip details!");
+            alert.showAndWait();
             replaceSceneContent("showTrips.fxml");
 //            showTripCreated("showTrips.fxml", nameBox.getText());
 //            resetTrip();
@@ -146,9 +148,6 @@ public class AddTripController extends Controller {
         vehicleComboBox.setItems(FXCollections.observableArrayList(account.getVehicles().keySet()));
 
         nameBox.clear();
-        stopTimeText.clear();
-        stopTimeText.setText("1");
-        dateText.clear();
     }
 
     /**

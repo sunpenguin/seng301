@@ -44,7 +44,7 @@ public class Main extends Application {
         generalData = new GeneralData();
         userAccount.addTrip("Test 1",
                 new Trip("Test 1", generalData.getRoutes().get("Route 2"), 0,
-                        userAccount.getVehicles().get("Honda"), 1));
+                        userAccount.getVehicles().get("Honda")));
         generalData.setCurrentTrip("Test 1");
     }
 

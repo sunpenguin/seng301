@@ -11,7 +11,7 @@ import model.Trip;
 
 
 /**
- * Created by sungu on 19/04/2017.
+ * The controller class for showTrips.fxml.
  */
 public class ShowTripsController extends Controller {
 
@@ -23,7 +23,6 @@ public class ShowTripsController extends Controller {
     @FXML private TableColumn stopPointNameList;
     @FXML private TableColumn stopPointTimeList;
     @FXML private TextField directionBox;
-    @FXML private TextField stopTimeText;
     @FXML private CheckBox recurrentBox;
     @FXML private CheckBox mondayBox;
     @FXML private CheckBox tuesdayBox;
@@ -65,9 +64,6 @@ public class ShowTripsController extends Controller {
             if (currentTrip.getDirection() == 0) { temporaryString = "To University"; }
             else { temporaryString = "From University"; }
             directionBox.setText(temporaryString);
-
-            Integer tempInt = currentTrip.getStopTimes();
-            stopTimeText.setText(tempInt.toString());
 
             if (currentTrip.isRecurrent()) {
                 recurrentBox.setSelected(true);

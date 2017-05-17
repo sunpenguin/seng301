@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PopUpRideController">
+<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AvailableRideController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="755.0" minWidth="10.0" prefWidth="121.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="755.0" minWidth="10.0" prefWidth="289.0" />
@@ -52,7 +52,7 @@
             <Insets right="25.0" />
          </GridPane.margin>
       </TextField>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rides for Stop Point: " GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Available Rides " GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>

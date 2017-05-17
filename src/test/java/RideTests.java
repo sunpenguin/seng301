@@ -11,14 +11,14 @@ import java.util.List;
  * @author Sunguin Peng
  */
 public class RideTests {
-    Ride testRide1;
-    Ride testRide2;
+    private Ride testRide1;
+    private Ride testRide2;
 
-    Trip trip;
-    Route route;
-    StopPoint sp1;
-    StopPoint sp2;
-    Vehicle car;
+    private Trip trip;
+    private Route route;
+    private StopPoint sp1;
+    private StopPoint sp2;
+    private Vehicle car;
 
     @Before
     public void setUp() {
@@ -27,7 +27,7 @@ public class RideTests {
         sp2 = new StopPoint(2, "Random Address", "Random Suburb");
         List<StopPoint> stopPoints= Arrays.asList(sp1, sp2);
         route = new Route("route", stopPoints);
-        trip = new Trip("Trip 1", route, 0, car, 2);
+        trip = new Trip("Trip 1", route, 0, car);
         testRide1 = new Ride(trip);
     }
 

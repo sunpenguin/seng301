@@ -1,7 +1,7 @@
 package model;
 
 import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,11 +17,11 @@ public class Trip {
     private int direction;
     private boolean recurrent;
     private List<Boolean> days;
-    private Date expiryDate;
+    private LocalDate expiryDate;
     private Vehicle vehicle;
 //    private DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    private SimpleDateFormat df = new SimpleDateFormat("dd/mm/yyyy");
-    private int stopTimes;
+//    private SimpleDateFormat df = new SimpleDateFormat("dd/mm/yyyy");
+//    private int stopTimes;
 
     /**
      * The constructor for a non-recurrent trip.
@@ -29,9 +29,8 @@ public class Trip {
      * @param route The route the trip will use
      * @param direction To university = 0, From university = 1
      * @param vehicle The vehicle to be used for the trip
-     * @param stopTimes How long the driver will stop at the stop points on the route
      */
-    public Trip(String name, Route route, int direction, Vehicle vehicle, int stopTimes) {
+    public Trip(String name, Route route, int direction, Vehicle vehicle) {
         this.name = name;
 //        List<StopPoint> tempRouteSP = new ArrayList<>();
 //        for(int i = 0; i < route.getRouteStops().size(); i++) {
@@ -43,7 +42,7 @@ public class Trip {
         this.direction = direction;
         this.recurrent = false;
         this.vehicle = vehicle;
-        this.stopTimes = stopTimes;
+//        this.stopTimes = stopTimes;
 
 //        for (StopPoint sp : this.route.getRouteStops()) {
 //            sp.setPassTime(stopTimes);
@@ -58,9 +57,8 @@ public class Trip {
      * @param days  The days the trip will be active on (as a list of booleans)
      * @param expiryDate    When this trip will no longer be in effect
      * @param vehicle The vehicle to be used for the trip
-     * @param stopTimes How long the driver will stop at the stop points on the route
      */
-    public Trip(String name, Route route, int direction, List<Boolean> days, String expiryDate, Vehicle vehicle, int stopTimes) {
+    public Trip(String name, Route route, int direction, List<Boolean> days, LocalDate expiryDate, Vehicle vehicle) {
         this.name = name;
         List<StopPoint> tempRouteSP = new ArrayList<>();
         for(int i = 0; i < route.getRouteStops().size(); i++) {
@@ -71,9 +69,10 @@ public class Trip {
         this.direction = direction;
         this.recurrent = true;
         this.days = days;
-        this.expiryDate = df.parse(expiryDate, new ParsePosition(0));
+//        this.expiryDate = df.parse(expiryDate, new ParsePosition(0));
+        this.expiryDate = expiryDate;
         this.vehicle = vehicle;
-        this.stopTimes = stopTimes;
+//        this.stopTimes = stopTimes;
 
 //        for (StopPoint sp : this.route.getRouteStops()) {
 //            sp.setPassTime(stopTimes);
@@ -82,11 +81,10 @@ public class Trip {
 
     /**
      * The expiry date parameter takes in a string and then converts it to a Date object
-     * @param expiryDate    The expiry date of the trip in format DD/MM/YYYY as a string
      */
-    public void setExpiryDate(String expiryDate) {
-        this.expiryDate = df.parse(expiryDate, new ParsePosition(0));
-    }
+//    public void setExpiryDate(String expiryDate) {
+//        this.expiryDate = df.parse(expiryDate, new ParsePosition(0));
+//    }
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -132,31 +130,15 @@ public class Trip {
         this.days = days;
     }
 
-    public Date getExpiryDate() {
+    public LocalDate getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(Date expiryDate) {
+    public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
     }
 
     public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
-    }
-
-    public SimpleDateFormat getDf() {
-        return df;
-    }
-
-    public void setDf(SimpleDateFormat df) {
-        this.df = df;
-    }
-
-    public int getStopTimes() {
-        return stopTimes;
-    }
-
-    public void setStopTimes(int stopTimes) {
-        this.stopTimes = stopTimes;
     }
 }

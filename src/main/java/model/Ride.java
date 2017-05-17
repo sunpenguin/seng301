@@ -8,6 +8,7 @@ public class Ride {
     private Trip trip;
     private int availableSeats;
     private boolean full;
+    private boolean share;
 
     /**
      * The constructor for a ride when seat numbers are specified
@@ -17,6 +18,7 @@ public class Ride {
     public Ride(Trip trip, int availableSeats) {
         this.trip = trip;
         setAvailableSeats(availableSeats);
+        share = false;
     }
 
     /**
@@ -27,6 +29,7 @@ public class Ride {
         this.trip = trip;
         availableSeats = 0;
         full = true;
+        share = false;
     }
 
     /**
@@ -51,6 +54,7 @@ public class Ride {
         }  else if (availableSeats == 0) {
             this.availableSeats = 0;
             full = true;
+            share = false;
         }
     }
 
@@ -60,5 +64,9 @@ public class Ride {
 
     public boolean isFull() {
         return full;
+    }
+
+    public void shareRide() {
+        share = true;
     }
 }

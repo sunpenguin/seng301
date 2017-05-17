@@ -19,7 +19,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#showTrips" text="Show Trips" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" onAction="#openSearchStopPoints" text="Add">
+                <Menu mnemonicParsing="false" text="Add">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#openAddVehicle" text="Add Vehicle" />
                         <MenuItem mnemonicParsing="false" onAction="#openAddSP" text="Add Stop Point" />
@@ -28,9 +28,10 @@
                         <MenuItem mnemonicParsing="false" onAction="#openShareRide" text="Share Ride" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Search">
+                  <Menu mnemonicParsing="false" text="View">
                     <items>
-                      <MenuItem mnemonicParsing="false" onAction="#openSearchStopPoints" text="Search Stop Points" />
+                      <MenuItem mnemonicParsing="false" onAction="#openStopPoints" text="View Stop Points" />
+                        <MenuItem mnemonicParsing="false" onAction="#openViewRides" text="View Available Rides" />
                     </items>
                   </Menu>
                 <Menu mnemonicParsing="false" text="Help">
