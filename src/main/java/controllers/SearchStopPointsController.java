@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.GeneralData;
 import model.StopPoint;
+import utils.Session;
 import utils.StopPointsSearcher;
 
 /**
@@ -38,18 +39,19 @@ public class SearchStopPointsController extends Controller {
 
         stopPointsTable.setItems(FXCollections.observableArrayList(generalData.getStopPoints().values()));
 
-//        setListener();
+        setListener();
 
         searchByComboBox.setItems(FXCollections.observableArrayList("Street Name", "Suburb Name"));
         searchByComboBox.getSelectionModel().selectFirst();
     }
 
     private void setListener() {
-//        stopPointsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-//            if (newSelection != null) {
-//                createPopUpStage("", 800, 800);
-//            }
-//        });
+        stopPointsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                Session.getInstance().setStopPoint((StopPoint) newSelection);
+                createPopUpStage("availableRides.fxml", 800, 800);
+            }
+        });
     }
 
     public void searchStopPoints() {

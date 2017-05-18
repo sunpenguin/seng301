@@ -5,6 +5,7 @@ package model;
  * @author Sunguin Peng
  */
 public class Ride {
+    private String name;
     private Trip trip;
     private int availableSeats;
     private boolean full;
@@ -15,21 +16,23 @@ public class Ride {
      * @param trip  The trip used in the ride
      * @param availableSeats    The number of seats available for the ride
      */
-    public Ride(Trip trip, int availableSeats) {
+    public Ride(String name, Trip trip, int availableSeats, boolean share) {
+        this.name = name;
         this.trip = trip;
         setAvailableSeats(availableSeats);
-        share = false;
+        this.share = share;
     }
 
     /**
      * The default constructor for a ride when seat numbers are not specified
      * @param trip  The trip used in the ride
      */
-    public Ride(Trip trip) {
+    public Ride(String name, Trip trip, boolean share) {
+        this.name = name;
         this.trip = trip;
         availableSeats = 0;
         full = true;
-        share = false;
+        this.share = share;
     }
 
     /**
@@ -68,5 +71,13 @@ public class Ride {
 
     public void shareRide() {
         share = true;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isShare() {
+        return share;
     }
 }

@@ -1,5 +1,7 @@
 package utils;
 
+import model.StopPoint;
+
 import java.time.LocalTime;
 
 /**
@@ -9,6 +11,7 @@ import java.time.LocalTime;
 public class Session {
 
     private LocalTime time;
+    private StopPoint stopPoint;
 
     private static Session instance = new Session();
 
@@ -25,5 +28,13 @@ public class Session {
 
     public void setTime(String time) {
         this.time = LocalTime.parse(time);
+    }
+
+    public StopPoint getStopPoint() {
+        return stopPoint;
+    }
+
+    public void setStopPoint(StopPoint stopPoint) {
+        this.stopPoint = stopPoint;
     }
 }

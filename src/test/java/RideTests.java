@@ -15,6 +15,7 @@ public class RideTests {
     private Ride testRide2;
 
     private Trip trip;
+    private Trip trip1;
     private Route route;
     private StopPoint sp1;
     private StopPoint sp2;
@@ -28,7 +29,9 @@ public class RideTests {
         List<StopPoint> stopPoints= Arrays.asList(sp1, sp2);
         route = new Route("route", stopPoints);
         trip = new Trip("Trip 1", route, 0, car);
-        testRide1 = new Ride(trip);
+        trip1 = new Trip("Trip 1", route, 1, car);
+        testRide1 = new Ride("Test Ride 1", trip, false);
+        testRide2 = new Ride("Test Ride 2", trip1, true);
     }
 
     @Test

@@ -3,6 +3,7 @@ package controllers;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import model.Account;
@@ -10,15 +11,13 @@ import model.GeneralData;
 import model.Ride;
 
 /**
- * The controller class xD
+ * The controller class for creating a ride.
  */
 public class CreateRideController extends Controller {
-    @FXML
-    private TextField nameText;
-    @FXML
-    private TextField passengerNumberText;
-    @FXML
-    private ComboBox tripComboBox;
+    @FXML private TextField nameText;
+    @FXML private TextField passengerNumberText;
+    @FXML private ComboBox tripComboBox;
+    @FXML private CheckBox shareNowCheckBox;
 
     private GeneralData generalData;
     private Account account;
@@ -43,9 +42,12 @@ public class CreateRideController extends Controller {
             alert.setHeaderText("You need to specify the number of passengers!");
             alert.showAndWait();
         } else {
-            Ride newRide = new Ride(account.getTrips().get(tripComboBox.getSelectionModel().getSelectedItem()),
-                    Integer.parseInt(passengerNumberText.getText()));
+            //TODO check that name of the ride is unique
+            Ride newRide = new Ride(nameText.getText(), account.getTrips().get(tripComboBox.getSelectionModel().getSelectedItem()),
+                    Integer.parseInt(passengerNumberText.getText()), shareNowCheckBox.isSelected());
             generalData.getRides().put(nameText.getText(), newRide);
+            account.getRides().put(nameText.getText(), newRide);
+            System.out.println("Bitch your ride is here!");
         }
     }
 }

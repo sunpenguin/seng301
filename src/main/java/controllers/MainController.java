@@ -42,6 +42,10 @@ public class MainController extends Controller {
         replaceSceneContent("showTrips.fxml");
     }
 
+    public void openMyRides() {
+        replaceSceneContent("viewAccountRides.fxml");
+    }
+
     public void openStopPoints() {
         replaceSceneContent("searchStopPoints.fxml");
     }

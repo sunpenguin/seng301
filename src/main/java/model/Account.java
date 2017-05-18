@@ -12,6 +12,7 @@ public class Account {
     private String type;
     private Map<String, Vehicle> vehicles;
     private Map<String, Trip> trips;
+    private Map<String, Ride> rides;
     private Map<String, StopPoint> stopPointsSearched;
 
     /**
@@ -24,6 +25,7 @@ public class Account {
         type = "driver";
         vehicles = new HashMap<>();
         trips = new HashMap<>();
+        rides = new HashMap<>();
 
         generateFalseAccount();  // For easier testing
     }
@@ -59,5 +61,13 @@ public class Account {
 
     public Map<String, Vehicle> getVehicles() {
         return vehicles;
+    }
+
+    public Map<String, Ride> getRides() {
+        return rides;
+    }
+
+    public void setRides(Map<String, Ride> rides) {
+        this.rides = rides;
     }
 }

@@ -26,37 +26,38 @@
       <RowConstraints maxHeight="75.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" text="Search Rides" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+      <Button disable="true" mnemonicParsing="false" text="Search Rides" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </Button>
       <TableView fx:id="ridesTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="stopTimeColumn" prefWidth="125.0" text="Stop Time" />
-          <TableColumn fx:id="daysColumn" prefWidth="418.0" text="Days" />
-            <TableColumn fx:id="streetSuburbColumn" prefWidth="176.0" text="Suburb" />
+          <TableColumn fx:id="stopTimeColumn" prefWidth="155.0" text="Stop Time" />
+          <TableColumn fx:id="daysColumn" prefWidth="474.0" text="Days" />
+            <TableColumn fx:id="directionColumn" prefWidth="272.0" text="Direction" />
         </columns>
          <GridPane.margin>
             <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </TableView>
-      <Label text="Search By" GridPane.rowIndex="2">
+      <Label disable="true" text="Search By" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </GridPane.margin>
       </Label>
-      <ComboBox fx:id="searchByComboBox" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField fx:id="searchField" GridPane.columnIndex="2" GridPane.rowIndex="2">
+      <ComboBox disable="true" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField disable="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </TextField>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Available Rides " GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+      <Text fx:id="titleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Rides For Selected Stop Point: " GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
+      <Button disable="true" mnemonicParsing="false" text="Book Ride" GridPane.columnIndex="2" GridPane.rowIndex="3" />
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
