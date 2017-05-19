@@ -49,7 +49,7 @@ public class SearchStopPointsController extends Controller {
         stopPointsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 Session.getInstance().setStopPoint((StopPoint) newSelection);
-                createPopUpStage("availableRides.fxml", 800, 800);
+                createPopUpStage("availableRides.fxml", 1000, 800);
             }
         });
     }

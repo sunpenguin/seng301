@@ -42,8 +42,12 @@ public class CreateRideController extends Controller {
             alert.setTitle("Ride Creation Error");
             alert.setHeaderText("Your number of passengers must be a valid number!");
             alert.showAndWait();
+        } else if (generalData.getRides().containsKey(nameText.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ride Creation Error");
+            alert.setHeaderText("There is already a ride with that name!");
+            alert.showAndWait();
         } else {
-            //TODO check that name of the ride is unique
             Ride newRide = new Ride(nameText.getText(), account.getTrips().get(tripComboBox.getSelectionModel().getSelectedItem()),
                     Integer.parseInt(passengerNumberText.getText()));
             generalData.getRides().put(nameText.getText(), newRide);

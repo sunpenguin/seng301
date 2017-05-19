@@ -32,7 +32,6 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#openMyRides" text="View My Rides" />
                       <MenuItem mnemonicParsing="false" onAction="#openStopPoints" text="View Stop Points" />
-                        <MenuItem mnemonicParsing="false" onAction="#openViewRides" text="View Available Rides" />
                     </items>
                   </Menu>
                 <Menu mnemonicParsing="false" text="Help">

@@ -18,7 +18,6 @@ import model.GeneralData;
 import model.Ride;
 import model.Trip;
 
-import java.beans.Expression;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -69,6 +68,7 @@ public class ViewAccountRidesController extends Controller {
 
                 String result = new String();
                 if (trip.isRecurrent() == true) {
+                    result += "The days the ride is available:\n";
                     for (int i = 0; i < trip.getDays().size(); i++) {
                         if (trip.getDays().get(i) == true) {
                             switch (i) {
