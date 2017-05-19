@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fdabaf8-05aa-40f6-b9e6-f1db9691443c" name="Default" comment="Created functionality to allow for ride sharing&#10;&#10;Next steps: Fix ride sharing (viewing my own rides as a user) and implement for when clicking a stop point, opens popup">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/core/Main.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/controllers/viewAccountRidesController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/ViewAccountRidesController.java" />
+    <list default="true" id="7fdabaf8-05aa-40f6-b9e6-f1db9691443c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controllers/ViewAccountRidesController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/controllers/viewAccountRidesController.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controllers/AddTripController.class" afterPath="$PROJECT_DIR$/target/classes/controllers/AddTripController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controllers/ShowTripsController.class" afterPath="$PROJECT_DIR$/target/classes/controllers/ShowTripsController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/Main.class" afterPath="$PROJECT_DIR$/target/classes/core/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Account.class" afterPath="$PROJECT_DIR$/target/classes/model/Account.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Ride.class" afterPath="$PROJECT_DIR$/target/classes/model/Ride.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Route.class" afterPath="$PROJECT_DIR$/target/classes/model/Route.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/Trip.class" afterPath="$PROJECT_DIR$/target/classes/model/Trip.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/RideTests.class" afterPath="$PROJECT_DIR$/target/test-classes/RideTests.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/AddTripController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddTripController.java" />
@@ -63,10 +69,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/core/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="266">
+                <state relative-caret-position="380">
                   <caret line="55" column="98" lean-forward="true" selection-start-line="55" selection-start-column="98" selection-end-line="55" selection-end-column="98" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -75,7 +81,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CreateRideController.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CreateRideController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/controllers/CreateRideController.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="367">
@@ -791,7 +797,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -800,14 +805,14 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28684807" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7746319" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04416761" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56285393" sideWeight="0.49570355" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7746319" sideWeight="0.49785176" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2207304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -851,7 +856,8 @@
     <MESSAGE value="Now correctly displays time even when using same route on different trips!&#10;This means after some cleaning up, story 5 is complete!&#10;&#10;Next steps: research DatePicker and implement it. Also finish Story 6 of B1 (shouldn't take too long). Start on Story 7/finish" />
     <MESSAGE value="Created DatePicker for trips!&#10;Refactored due to rethinking design:&#10;- Changed share to create ride (still needs refactoring)&#10;- There will be a &quot;View My Rides&quot;, where the driver can share the ride.&#10;- Various other things but main things stated&#10;&#10;Next steps: Start on Story 7/finish and finish story 5 alongside it" />
     <MESSAGE value="Created functionality to allow for ride sharing&#10;&#10;Next steps: Fix ride sharing (viewing my own rides as a user) and implement for when clicking a stop point, opens popup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created functionality to allow for ride sharing&#10;&#10;Next steps: Fix ride sharing (viewing my own rides as a user) and implement for when clicking a stop point, opens popup" />
+    <MESSAGE value="Created a version of ride sharing that I think is the way to do it.&#10;&#10;Next steps: Implement for when clicking a stop point, opens popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a version of ride sharing that I think is the way to do it.&#10;&#10;Next steps: Implement for when clicking a stop point, opens popup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1270,16 +1276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="55" column="98" lean-forward="true" selection-start-line="55" selection-start-column="98" selection-end-line="55" selection-end-column="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ViewAccountRidesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="785">
@@ -1307,6 +1303,16 @@
         <state relative-caret-position="367">
           <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="55" column="98" lean-forward="true" selection-start-line="55" selection-start-column="98" selection-end-line="55" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
