@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * The model class that defines a route.
+ *
  * Created by Sunguin Peng.
  */
 public class Route implements Serializable {
@@ -30,11 +31,6 @@ public class Route implements Serializable {
     }
 
     public List<StopPoint> getRouteStops() {
-//        List<StopPoint> tempRouteSP = new ArrayList<>();
-//        for(int i = 0; i < routeStops.size(); i++) {
-//            tempRouteSP.add(Copy.copy(routeStops.get(i)));
-//        }
-//        return tempRouteSP;
         return routeStops;
     }
 

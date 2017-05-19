@@ -3,7 +3,6 @@ package model;
 import java.text.ParsePosition;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,9 +18,6 @@ public class Trip {
     private List<Boolean> days;
     private LocalDate expiryDate;
     private Vehicle vehicle;
-//    private DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//    private SimpleDateFormat df = new SimpleDateFormat("dd/mm/yyyy");
-//    private int stopTimes;
 
     /**
      * The constructor for a non-recurrent trip.
@@ -30,23 +26,13 @@ public class Trip {
      * @param direction To university = 0, From university = 1
      * @param vehicle The vehicle to be used for the trip
      */
-    public Trip(String name, Route route, int direction, Vehicle vehicle) {
+    public Trip(String name, Route route, int direction, LocalDate expiryDate, Vehicle vehicle) {
         this.name = name;
-//        List<StopPoint> tempRouteSP = new ArrayList<>();
-//        for(int i = 0; i < route.getRouteStops().size(); i++) {
-//            tempRouteSP.add(route.getRouteStops().get(i).copy());
-////            System.out.println(route.getRouteStops().get(i).getTime());
-//        }
-//        this.route = new Route(new String(route.getName()), tempRouteSP);
         this.route = route;
         this.direction = direction;
         this.recurrent = false;
+        this.expiryDate = expiryDate;
         this.vehicle = vehicle;
-//        this.stopTimes = stopTimes;
-
-//        for (StopPoint sp : this.route.getRouteStops()) {
-//            sp.setPassTime(stopTimes);
-//        }
     }
 
     /**
@@ -65,26 +51,12 @@ public class Trip {
             tempRouteSP.add(route.getRouteStops().get(i).copy());
         }
         this.route = new Route(new String(route.getName()), tempRouteSP);
-//        this.route = route;
         this.direction = direction;
         this.recurrent = true;
         this.days = days;
-//        this.expiryDate = df.parse(expiryDate, new ParsePosition(0));
         this.expiryDate = expiryDate;
         this.vehicle = vehicle;
-//        this.stopTimes = stopTimes;
-
-//        for (StopPoint sp : this.route.getRouteStops()) {
-//            sp.setPassTime(stopTimes);
-//        }
     }
-
-    /**
-     * The expiry date parameter takes in a string and then converts it to a Date object
-     */
-//    public void setExpiryDate(String expiryDate) {
-//        this.expiryDate = df.parse(expiryDate, new ParsePosition(0));
-//    }
 
     public Vehicle getVehicle() {
         return vehicle;

@@ -17,7 +17,6 @@ public class CreateRideController extends Controller {
     @FXML private TextField nameText;
     @FXML private TextField passengerNumberText;
     @FXML private ComboBox tripComboBox;
-    @FXML private CheckBox shareNowCheckBox;
 
     private GeneralData generalData;
     private Account account;
@@ -36,18 +35,19 @@ public class CreateRideController extends Controller {
             alert.setTitle("Ride Creation Error");
             alert.setHeaderText("You need to name your ride!");
             alert.showAndWait();
-        } else if (passengerNumberText.getText() == null) {
+        } else if (passengerNumberText.getText() == null ||
+                Integer.parseInt(passengerNumberText.getText()) >
+                        account.getTrips().get(tripComboBox.getSelectionModel().getSelectedItem()).getVehicle().getSeats()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Ride Creation Error");
-            alert.setHeaderText("You need to specify the number of passengers!");
+            alert.setHeaderText("Your number of passengers must be a valid number!");
             alert.showAndWait();
         } else {
             //TODO check that name of the ride is unique
             Ride newRide = new Ride(nameText.getText(), account.getTrips().get(tripComboBox.getSelectionModel().getSelectedItem()),
-                    Integer.parseInt(passengerNumberText.getText()), shareNowCheckBox.isSelected());
+                    Integer.parseInt(passengerNumberText.getText()));
             generalData.getRides().put(nameText.getText(), newRide);
             account.getRides().put(nameText.getText(), newRide);
-            System.out.println("Bitch your ride is here!");
         }
     }
 }

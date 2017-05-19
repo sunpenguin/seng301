@@ -36,7 +36,7 @@ public class Account {
      */
     public void generateFalseAccount() {
         Vehicle car1 = new Vehicle("Car", "Honda Civic", "Pink", "XD0303", 1951, 3);
-        Vehicle car2 = new Vehicle("Car", "VoltsWagon Beetle", "Red", "G00DC4R", 2016, 1);
+        Vehicle car2 = new Vehicle("Car", "VoltsWagon Beetle", "Red", "G00DC4R", 2016, 2);
 
         addVehicle("Honda", car1);
         addVehicle("Beetle", car2);

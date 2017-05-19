@@ -3,6 +3,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,11 +29,13 @@ public class RideTests {
         sp1 = new StopPoint(1, "Address", "Suburb");
         sp2 = new StopPoint(2, "Random Address", "Random Suburb");
         List<StopPoint> stopPoints= Arrays.asList(sp1, sp2);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         route = new Route("route", stopPoints);
-        trip = new Trip("Trip 1", route, 0, car);
-        trip1 = new Trip("Trip 1", route, 1, car);
-        testRide1 = new Ride("Test Ride 1", trip, false);
-        testRide2 = new Ride("Test Ride 2", trip1, true);
+        trip = new Trip("Trip 1", route, 0, LocalDate.parse("15/12/2020", formatter), car);
+        trip1 = new Trip("Trip 1", route, 1, LocalDate.parse("15/01/2001", formatter), car);
+        testRide1 = new Ride("Test Ride 1", trip);
+        testRide2 = new Ride("Test Ride 2", trip1);
     }
 
     @Test

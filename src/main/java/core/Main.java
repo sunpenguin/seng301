@@ -14,6 +14,10 @@ import model.GeneralData;
 import model.Trip;
 
 import java.io.InputStream;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -42,9 +46,15 @@ public class Main extends Application {
     public void testStartUp() {
         userAccount = new Account("User");
         generalData = new GeneralData();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         userAccount.addTrip("Test 1",
                 new Trip("Test 1", generalData.getRoutes().get("Route 2"), 0,
-                        userAccount.getVehicles().get("Honda")));
+                        LocalDate.parse("12/12/2012", formatter), userAccount.getVehicles().get("Honda")));
+        userAccount.addTrip("Test 2",
+                new Trip("Test 2", generalData.getRoutes().get("Route 1"), 1,
+                        new ArrayList<>(Arrays.asList(true, true, true, true, true, false, true)),
+                        LocalDate.parse("12/12/2012", formatter), userAccount.getVehicles().get("Beetle")));
         generalData.setCurrentTrip("Test 1");
     }
 

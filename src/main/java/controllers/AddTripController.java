@@ -104,6 +104,13 @@ public class AddTripController extends Controller {
             alert.setTitle("Add Trip Error");
             alert.setHeaderText("You need to select a vehicle for your trip!");
             alert.showAndWait();
+        } else if (dateText.getValue() == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Add Trip Error");
+            alert.setHeaderText("You need to specify the date of the trip!");
+            alert.setContentText("For a single trip, set the expiry date to the date of the trip.\n" +
+                    "For a recurring trip, the expiry date is how long you want the trip to last for.");
+            alert.showAndWait();
         } else {
             int direction;
             if (directionComboBox.getValue() == "To University") direction = 0;
@@ -124,7 +131,9 @@ public class AddTripController extends Controller {
                 newTrip = new Trip(nameBox.getText(),
                         new Route(routeCopy.getName(), stopPoints),
                         direction,
-                        account.getVehicles().get(vehicleComboBox.getValue()));
+                        dateText.getValue(),
+                        account.getVehicles().get(vehicleComboBox.getValue())
+                        );
             }
             account.addTrip(nameBox.getText(), newTrip);
             generalData.setCurrentTrip(nameBox.getText());

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.viewAccountRidesController">
+<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViewAccountRidesController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="755.0" minWidth="10.0" prefWidth="121.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="755.0" minWidth="10.0" prefWidth="289.0" />
@@ -33,10 +33,10 @@
       </Button>
       <TableView fx:id="ridesTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="nameColumn" editable="false" prefWidth="209.0" text="Name" />
-          <TableColumn fx:id="directionColumn" editable="false" prefWidth="214.0" text="Direction" />
-            <TableColumn fx:id="daysColumn" editable="false" prefWidth="362.0" text="Days" />
-            <TableColumn fx:id="sharedColumn" prefWidth="134.0" text="Shared" />
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="209.0" resizable="false" text="Name" />
+          <TableColumn fx:id="directionColumn" editable="false" prefWidth="137.0" resizable="false" text="Direction" />
+            <TableColumn fx:id="daysColumn" editable="false" prefWidth="439.0" resizable="false" text="Days" />
+            <TableColumn fx:id="fullColumn" editable="false" prefWidth="134.0" resizable="false" text="Seats Available" />
         </columns>
          <GridPane.margin>
             <Insets left="25.0" right="25.0" />

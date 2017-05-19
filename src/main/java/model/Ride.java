@@ -9,30 +9,30 @@ public class Ride {
     private Trip trip;
     private int availableSeats;
     private boolean full;
-    private boolean share;
+    private boolean shared;
 
     /**
      * The constructor for a ride when seat numbers are specified
      * @param trip  The trip used in the ride
      * @param availableSeats    The number of seats available for the ride
      */
-    public Ride(String name, Trip trip, int availableSeats, boolean share) {
+    public Ride(String name, Trip trip, int availableSeats) {
         this.name = name;
         this.trip = trip;
-        setAvailableSeats(availableSeats);
-        this.share = share;
+        this.availableSeats = availableSeats;
+        shared = true;
     }
 
     /**
      * The default constructor for a ride when seat numbers are not specified
      * @param trip  The trip used in the ride
      */
-    public Ride(String name, Trip trip, boolean share) {
+    public Ride(String name, Trip trip) {
         this.name = name;
         this.trip = trip;
         availableSeats = 0;
         full = true;
-        this.share = share;
+        shared = true;
     }
 
     /**
@@ -57,7 +57,7 @@ public class Ride {
         }  else if (availableSeats == 0) {
             this.availableSeats = 0;
             full = true;
-            share = false;
+            shared = false;
         }
     }
 
@@ -70,14 +70,34 @@ public class Ride {
     }
 
     public void shareRide() {
-        share = true;
+        shared = true;
     }
 
     public String getName() {
         return name;
     }
 
-    public boolean isShare() {
-        return share;
+    public boolean isShared() {
+        return shared;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
+    }
+
+    public void setFull(boolean full) {
+        this.full = full;
+    }
+
+    public void setShared(boolean shared) {
+        this.shared = shared;
+    }
+
+    public Trip getTrip() {
+        return trip;
     }
 }

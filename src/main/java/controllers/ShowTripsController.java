@@ -65,6 +65,7 @@ public class ShowTripsController extends Controller {
             else { temporaryString = "From University"; }
             directionBox.setText(temporaryString);
 
+            dateText.setText(currentTrip.getExpiryDate().toString());
             if (currentTrip.isRecurrent()) {
                 recurrentBox.setSelected(true);
                 for (int i = 0; i < currentTrip.getDays().size(); i++) {
@@ -96,7 +97,6 @@ public class ShowTripsController extends Controller {
                         }
                     }
                 }
-                dateText.setText(currentTrip.getExpiryDate().toString());
             }
         });
     }
