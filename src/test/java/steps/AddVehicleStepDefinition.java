@@ -12,7 +12,7 @@ import org.junit.Assert;
  * Created by sungu on 1/04/2017.
  */
 public class AddVehicleStepDefinition {
-    Account account = new Account("Test");
+    Account account = new Account("Test", 420);
     Vehicle car;
 
     @Given("^that I am a \"([^\"]*)\"$")
@@ -32,7 +32,7 @@ public class AddVehicleStepDefinition {
     public void theShouldBeAddedToThe(String carName, String accountName) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         car = new Vehicle(carName);
-        account = new Account(accountName);
+        account = new Account(accountName, 69);
         account.addVehicle(carName, car);
         Assert.assertTrue(account.getVehicles().containsKey(carName));
         Assert.assertTrue(account.getVehicles().containsValue(car));

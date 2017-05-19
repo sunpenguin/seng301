@@ -52,22 +52,6 @@ public abstract class Controller implements Initializable {
             e.printStackTrace();
         }
     }
-//
-//    /**
-//     * Replaces content and loads the content with the load method
-//     * @param filePath  The name of the file path as a string
-//     */
-//    public void showTripCreated(String filePath, String name){
-//        try {
-//            Controller controller = (Controller)
-//                    parent.replaceSceneContent(filePath);
-//            controller.setApp(parent);
-////            controller.load();
-//            controller.loadSelected(name);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     /**
      * Creates a popup window with a specific FXML scene. May be used later.

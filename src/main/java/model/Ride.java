@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+
 /**
  * The model class that stores ride information.
  * @author Sunguin Peng
@@ -10,6 +12,23 @@ public class Ride {
     private int availableSeats;
     private boolean full;
     private boolean shared;
+
+    private Route route;
+    private int direction;
+    private LocalDate date;
+    private Vehicle vehicle;
+
+    /**
+     * The constructor for a proper ride after finding out the true meaning of the story.
+     */
+    public Ride(String name, Route route, int direction, LocalDate date, Vehicle vehicle, int availableSeats) {
+        this.name = name;
+        this.route = route;
+        this.direction = direction;
+        this.date = date;
+        this.vehicle = vehicle;
+        this.availableSeats = availableSeats;
+    }
 
     /**
      * The constructor for a ride when seat numbers are specified

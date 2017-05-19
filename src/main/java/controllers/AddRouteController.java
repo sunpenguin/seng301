@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import model.GeneralData;
 import model.Route;
 import model.StopPoint;
@@ -18,12 +19,10 @@ import java.util.List;
  * @see controllers.Controller
  */
 public class AddRouteController extends Controller {
-    @FXML
-    private TextField nameText;
-    @FXML
-    private ListView stopPointList;
-    @FXML
-    private ListView selectedStopPointList;
+    @FXML private TextField nameText;
+    @FXML private ListView stopPointList;
+    @FXML private ListView selectedStopPointList;
+    @FXML private Button addRouteButton;
 
     private GeneralData generalData;
     private List<StopPoint> temporaryData; // The list that contains all the stop points
@@ -89,6 +88,9 @@ public class AddRouteController extends Controller {
 
             displayAddress(stopPointList, temporaryData);
             displayAddress(selectedStopPointList, temporaryRoute);
+
+            Stage stage = (Stage) addRouteButton.getScene().getWindow();
+            stage.close();
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Route Error");

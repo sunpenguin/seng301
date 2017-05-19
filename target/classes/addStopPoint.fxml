@@ -32,17 +32,17 @@
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </GridPane.margin>
       </Label>
-      <TextField fx:id="streetText" GridPane.columnIndex="1" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <Button mnemonicParsing="false" onAction="#addStopPoint" text="Register New Stop Point" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+      <Button fx:id="addStopPointButton" mnemonicParsing="false" onAction="#addStopPoint" text="Register New Stop Point" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </Button>
       <TextField fx:id="numberText" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="streetText" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>

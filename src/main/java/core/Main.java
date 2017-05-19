@@ -44,7 +44,7 @@ public class Main extends Application {
      * Starts up the test data. ALso adds a trip in for testing rides.
      */
     public void testStartUp() {
-        userAccount = new Account("User");
+        userAccount = new Account("User", 420);
         generalData = new GeneralData();
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

@@ -2,7 +2,9 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.GeneralData;
 import model.StopPoint;
 import utils.Checkers;
@@ -14,12 +16,10 @@ import utils.Checkers;
  * @see controllers.Controller
  */
 public class AddStopPointController extends Controller {
-    @FXML
-    private TextField numberText;
-    @FXML
-    private TextField streetText;
-    @FXML
-    private TextField suburbText;
+    @FXML private TextField numberText;
+    @FXML private TextField streetText;
+    @FXML private TextField suburbText;
+    @FXML private Button addStopPointButton;
 
     private GeneralData generalData;
 
@@ -38,17 +38,6 @@ public class AddStopPointController extends Controller {
      * @see GeneralData
      */
     public void addStopPoint() {
-//        if (!addressText.getText().isEmpty()) {
-//            generalData.addStopPoint(addressText.getText(), new StopPoint(
-//                    addressText.getText()
-//            ));
-//            addressText.clear();
-//        } else {
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("Add Stop Point Error");
-//            alert.setHeaderText("There was an error adding your stop point.");
-//            alert.showAndWait();
-//        }
         if (numberText.getText() == null || !Checkers.isNumeric(numberText.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Stop Point Error");
@@ -68,13 +57,8 @@ public class AddStopPointController extends Controller {
             generalData.addStopPoint(
                     numberText.getText() + streetText.getText() + suburbText.getText(),
                     new StopPoint(Integer.parseInt(numberText.getText()), streetText.getText(), suburbText.getText()));
-            clearFields();
+            Stage stage = (Stage) addStopPointButton.getScene().getWindow();
+            stage.close();
         }
-    }
-
-    private void clearFields() {
-        numberText.clear();
-        streetText.clear();
-        suburbText.clear();
     }
 }

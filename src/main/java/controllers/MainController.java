@@ -3,6 +3,7 @@ package controllers;
 
 /**
  * The main controller class that manages the top menu.
+ *
  * @author Sunguin Peng
  */
 public class MainController extends Controller {
@@ -18,28 +19,12 @@ public class MainController extends Controller {
         replaceSceneContent("home.fxml");
     }
 
-    public void openAddVehicle() {
-        replaceSceneContent("addVehicleForm.fxml");
-    }
-
-    public void openAddSP() {
-        replaceSceneContent("addStopPoint.fxml");
-    }
-
-    public void openAddRoute() {
-        replaceSceneContent("addRoute.fxml");
+    public void openViewVehicles() {
+        replaceSceneContent("viewVehicles.fxml");
     }
 
     public void openAddTrip() {
         replaceSceneContent("addTrip.fxml");
-    }
-
-    public void openShareRide() {
-        replaceSceneContent("createRide.fxml");
-    }
-
-    public void showTrips() {
-        replaceSceneContent("showTrips.fxml");
     }
 
     public void openMyRides() {
@@ -47,7 +32,11 @@ public class MainController extends Controller {
     }
 
     public void openStopPoints() {
-        replaceSceneContent("searchStopPoints.fxml");
+        replaceSceneContent("viewStopPoints.fxml");
+    }
+
+    public void openRoutes() {
+        replaceSceneContent("viewRoutes.fxml");
     }
 
     public void killMe() {

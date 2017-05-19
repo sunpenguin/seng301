@@ -1,9 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * The model class that holds all the information the user has done that is not account reliant.
@@ -12,7 +9,7 @@ import java.util.Map;
 public class GeneralData {
     private Map<String, StopPoint> stopPoints;
     private Map<String, Route> routes;
-    private Map<String, Ride> rides;
+    private Map<Integer, List<Ride>> rides;
     private String currentTrip;
 
     public GeneralData() {
@@ -63,7 +60,7 @@ public class GeneralData {
         this.currentTrip = currentTrip;
     }
 
-    public Map<String, Ride> getRides() {
+    public Map<Integer, List<Ride>> getRides() {
         return rides;
     }
 }

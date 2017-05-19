@@ -35,7 +35,9 @@ public class AddTripController extends Controller {
     @FXML private CheckBox fridayBox;
     @FXML private CheckBox saturdayBox;
     @FXML private CheckBox sundayBox;
-    @FXML private DatePicker dateText;
+    @FXML private DatePicker startDateText;
+    @FXML private DatePicker expiryDateText;
+    @FXML private TextField passengersText;
 
     private GeneralData generalData;
     private Account account;
@@ -79,7 +81,7 @@ public class AddTripController extends Controller {
 
         stopPointTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                createPopUpStage("timeSetterTrip.fxml", 300, 200);
+                createPopUpStage("timeSetterRide.fxml", 300, 200);
                 StopPoint sp = (StopPoint) newSelection;
                 sp.setTime(Session.getInstance().getTime());
                 stopPointTable.refresh();
@@ -104,7 +106,7 @@ public class AddTripController extends Controller {
             alert.setTitle("Add Trip Error");
             alert.setHeaderText("You need to select a vehicle for your trip!");
             alert.showAndWait();
-        } else if (dateText.getValue() == null) {
+        } else if (expiryDateText.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Trip Error");
             alert.setHeaderText("You need to specify the date of the trip!");
@@ -119,24 +121,24 @@ public class AddTripController extends Controller {
             Trip newTrip;
             if (recurrentBox.isSelected()) {
                 allDaysCheck();
-//                System.out.println(routeCopy.getRouteStops().get(0).getTime());
                 newTrip = new Trip(nameBox.getText(),
                         new Route(routeCopy.getName(), stopPoints),
                         direction,
                         days,
-                        dateText.getValue(),
+                        expiryDateText.getValue(),
                         account.getVehicles().get(vehicleComboBox.getValue()));
             } else {
-//                System.out.println(stopPoints.get(0).getTime());
-                newTrip = new Trip(nameBox.getText(),
-                        new Route(routeCopy.getName(), stopPoints),
-                        direction,
-                        dateText.getValue(),
-                        account.getVehicles().get(vehicleComboBox.getValue())
-                        );
+//                newTrip = new Trip(nameBox.getText(),
+//                        new Route(routeCopy.getName(), stopPoints),
+//                        direction,
+//                        expiryDateText.getValue(),
+//                        account.getVehicles().get(vehicleComboBox.getValue())
+//                        );
+              createNewRides();
             }
-            account.addTrip(nameBox.getText(), newTrip);
-            generalData.setCurrentTrip(nameBox.getText());
+//            account.addTrip(nameBox.getText(), newTrip);
+//            generalData.setCurrentTrip(nameBox.getText());
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Trip Creation");
             alert.setHeaderText("Your trip has been successfully created!");
@@ -145,6 +147,29 @@ public class AddTripController extends Controller {
             replaceSceneContent("showTrips.fxml");
 //            showTripCreated("showTrips.fxml", nameBox.getText());
 //            resetTrip();
+        }
+    }
+
+    private void createNewRides() {
+        int direction;
+        if (directionComboBox.getValue() == "To University") direction = 0;
+        else direction = 1;
+
+        List<Ride> rides;
+        if (generalData.getRides().containsKey(account.getId())) {
+            rides = generalData.getRides().get(account.getId());
+        } else {
+            rides = new ArrayList<>();
+        }
+
+        if (!recurrentBox.isSelected()) {
+            Ride rideToAdd = new Ride(nameBox.getText(),
+                             new Route(routeCopy.getName(), stopPoints),
+                             direction,
+                             startDateText.getValue(),
+                             account.getVehicles().get(vehicleComboBox.getValue()),
+                             Integer.parseInt(passengersText.getText()));
+            rides.add(rideToAdd);
         }
     }
 

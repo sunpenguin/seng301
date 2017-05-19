@@ -9,6 +9,7 @@ import java.util.Map;
  */
 public class Account {
     private String name;
+    private Integer id;
     private String type;
     private Map<String, Vehicle> vehicles;
     private Map<String, Trip> trips;
@@ -20,8 +21,9 @@ public class Account {
      * Currently only requires a name.
      * @param name the username for the account
      */
-    public Account(String name) {
+    public Account(String name, Integer id) {
         this.name = name;
+        this.id = id;
         type = "driver";
         vehicles = new HashMap<>();
         trips = new HashMap<>();
@@ -69,5 +71,9 @@ public class Account {
 
     public void setRides(Map<String, Ride> rides) {
         this.rides = rides;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }

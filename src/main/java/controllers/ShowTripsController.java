@@ -55,7 +55,7 @@ public class ShowTripsController extends Controller {
             currentTrip = account.getTrips().get(newValue);
             nameBox.setText(currentTrip.getName());
             routeBox.setText(currentTrip.getRoute().getName());
-            vehicleBox.setText(currentTrip.getVehicle().getLicensePlate());
+            vehicleBox.setText(currentTrip.getVehicle().getLicencePlate());
 
             stopPointNameList.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Address"));
             stopPointTimeList.setCellValueFactory(new PropertyValueFactory<StopPoint, Integer>("Time"));

@@ -14,7 +14,7 @@ import utils.Session;
 
 import java.time.format.DateTimeFormatter;
 
-public class AvailableRideController extends Controller {
+public class ViewAvailableRideController extends Controller {
 
     @FXML private TableView ridesTable;
     @FXML private TableColumn stopTimeColumn;

@@ -16,22 +16,18 @@
                 <Menu mnemonicParsing="false" text="File">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#openHome" text="Home" />
-                        <MenuItem mnemonicParsing="false" onAction="#showTrips" text="Show Trips" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Add">
+                <Menu mnemonicParsing="false" text="Driver">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#openAddVehicle" text="Add Vehicle" />
-                        <MenuItem mnemonicParsing="false" onAction="#openAddSP" text="Add Stop Point" />
-                        <MenuItem mnemonicParsing="false" onAction="#openAddRoute" text="Add Route" />
-                        <MenuItem mnemonicParsing="false" onAction="#openAddTrip" text="Add Trip" />
-                        <MenuItem mnemonicParsing="false" onAction="#openShareRide" text="Share Ride" />
+                        <MenuItem mnemonicParsing="false" onAction="#openMyRides" text="View My Rides" />
+                    <MenuItem mnemonicParsing="false" onAction="#openViewVehicles" text="View Vehicles" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="View">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#openMyRides" text="View My Rides" />
                       <MenuItem mnemonicParsing="false" onAction="#openStopPoints" text="View Stop Points" />
+                        <MenuItem mnemonicParsing="false" onAction="#openRoutes" text="View Routes" />
                     </items>
                   </Menu>
                 <Menu mnemonicParsing="false" text="Help">

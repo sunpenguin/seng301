@@ -11,7 +11,7 @@ import utils.Session;
 /**
  * Sets a time for a selected Stop Point for a Route during Trip creation.
  */
-public class TimeSetterTripController extends Controller {
+public class TimeSetterRideController extends Controller {
 
     @FXML private TextField timeText;
     @FXML private Button confirmButton;

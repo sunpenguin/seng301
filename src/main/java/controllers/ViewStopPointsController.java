@@ -10,21 +10,15 @@ import utils.Session;
 import utils.StopPointsSearcher;
 
 /**
- * Created by sungu on 24/04/2017.
+ * The controller class for viewing stop points.
  */
-public class SearchStopPointsController extends Controller {
-    @FXML
-    private TableView stopPointsTable;
-    @FXML
-    private TableColumn streetNumberColumn;
-    @FXML
-    private TableColumn streetNameColumn;
-    @FXML
-    private TableColumn streetSuburbColumn;
-    @FXML
-    private TextField searchField;
-    @FXML
-    private ComboBox searchByComboBox;
+public class ViewStopPointsController extends Controller {
+    @FXML private TableView stopPointsTable;
+    @FXML private TableColumn streetNumberColumn;
+    @FXML private TableColumn streetNameColumn;
+    @FXML private TableColumn streetSuburbColumn;
+    @FXML private TextField searchField;
+    @FXML private ComboBox searchByComboBox;
 
     private GeneralData generalData;
     private StopPointsSearcher stopPointsSearcher;
@@ -49,7 +43,7 @@ public class SearchStopPointsController extends Controller {
         stopPointsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 Session.getInstance().setStopPoint((StopPoint) newSelection);
-                createPopUpStage("availableRides.fxml", 1000, 800);
+                createPopUpStage("viewAvailableRides.fxml", 1000, 800);
             }
         });
     }
@@ -78,5 +72,12 @@ public class SearchStopPointsController extends Controller {
                     break;
             }
         }
+    }
+
+    public void addStopPoint() {
+        createPopUpStage("addStopPoint.fxml", 1000, 800);
+        stopPointsTable.setItems(FXCollections.observableArrayList(generalData.getStopPoints().values()));
+        searchField.clear();
+        stopPointsTable.getSelectionModel().clearSelection();
     }
 }

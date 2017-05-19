@@ -42,7 +42,7 @@
             <Insets right="25.0" />
          </GridPane.margin>
       </TextField>
-      <Button mnemonicParsing="false" onAction="#addRoute" text="Register New Route" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+      <Button fx:id="addRouteButton" mnemonicParsing="false" onAction="#addRoute" text="Register New Route" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
