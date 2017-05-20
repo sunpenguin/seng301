@@ -21,7 +21,7 @@ public class GeneralData {
         routes = new HashMap<>();
         rides = new HashMap<>();
 
-        automaticID = 0;
+//        automaticID = 0;
 
         generateFalseData();// For easier GUI testing
     }
@@ -47,8 +47,8 @@ public class GeneralData {
     }
 
     public void addAccount(Account account) {
-        automaticID += automaticID;
-        accountMap.put(automaticID, account);
+//        automaticID += automaticID;
+        accountMap.put(account.getId(), account);
     }
 
     public Map<Integer, Account> getAccountMap() {

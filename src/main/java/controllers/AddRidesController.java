@@ -151,7 +151,8 @@ public class AddRidesController extends Controller {
                              direction,
                              startDateText.getValue(),
                              account.getVehicles().get(vehicleComboBox.getValue()),
-                             Integer.parseInt(passengersText.getText()));
+                             Integer.parseInt(passengersText.getText()),
+                             account.getId());
             rides.add(rideToAdd);
         } else {
             LocalDate date = startDateText.getValue();
@@ -162,7 +163,8 @@ public class AddRidesController extends Controller {
                             direction,
                             date,
                             account.getVehicles().get(vehicleComboBox.getValue()),
-                            Integer.parseInt(passengersText.getText()));
+                            Integer.parseInt(passengersText.getText()),
+                            account.getId());
                     rides.add(rideToAdd);
                 }
                 date = date.plusDays(1);

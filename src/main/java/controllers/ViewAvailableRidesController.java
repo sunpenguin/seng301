@@ -15,6 +15,8 @@ import javafx.util.Callback;
 import model.*;
 import utils.Session;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +28,9 @@ public class ViewAvailableRidesController extends Controller {
 
     @FXML private Text titleText;
     @FXML private TableView ridesTable;
-    @FXML private TableColumn nameColumn;
-    @FXML private TableColumn directionColumn;
-    @FXML private TableColumn routeColumn;
     @FXML private TableColumn dateColumn;
-    @FXML private TableColumn vehicleColumn;
+    @FXML private TableColumn timeColumn;
+    @FXML private TableColumn directionColumn;
     @FXML private CheckBox toUniCheckBox;
     @FXML private CheckBox fromUniCheckBox;
 
@@ -46,7 +46,9 @@ public class ViewAvailableRidesController extends Controller {
 
         titleText.setText("All Rides with Stop Point: " +
                 stopPoint.getNumber() + " " + stopPoint.getAddress() + ", " + stopPoint.getSuburb());
+
         setUpRidesTable();
+        setListeners();
     }
 
     private void setUpRidesTable() {
@@ -69,7 +71,33 @@ public class ViewAvailableRidesController extends Controller {
             }
         }
 
-        nameColumn.setCellValueFactory(new PropertyValueFactory<Ride, String>("Name"));
+        dateColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue call(TableColumn.CellDataFeatures param) {
+                Ride ride = (Ride) param.getValue();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+                String result = ride.getDate().format(formatter) + " (" + ride.getDate().getDayOfWeek() + ")";
+                return new SimpleStringProperty(result);
+            }
+        });
+
+        timeColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue call(TableColumn.CellDataFeatures param) {
+                Ride ride = (Ride) param.getValue();
+                String result = "00:00";
+                for (StopPoint sp : ride.getRoute().getRouteStops()) {
+                    if (sp.getNumber().equals(stopPoint.getNumber()) ||
+                            sp.getAddress().equals(stopPoint.getAddress()) ||
+                            sp.getSuburb().equals(stopPoint.getAddress())) {
+                        result = sp.getTime().format(DateTimeFormatter.ofPattern("HH:mm"));
+                        break;
+                    }
+                }
+                return new SimpleStringProperty(result);
+            }
+        });
 
         directionColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
             @Override
@@ -85,52 +113,14 @@ public class ViewAvailableRidesController extends Controller {
             }
         });
 
-        routeColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue call(TableColumn.CellDataFeatures param) {
-                Ride ride = (Ride) param.getValue();
-                List<StopPoint> stopPoints = ride.getRoute().getRouteStops();
-                String direction = "The course for this route is as below:\n";
-                for (StopPoint stopPoint : stopPoints) {
-                    direction += stopPoint.getNumber() + " " + stopPoint.getAddress() + ", " + stopPoint.getSuburb() + "\n";
-                }
-                return new SimpleStringProperty(direction);
-            }
-        });
-
-
-        dateColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue call(TableColumn.CellDataFeatures param) {
-                Ride ride = (Ride) param.getValue();
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-                String day = ride.getDate().getDayOfWeek().toString();
-                day = day.substring(0, 3);
-
-                String result = ride.getDate().format(formatter) + "\n(" + day + ")";
-                return new SimpleStringProperty(result);
-            }
-        });
-        vehicleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
-            @Override
-            public ObservableValue call(TableColumn.CellDataFeatures param) {
-                Ride ride = (Ride) param.getValue();
-                Vehicle vehicle = ride.getVehicle();
-
-                String result = "The vehicle used for this ride is a:\n" +
-                        vehicle.getType() + ", " + vehicle.getModel() + " (" + vehicle.getLicencePlate() + ")\n" +
-                        "The number of seats available are: " + ride.getAvailableSeats();
-                return new SimpleStringProperty(result);
-            }
-        });
-
         ridesTable.setItems(FXCollections.observableArrayList(filteredRides));
     }
 
-//    private void setListeners() {
-//        ridesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-//            if (newSelection != null) {
+    private void setListeners() {
+        ridesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                Session.getInstance().setRide((Ride) newSelection);
+                createPopUpStage("viewSingleRideDetails.fxml", 1000, 800);
 //                Ride ride = (Ride) newSelection;
 //                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 //                alert.setTitle("Ride Share Confirmation");
@@ -146,9 +136,9 @@ public class ViewAvailableRidesController extends Controller {
 //                } else if (action.isPresent() && action.get() == ButtonType.OK) {
 //                    ride.shareRide();
 //                }
-//            }
-//        });
-//    }
+            }
+        });
+    }
 
     public void toggleToUniFilter() {
         createFilteredRides();

@@ -16,6 +16,7 @@
                 <Menu mnemonicParsing="false" text="File">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#openHome" text="Home" />
+                        <MenuItem mnemonicParsing="false" onAction="#openAccount" text="My Account" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Driver">

@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Account;
 import model.GeneralData;
+import utils.Session;
 
 import java.io.InputStream;
 import java.time.format.DateTimeFormatter;
@@ -46,9 +47,9 @@ public class Main extends Application {
         userAccount = new Account("User", 420);
         generalData = new GeneralData();
         generalData.addAccount(userAccount);
+        Session.getInstance().setCurrentAccount(userAccount);
         generalData.getRides().put(userAccount.getId(), new ArrayList<>());
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         generalData.setCurrentTrip("Test 1");
     }
 

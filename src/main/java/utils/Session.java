@@ -1,5 +1,7 @@
 package utils;
 
+import model.Account;
+import model.Ride;
 import model.StopPoint;
 
 import java.time.LocalTime;
@@ -12,6 +14,9 @@ public class Session {
 
     private LocalTime time;
     private StopPoint stopPoint;
+    private Ride ride;
+
+    private Account currentAccount;
 
     private static Session instance = new Session();
 
@@ -36,5 +41,21 @@ public class Session {
 
     public void setStopPoint(StopPoint stopPoint) {
         this.stopPoint = stopPoint;
+    }
+
+    public Ride getRide() {
+        return ride;
+    }
+
+    public void setRide(Ride ride) {
+        this.ride = ride;
+    }
+
+    public Account getCurrentAccount() {
+        return currentAccount;
+    }
+
+    public void setCurrentAccount(Account currentAccount) {
+        this.currentAccount = currentAccount;
     }
 }

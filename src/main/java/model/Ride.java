@@ -1,6 +1,8 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The model class that stores ride information.
@@ -11,22 +13,26 @@ public class Ride {
     private int availableSeats;
     private boolean full;
     private boolean shared;
-
     private Route route;
     private int direction;
     private LocalDate date;
     private Vehicle vehicle;
+    private int driverID;
+    private Map<Integer, Account> passengers;
 
     /**
      * The constructor for a proper ride after finding out the true meaning of the story.
      */
-    public Ride(String name, Route route, int direction, LocalDate date, Vehicle vehicle, int availableSeats) {
+    public Ride(String name, Route route, int direction, LocalDate date, Vehicle vehicle, int availableSeats, int driverID) {
         this.name = name;
         this.route = route;
         this.direction = direction;
         this.date = date;
         this.vehicle = vehicle;
         this.availableSeats = availableSeats;
+        this.driverID = driverID;
+        passengers = new HashMap<>();
+
     }
 
     /**
@@ -39,6 +45,20 @@ public class Ride {
                 full = true;
         }
     }
+
+
+    /**
+     * The method to add passengers. The boolean for full becomes true when there are no more available seats.
+     */
+    public void addPassenger(Account account) {
+        if (!full) {
+            passengers.put(account.getId(), account);
+            availableSeats -= 1;
+            if (availableSeats == 0)
+                full = true;
+        }
+    }
+
 
     /**
      * Checks the number of seats are within range of the vehicle specified before setting the number
@@ -117,5 +137,13 @@ public class Ride {
 
     public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
+    }
+
+    public int getDriverID() {
+        return driverID;
+    }
+
+    public void setDriverID(int driverID) {
+        this.driverID = driverID;
     }
 }
