@@ -11,19 +11,17 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Account;
 import model.GeneralData;
-import model.Trip;
 
 import java.io.InputStream;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 /**
  * @author Sunguin Peng
  */
 public class Main extends Application {
+    // TODO add @FXML tags above all fxml methods
     private Stage primaryStage = null;
     private VBox mainContainer = null;
     private MainController mainController = null;
@@ -44,17 +42,13 @@ public class Main extends Application {
      * Starts up the test data. ALso adds a trip in for testing rides.
      */
     public void testStartUp() {
+        // TODO Find a better way to initialize rides dictionary
         userAccount = new Account("User", 420);
         generalData = new GeneralData();
+        generalData.addAccount(userAccount);
+        generalData.getRides().put(userAccount.getId(), new ArrayList<>());
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        userAccount.addTrip("Test 1",
-                new Trip("Test 1", generalData.getRoutes().get("Route 2"), 0,
-                        LocalDate.parse("12/12/2012", formatter), userAccount.getVehicles().get("Honda")));
-        userAccount.addTrip("Test 2",
-                new Trip("Test 2", generalData.getRoutes().get("Route 1"), 1,
-                        new ArrayList<>(Arrays.asList(true, true, true, true, true, false, true)),
-                        LocalDate.parse("12/12/2012", formatter), userAccount.getVehicles().get("Beetle")));
         generalData.setCurrentTrip("Test 1");
     }
 

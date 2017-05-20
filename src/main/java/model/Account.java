@@ -12,9 +12,7 @@ public class Account {
     private Integer id;
     private String type;
     private Map<String, Vehicle> vehicles;
-    private Map<String, Trip> trips;
-    private Map<String, Ride> rides;
-    private Map<String, StopPoint> stopPointsSearched;
+    private String licenceNumber;
 
     /**
      * The constructor for an account.
@@ -24,10 +22,9 @@ public class Account {
     public Account(String name, Integer id) {
         this.name = name;
         this.id = id;
-        type = "driver";
+        type = "Passenger";
         vehicles = new HashMap<>();
-        trips = new HashMap<>();
-        rides = new HashMap<>();
+        licenceNumber = "No Licence Number";
 
         generateFalseAccount();  // For easier testing
     }
@@ -48,32 +45,33 @@ public class Account {
         vehicles.put(name, vehicle);
     }
 
-    public void addTrip(String name, Trip trip) {
-        trips.put(name, trip);
-    }
-
-    public Map<String, Trip> getTrips() {
-        return trips;
-    }
-
     public void setType(String type) {
-        if (type == "driver" || type == "passenger")
+        if (type == "Driver" || type == "Passenger")
             this.type = type;
+    }
+
+    public void upgrade(String licenceNumber) {
+        type = "Driver";
+        this.licenceNumber = licenceNumber;
     }
 
     public Map<String, Vehicle> getVehicles() {
         return vehicles;
     }
 
-    public Map<String, Ride> getRides() {
-        return rides;
-    }
-
-    public void setRides(Map<String, Ride> rides) {
-        this.rides = rides;
-    }
-
     public Integer getId() {
         return id;
+    }
+
+    public String getLicenceNumber() {
+        return licenceNumber;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
     }
 }

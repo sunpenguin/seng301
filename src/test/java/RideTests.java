@@ -15,10 +15,8 @@ import java.util.List;
 public class RideTests {
     private Ride testRide1;
     private Ride testRide2;
-
-    private Trip trip;
-    private Trip trip1;
-    private Route route;
+    private Route route1;
+    private Route route2;
     private StopPoint sp1;
     private StopPoint sp2;
     private Vehicle car;
@@ -31,11 +29,12 @@ public class RideTests {
         List<StopPoint> stopPoints= Arrays.asList(sp1, sp2);
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        route = new Route("route", stopPoints);
-        trip = new Trip("Trip 1", route, 0, LocalDate.parse("15/12/2020", formatter), car);
-        trip1 = new Trip("Trip 1", route, 1, LocalDate.parse("15/01/2001", formatter), car);
-        testRide1 = new Ride("Test Ride 1", trip);
-        testRide2 = new Ride("Test Ride 2", trip1);
+        route1 = new Route("route1", stopPoints);
+        route2 = new Route("route2", stopPoints);
+        testRide1 = new Ride("Test Ride 1", route1, 0,
+                LocalDate.parse("15/12/2020", formatter), car, 2);
+        testRide2 = new Ride("Test Ride 2", route2, 1,
+                LocalDate.parse("15/01/2001", formatter), car, 2);
     }
 
     @Test

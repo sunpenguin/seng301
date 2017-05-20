@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddTripController">
+<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddRidesController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="373.0" minWidth="-Infinity" prefWidth="256.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="558.0" minWidth="10.0" prefWidth="499.0" />
@@ -39,16 +39,22 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" onAction="#addTrip" text="Register New Trip" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+      <Button fx:id="createRideButton" mnemonicParsing="false" onAction="#addTrip" text="Create Rides" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
       </Button>
       <Label text="All Stop Points in Route" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-      <ComboBox fx:id="routeComboBox" prefWidth="200.0" promptText="(No route selected)" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-      <Label text="Selected Route for Trip" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <Label text="Direction" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <ComboBox fx:id="directionComboBox" prefHeight="31.0" prefWidth="170.0" promptText="To University" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+      <ComboBox fx:id="routeComboBox" prefWidth="300.0" promptText="(No route selected)" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <Label text="Selected Route for Trip" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="25.0" />
+         </GridPane.margin></Label>
+      <Label text="Direction" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="25.0" />
+         </GridPane.margin></Label>
+      <ComboBox fx:id="directionComboBox" prefWidth="300.0" promptText="To University" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets right="40.0" />
          </GridPane.margin>
@@ -101,38 +107,64 @@
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Expiry Date" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+      <Label text="Expiry Date" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="7">
          <GridPane.margin>
-            <Insets right="25.0" />
+            <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </Label>
       <Separator prefHeight="3.0" prefWidth="448.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
-      <Label text="Name of your Trip" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <TextField fx:id="nameBox" maxWidth="-Infinity" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+      <Label text="Name of your Trip" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="25.0" />
+         </GridPane.margin></Label>
+      <TextField fx:id="nameBox" maxWidth="-Infinity" prefWidth="300.0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
       </TextField>
-      <Label text="Vehicle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <ComboBox fx:id="vehicleComboBox" prefWidth="170.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+      <Label text="Vehicle" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="25.0" />
+         </GridPane.margin></Label>
+      <ComboBox fx:id="vehicleComboBox" prefWidth="300.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets right="40.0" />
          </GridPane.margin>
       </ComboBox>
-      <TableView fx:id="stopPointTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.rowSpan="4">
+      <TableView fx:id="stopPointTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.rowSpan="3">
         <columns>
           <TableColumn fx:id="stopPointNameList" prefWidth="305.0" resizable="false" sortable="false" text="Stop Point" />
           <TableColumn fx:id="stopPointTimeList" minWidth="0.0" prefWidth="143.0" resizable="false" sortable="false" text="Time to Arrive" />
         </columns>
          <GridPane.margin>
-            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+            <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </TableView>
-      <DatePicker fx:id="dateText" GridPane.columnIndex="3" GridPane.rowIndex="7">
+      <DatePicker fx:id="expiryDateText" prefWidth="275.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
          <GridPane.margin>
             <Insets right="40.0" />
          </GridPane.margin>
       </DatePicker>
+      <Label text="Start Date" GridPane.halignment="LEFT" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin>
+      </Label>
+      <DatePicker fx:id="startDateText" prefWidth="275.0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets right="50.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <Label text="Number Of Passengers" GridPane.halignment="LEFT" GridPane.rowIndex="8">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="passengersText" GridPane.columnIndex="1" GridPane.rowIndex="8">
+         <GridPane.margin>
+            <Insets right="50.0" />
+         </GridPane.margin>
+      </TextField>
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" top="15.0" />

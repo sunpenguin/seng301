@@ -6,19 +6,22 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.*;
 import utils.Copy;
 import utils.Session;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The controller class for the FXML file "addTrip.fxml".
+ * The controller class for the FXML file "addRoutes.fxml".
+ *
  * @author Sunguin Peng
  * @see controllers.Controller
  */
-public class AddTripController extends Controller {
+public class AddRidesController extends Controller {
 
     @FXML private TextField nameBox;
     @FXML private ComboBox vehicleComboBox;
@@ -38,6 +41,7 @@ public class AddTripController extends Controller {
     @FXML private DatePicker startDateText;
     @FXML private DatePicker expiryDateText;
     @FXML private TextField passengersText;
+    @FXML private Button createRideButton;
 
     private GeneralData generalData;
     private Account account;
@@ -91,7 +95,7 @@ public class AddTripController extends Controller {
 
 
     /**
-     * This method takes in all the parameters entered in the form "addTrip.fxml" and creates a new trip.
+     * This method takes in all the parameters entered in the form "addRoutes.fxml" and creates a new trip.
      * This trip is added into the user account.
      * @see Account
      */
@@ -106,47 +110,25 @@ public class AddTripController extends Controller {
             alert.setTitle("Add Trip Error");
             alert.setHeaderText("You need to select a vehicle for your trip!");
             alert.showAndWait();
-        } else if (expiryDateText.getValue() == null) {
+        } else if (startDateText.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Trip Error");
             alert.setHeaderText("You need to specify the date of the trip!");
-            alert.setContentText("For a single trip, set the expiry date to the date of the trip.\n" +
-                    "For a recurring trip, the expiry date is how long you want the trip to last for.");
             alert.showAndWait();
         } else {
-            int direction;
-            if (directionComboBox.getValue() == "To University") direction = 0;
-            else direction = 1;
-
-            Trip newTrip;
             if (recurrentBox.isSelected()) {
                 allDaysCheck();
-                newTrip = new Trip(nameBox.getText(),
-                        new Route(routeCopy.getName(), stopPoints),
-                        direction,
-                        days,
-                        expiryDateText.getValue(),
-                        account.getVehicles().get(vehicleComboBox.getValue()));
-            } else {
-//                newTrip = new Trip(nameBox.getText(),
-//                        new Route(routeCopy.getName(), stopPoints),
-//                        direction,
-//                        expiryDateText.getValue(),
-//                        account.getVehicles().get(vehicleComboBox.getValue())
-//                        );
-              createNewRides();
             }
-//            account.addTrip(nameBox.getText(), newTrip);
-//            generalData.setCurrentTrip(nameBox.getText());
+            createNewRides();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Trip Creation");
             alert.setHeaderText("Your trip has been successfully created!");
             alert.setContentText("You will now be taken to your new trip details!");
             alert.showAndWait();
-            replaceSceneContent("showTrips.fxml");
-//            showTripCreated("showTrips.fxml", nameBox.getText());
-//            resetTrip();
+
+            Stage stage = (Stage) createRideButton.getScene().getWindow();
+            stage.close();
         }
     }
 
@@ -162,26 +144,31 @@ public class AddTripController extends Controller {
             rides = new ArrayList<>();
         }
 
+        Ride rideToAdd;
         if (!recurrentBox.isSelected()) {
-            Ride rideToAdd = new Ride(nameBox.getText(),
+            rideToAdd = new Ride(nameBox.getText(),
                              new Route(routeCopy.getName(), stopPoints),
                              direction,
                              startDateText.getValue(),
                              account.getVehicles().get(vehicleComboBox.getValue()),
                              Integer.parseInt(passengersText.getText()));
             rides.add(rideToAdd);
+        } else {
+            LocalDate date = startDateText.getValue();
+            while (date.isBefore(expiryDateText.getValue().plusDays(1))) {
+                if (days.get(date.getDayOfWeek().getValue() - 1)) {
+                    rideToAdd = new Ride(nameBox.getText(),
+                            new Route(routeCopy.getName(), stopPoints),
+                            direction,
+                            date,
+                            account.getVehicles().get(vehicleComboBox.getValue()),
+                            Integer.parseInt(passengersText.getText()));
+                    rides.add(rideToAdd);
+                }
+                date = date.plusDays(1);
+            }
         }
-    }
-
-    /**
-     * Resets the information on the form.
-     */
-    private void resetTrip() {
-        directionComboBox.setItems(FXCollections.observableArrayList("To University", "From University"));
-        directionComboBox.getSelectionModel().selectFirst();
-        vehicleComboBox.setItems(FXCollections.observableArrayList(account.getVehicles().keySet()));
-
-        nameBox.clear();
+        generalData.getRides().put(account.getId(), rides);
     }
 
     /**

@@ -33,10 +33,11 @@
       </Button>
       <TableView fx:id="ridesTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="nameColumn" editable="false" prefWidth="209.0" resizable="false" text="Name" />
-          <TableColumn fx:id="directionColumn" editable="false" prefWidth="137.0" resizable="false" text="Direction" />
-            <TableColumn fx:id="daysColumn" editable="false" prefWidth="439.0" resizable="false" text="Days" />
-            <TableColumn fx:id="fullColumn" editable="false" prefWidth="134.0" resizable="false" text="Seats Available" />
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="109.0" resizable="false" text="Name" />
+          <TableColumn fx:id="directionColumn" editable="false" prefWidth="155.0" resizable="false" text="Direction" />
+            <TableColumn fx:id="routeColumn" prefWidth="268.0" resizable="false" text="Route" />
+            <TableColumn fx:id="dateColumn" editable="false" minWidth="0.0" prefWidth="104.0" resizable="false" text="Date" />
+            <TableColumn fx:id="vehicleColumn" editable="false" minWidth="0.0" prefWidth="283.0" resizable="false" text="Vehicle" />
         </columns>
          <GridPane.margin>
             <Insets left="25.0" right="25.0" />
@@ -58,6 +59,7 @@
             <Font size="20.0" />
          </font>
       </Text>
+      <Button mnemonicParsing="false" onAction="#openRideCreator" text="Create Rides" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

@@ -19,12 +19,12 @@ public class MainController extends Controller {
         replaceSceneContent("home.fxml");
     }
 
-    public void openViewVehicles() {
-        replaceSceneContent("viewVehicles.fxml");
+    public void openAccount() {
+        replaceSceneContent("viewAccountDetails.fxml");
     }
 
-    public void openAddTrip() {
-        replaceSceneContent("addTrip.fxml");
+    public void openViewVehicles() {
+        replaceSceneContent("viewVehicles.fxml");
     }
 
     public void openMyRides() {

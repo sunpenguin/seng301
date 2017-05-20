@@ -4,18 +4,24 @@ import java.util.*;
 
 /**
  * The model class that holds all the information the user has done that is not account reliant.
+ *
  * @author Sunguin Peng
  */
 public class GeneralData {
+    private Map<Integer, Account> accountMap;
     private Map<String, StopPoint> stopPoints;
     private Map<String, Route> routes;
     private Map<Integer, List<Ride>> rides;
     private String currentTrip;
+    private Integer automaticID;
 
     public GeneralData() {
+        accountMap = new HashMap<>();
         stopPoints = new HashMap<>();
         routes = new HashMap<>();
         rides = new HashMap<>();
+
+        automaticID = 0;
 
         generateFalseData();// For easier GUI testing
     }
@@ -38,6 +44,15 @@ public class GeneralData {
 
         routes.put("Route 1", route1);
         routes.put("Route 2", route2);
+    }
+
+    public void addAccount(Account account) {
+        automaticID += automaticID;
+        accountMap.put(automaticID, account);
+    }
+
+    public Map<Integer, Account> getAccountMap() {
+        return accountMap;
     }
 
     public void addStopPoint(String name, StopPoint stopPoint) {

@@ -8,7 +8,6 @@ import java.time.LocalDate;
  */
 public class Ride {
     private String name;
-    private Trip trip;
     private int availableSeats;
     private boolean full;
     private boolean shared;
@@ -31,30 +30,6 @@ public class Ride {
     }
 
     /**
-     * The constructor for a ride when seat numbers are specified
-     * @param trip  The trip used in the ride
-     * @param availableSeats    The number of seats available for the ride
-     */
-    public Ride(String name, Trip trip, int availableSeats) {
-        this.name = name;
-        this.trip = trip;
-        this.availableSeats = availableSeats;
-        shared = true;
-    }
-
-    /**
-     * The default constructor for a ride when seat numbers are not specified
-     * @param trip  The trip used in the ride
-     */
-    public Ride(String name, Trip trip) {
-        this.name = name;
-        this.trip = trip;
-        availableSeats = 0;
-        full = true;
-        shared = true;
-    }
-
-    /**
      * The method to add passengers. The boolean for full becomes true when there are no more available seats.
      */
     public void addPassenger() {
@@ -70,7 +45,7 @@ public class Ride {
      * @param availableSeats    the number of available seats
      */
     public void setAvailableSeats(int availableSeats) {
-        if (availableSeats <= trip.getVehicle().getSeats() && availableSeats > 0) {
+        if (availableSeats <= vehicle.getSeats() && availableSeats > 0) {
             this.availableSeats = availableSeats;
             full = false;
         }  else if (availableSeats == 0) {
@@ -104,10 +79,6 @@ public class Ride {
         this.name = name;
     }
 
-    public void setTrip(Trip trip) {
-        this.trip = trip;
-    }
-
     public void setFull(boolean full) {
         this.full = full;
     }
@@ -116,7 +87,35 @@ public class Ride {
         this.shared = shared;
     }
 
-    public Trip getTrip() {
-        return trip;
+    public Route getRoute() {
+        return route;
+    }
+
+    public void setRoute(Route route) {
+        this.route = route;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public void setDirection(int direction) {
+        this.direction = direction;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 }
