@@ -1,7 +1,9 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,7 +20,7 @@ public class Ride {
     private LocalDate date;
     private Vehicle vehicle;
     private int driverID;
-    private Map<Integer, Account> passengers;
+    private List<Integer> passengers;
 
     /**
      * The constructor for a proper ride after finding out the true meaning of the story.
@@ -31,7 +33,7 @@ public class Ride {
         this.vehicle = vehicle;
         this.availableSeats = availableSeats;
         this.driverID = driverID;
-        passengers = new HashMap<>();
+        passengers = new ArrayList();
 
     }
 
@@ -52,10 +54,12 @@ public class Ride {
      */
     public void addPassenger(Account account) {
         if (!full) {
-            passengers.put(account.getId(), account);
+            passengers.add(account.getId());
             availableSeats -= 1;
-            if (availableSeats == 0)
+            if (availableSeats == 0) {
                 full = true;
+                shared = false;
+            }
         }
     }
 

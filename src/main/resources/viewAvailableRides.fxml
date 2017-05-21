@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -46,6 +47,7 @@
       </Text>
       <CheckBox fx:id="toUniCheckBox" mnemonicParsing="false" onAction="#toggleToUniFilter" text="Filter Rides to University" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
       <CheckBox fx:id="fromUniCheckBox" mnemonicParsing="false" onAction="#toggleFromUniFilter" text="Filter Rides from University" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#viewRideDetails" text="View Ride Details" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

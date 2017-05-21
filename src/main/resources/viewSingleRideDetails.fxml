@@ -89,7 +89,7 @@
             <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Seats Available" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+      <Label text="Seats (in car)" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
@@ -110,7 +110,7 @@
             <Insets left="25.0" />
          </GridPane.margin>
       </Text>
-      <Button mnemonicParsing="false" onAction="#bookRide" text="Book This Ride" GridPane.columnIndex="6" GridPane.rowIndex="7">
+      <Button fx:id="bookRideButton" mnemonicParsing="false" onAction="#bookRide" text="Book This Ride" GridPane.columnIndex="6" GridPane.rowIndex="7">
          <GridPane.margin>
             <Insets bottom="20.0" right="25.0" />
          </GridPane.margin>

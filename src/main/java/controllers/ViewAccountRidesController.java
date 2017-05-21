@@ -121,6 +121,11 @@ public class ViewAccountRidesController extends Controller {
                     errorAlert.setTitle("Ride Share Confirmation");
                     errorAlert.setHeaderText("You have already shared this ride!");
                     errorAlert.showAndWait();
+                } else if (ride.getAvailableSeats() == 0 && action.get() == ButtonType.OK) {
+                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                    errorAlert.setTitle("Ride Share Confirmation");
+                    errorAlert.setHeaderText("You have already shared this ride and it is full!");
+                    errorAlert.showAndWait();
                 } else if (action.isPresent() && action.get() == ButtonType.OK) {
                     ride.shareRide();
                 }

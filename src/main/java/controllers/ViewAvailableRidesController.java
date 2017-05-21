@@ -48,10 +48,10 @@ public class ViewAvailableRidesController extends Controller {
                 stopPoint.getNumber() + " " + stopPoint.getAddress() + ", " + stopPoint.getSuburb());
 
         setUpRidesTable();
-        setListeners();
+//        setListeners();
     }
 
-    private void setUpRidesTable() {
+    private void filterRides() {
         rides = new ArrayList<>();
         filteredRides = new ArrayList<>();
 
@@ -60,7 +60,7 @@ public class ViewAvailableRidesController extends Controller {
         }
 
         for (Ride ride : rides) {
-            if (ride.isShared()) {
+            if (ride.isShared() && ride.getAvailableSeats() > 0) {
                 for (StopPoint sp : ride.getRoute().getRouteStops()) {
                     if (sp.getNumber().equals(stopPoint.getNumber()) ||
                             sp.getAddress().equals(stopPoint.getAddress()) ||
@@ -70,6 +70,10 @@ public class ViewAvailableRidesController extends Controller {
                 }
             }
         }
+    }
+
+    private void setUpRidesTable() {
+        filterRides();
 
         dateColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
             @Override
@@ -116,11 +120,22 @@ public class ViewAvailableRidesController extends Controller {
         ridesTable.setItems(FXCollections.observableArrayList(filteredRides));
     }
 
+    public void viewRideDetails() {
+        if (ridesTable.getSelectionModel().getSelectedItem() != null)
+        Session.getInstance().setRide((Ride) ridesTable.getSelectionModel().getSelectedItem());
+        createPopUpStage("viewSingleRideDetails.fxml", 1000, 800);
+        setUpRidesTable();
+    }
+
     private void setListeners() {
         ridesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 Session.getInstance().setRide((Ride) newSelection);
                 createPopUpStage("viewSingleRideDetails.fxml", 1000, 800);
+//                setUpRidesTable();
+//                if (!Session.getInstance().getRide().isShared()) {
+//
+//                }
 //                Ride ride = (Ride) newSelection;
 //                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 //                alert.setTitle("Ride Share Confirmation");
