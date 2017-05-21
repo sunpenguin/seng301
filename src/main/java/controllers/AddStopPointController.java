@@ -37,7 +37,8 @@ public class AddStopPointController extends Controller {
      * This stop point is added into GeneralData.
      * @see GeneralData
      */
-    public void addStopPoint() {
+    @FXML
+    private void addStopPoint() {
         if (numberText.getText() == null || !Checkers.isNumeric(numberText.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Stop Point Error");

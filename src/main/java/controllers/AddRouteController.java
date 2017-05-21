@@ -45,7 +45,8 @@ public class AddRouteController extends Controller {
     /**
      * This method will add a stop point to the new route being created.
      */
-    public void addToSelected() {
+    @FXML
+    private void addToSelected() {
         ObservableList<StopPoint> toMove = stopPointList.getSelectionModel().getSelectedItems();
         if (toMove != null && toMove.size() > 0) {
             temporaryData.remove(toMove.get(0));
@@ -60,7 +61,8 @@ public class AddRouteController extends Controller {
     /**
      * This method will remove a stop point to the new route being created.
      */
-    public void removeFromSelected() {
+    @FXML
+    private void removeFromSelected() {
         ObservableList<StopPoint> toMove = selectedStopPointList.getSelectionModel().getSelectedItems();
         if (toMove != null && toMove.size() > 0) {
             temporaryRoute.remove(toMove.get(0));
@@ -77,7 +79,8 @@ public class AddRouteController extends Controller {
      * This route is added into GeneralData.
      * @see GeneralData
      */
-    public void addRoute() {
+    @FXML
+    private void addRoute() {
         if (temporaryRoute.size() > 0 && !nameText.getText().isEmpty()) {
 
             generalData.getRoutes().put(nameText.getText(), new Route(nameText.getText(), temporaryRoute));

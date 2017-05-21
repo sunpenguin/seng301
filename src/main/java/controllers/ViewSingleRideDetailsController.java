@@ -52,7 +52,8 @@ public class ViewSingleRideDetailsController extends Controller {
         stopsText.setText(stops.toString());
     }
 
-    public void bookRide() {
+    @FXML
+    private void bookRide() {
         Ride ride = Session.getInstance().getRide();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Ride Passenger Confirmation");

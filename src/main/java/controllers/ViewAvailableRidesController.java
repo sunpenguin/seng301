@@ -60,7 +60,7 @@ public class ViewAvailableRidesController extends Controller {
         }
 
         for (Ride ride : rides) {
-            if (ride.isShared() && ride.getAvailableSeats() > 0) {
+            if (ride.isShared() && !ride.isFull()) {
                 for (StopPoint sp : ride.getRoute().getRouteStops()) {
                     if (sp.getNumber().equals(stopPoint.getNumber()) ||
                             sp.getAddress().equals(stopPoint.getAddress()) ||
@@ -155,11 +155,13 @@ public class ViewAvailableRidesController extends Controller {
         });
     }
 
-    public void toggleToUniFilter() {
+    @FXML
+    private void toggleToUniFilter() {
         createFilteredRides();
     }
 
-    public void toggleFromUniFilter() {
+    @FXML
+    private void toggleFromUniFilter() {
         createFilteredRides();
     }
 
@@ -183,9 +185,5 @@ public class ViewAvailableRidesController extends Controller {
             }
         }
         ridesTable.setItems(FXCollections.observableArrayList(filter));
-    }
-
-    public void setStopPoint(StopPoint stopPoint) {
-        this.stopPoint = stopPoint;
     }
 }

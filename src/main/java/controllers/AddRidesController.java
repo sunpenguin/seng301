@@ -99,7 +99,8 @@ public class AddRidesController extends Controller {
      * This trip is added into the user account.
      * @see Account
      */
-    public void addTrip() {
+    @FXML
+    private void addTrip() {
         if (nameBox.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Trip Error");

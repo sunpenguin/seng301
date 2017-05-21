@@ -42,7 +42,8 @@ public class AddVehicleController extends Controller {
      * This vehicle is added into the user account.
      * @see Account
      */
-    public void addVehicle() {
+    @FXML
+    private void addVehicle() {
         try {
             currentUser.addVehicle(lpText.getText(), new Vehicle(
                     typeText.getText(),

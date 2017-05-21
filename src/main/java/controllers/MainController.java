@@ -1,6 +1,8 @@
 package controllers;
 
 
+import javafx.fxml.FXML;
+
 /**
  * The main controller class that manages the top menu.
  *
@@ -15,31 +17,38 @@ public class MainController extends Controller {
         //nothing to load
     }
 
-    public void openHome() {
+    @FXML
+    private void openHome() {
         replaceSceneContent("home.fxml");
     }
 
-    public void openAccount() {
+    @FXML
+    private void openAccount() {
         replaceSceneContent("viewAccountDetails.fxml");
     }
 
-    public void openViewVehicles() {
+    @FXML
+    private void openViewVehicles() {
         replaceSceneContent("viewVehicles.fxml");
     }
 
-    public void openMyRides() {
+    @FXML
+    private void openMyRides() {
         replaceSceneContent("viewAccountRides.fxml");
     }
 
-    public void openStopPoints() {
+    @FXML
+    private void openStopPoints() {
         replaceSceneContent("viewStopPoints.fxml");
     }
 
-    public void openRoutes() {
+    @FXML
+    private void openRoutes() {
         replaceSceneContent("viewRoutes.fxml");
     }
 
-    public void killMe() {
+    @FXML
+    private void killMe() {
         System.out.println("HA! You think I would die? Hell no! Enjoy this you sucker!");
     }
 }

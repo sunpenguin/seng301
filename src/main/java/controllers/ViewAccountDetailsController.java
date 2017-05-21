@@ -35,11 +35,13 @@ public class ViewAccountDetailsController extends Controller {
         }
     }
 
-    public void goToVehicles() {
+    @FXML
+    private void goToVehicles() {
         replaceSceneContent("viewVehicles.fxml");
     }
 
-    public void verifyLicence() {
+    @FXML
+    private void verifyLicence() {
         // TODO check it is a valid licence (maybe own class?)
         if (!licenceText.getText().isEmpty()) {
             account.upgrade(licenceText.getText());

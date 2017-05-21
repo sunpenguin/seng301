@@ -19,7 +19,8 @@ public class TimeSetterRideController extends Controller {
     public void load() {
     }
 
-    public void setTime() {
+    @FXML
+    private void setTime() {
         if (timeText.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Time Set Error");

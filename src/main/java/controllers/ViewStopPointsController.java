@@ -48,7 +48,8 @@ public class ViewStopPointsController extends Controller {
         });
     }
 
-    public void searchStopPoints() {
+    @FXML
+    private void searchStopPoints() {
         String searchType = searchByComboBox.getValue().toString();
         if (searchField.getText() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -74,7 +75,8 @@ public class ViewStopPointsController extends Controller {
         }
     }
 
-    public void addStopPoint() {
+    @FXML
+    private void addStopPoint() {
         createPopUpStage("addStopPoint.fxml", 1000, 800);
         stopPointsTable.setItems(FXCollections.observableArrayList(generalData.getStopPoints().values()));
         searchField.clear();
