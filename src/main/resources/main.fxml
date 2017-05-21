@@ -22,13 +22,13 @@
                 <Menu mnemonicParsing="false" text="Driver">
                   <items>
                         <MenuItem mnemonicParsing="false" onAction="#openMyRides" text="View My Rides" />
-                    <MenuItem mnemonicParsing="false" onAction="#openViewVehicles" text="View Vehicles" />
+                    <MenuItem mnemonicParsing="false" onAction="#openViewVehicles" text="View My Vehicles" />
+                        <MenuItem mnemonicParsing="false" onAction="#openRoutes" text="View My Routes" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="View">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#openStopPoints" text="View Stop Points" />
-                        <MenuItem mnemonicParsing="false" onAction="#openRoutes" text="View Routes" />
                     </items>
                   </Menu>
                 <Menu mnemonicParsing="false" text="Help">

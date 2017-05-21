@@ -1,20 +1,21 @@
 package core;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
+import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Account;
 import model.GeneralData;
 import utils.Session;
 
-import java.io.InputStream;
-import java.time.format.DateTimeFormatter;
+import java.io.*;
 import java.util.ArrayList;
 
 
@@ -22,6 +23,9 @@ import java.util.ArrayList;
  * @author Sunguin Peng
  */
 public class Main extends Application {
+
+    static Gson gson = new GsonBuilder().create();
+
     // TODO add @FXML tags above all fxml methods
     private Stage primaryStage = null;
     private VBox mainContainer = null;
@@ -63,7 +67,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        testStartUp();
+        generalData = load();
+        userAccount = generalData.getAccountMap().get(420);
+        Session.getInstance().setCurrentAccount(userAccount);
+//        testStartUp();
 
         this.primaryStage = primaryStage;
 
@@ -97,5 +104,33 @@ public class Main extends Application {
         }
         mainContainer.getChildren().add(page);
         return loader.getController();
+    }
+
+
+    public static GeneralData load() throws UnsupportedEncodingException {
+        Reader reader = new InputStreamReader(Main.class.getResourceAsStream("/data.json"), "UTF-8");
+        return gson.fromJson(reader, GeneralData.class);
+    }
+
+    public static void save(GeneralData system) throws IOException {
+        Writer writer = new OutputStreamWriter(new FileOutputStream("src/main/resources/data.json"), "UTF-8");
+        gson.toJson(system, writer);
+        writer.close();
+    }
+
+    @Override
+    public void stop() {
+        try {
+            save(generalData);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Saving Data");
+            alert.setHeaderText("Saving your Data");
+            alert.setContentText("Your data has been saved. Now exiting program");
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Saving Error");
+            alert.setHeaderText("Error Saving your Data");
+            alert.setContentText("It seems like your data cannot be saved (the program has successfully failed)");
+        }
     }
 }

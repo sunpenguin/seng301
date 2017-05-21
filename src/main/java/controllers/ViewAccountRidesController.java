@@ -15,6 +15,7 @@ import javafx.util.Callback;
 import model.*;
 
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,8 +38,10 @@ public class ViewAccountRidesController extends Controller {
         account = getParent().getUserAccount();
         generalData = getParent().getGeneralData();
 
-        if (generalData.getRides().get(account.getId()).size() > 0) {
+        if (generalData.getRides().containsKey(account.getId()) && generalData.getRides().get(account.getId()).size() > 0){
             setUpRidesTable();
+        } else {//if (generalData.getRides().containsKey(account.getId()) && generalData.getRides().get(account.getId()).size() <= 0) {
+            generalData.getRides().put(account.getId(), new ArrayList<>());
         }
         setListeners();
     }
