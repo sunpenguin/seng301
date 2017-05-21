@@ -24,15 +24,38 @@ public class AccountCreationController extends Controller {
     @FXML private DatePicker licenceExpiryDate;
     @FXML private ComboBox<?> licenceTypeCheckBox;
 
-    public void load() {
+    private boolean validatedText;
+    private boolean validatedLicence;
 
+    public void load() {
+        validatedText = false;
+        validatedLicence = false;
     }
 
     @FXML
     private void registerAccount() {
-        // Step 1: checks all fields are valid
+        if (validateText()) {
+            if (validatedLicence) {
+                // Create Driver
+            } else {
+                // Create Passenger with message stating licence may be incorrect?
+            }
+
+        }
         // Step 2: checks licence fields if any
         // Step 3: create account and go back to log in screen
+    }
+
+    private boolean validateText() {
+        String email = emailText.getText();
+        if (email.matches(".*@uclive.ac.nz$") || email.matches(".*@canterbury.ac.nz$")) {
+            validatedText = true;
+        }
+        return validatedText;
+    }
+
+    private boolean validateLicence() {
+        return validatedLicence;
     }
 
 }
