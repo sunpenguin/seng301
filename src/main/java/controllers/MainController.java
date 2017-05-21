@@ -2,6 +2,8 @@ package controllers;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuBar;
+
 
 /**
  * The main controller class that manages the top menu.
@@ -10,11 +12,20 @@ import javafx.fxml.FXML;
  */
 public class MainController extends Controller {
 
+    @FXML private MenuBar menuBar;
+
+    private boolean menuToggle = true;
+
     /**
      * Initial loader from the abstract class
      */
     public void load() {
         //nothing to load
+    }
+
+    public void toggleMenuDisable() {
+        menuToggle = !menuToggle;
+        menuBar.setDisable(menuToggle);
     }
 
     @FXML

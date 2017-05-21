@@ -67,6 +67,10 @@ public class Main extends Application {
         return generalData;
     }
 
+    public void toggleMenuDisable() {
+        mainController.toggleMenuDisable();
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         generalData = load();
