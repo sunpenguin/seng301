@@ -11,12 +11,13 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="1000.0">
          <children>
-            <MenuBar fx:id="menuBar" disable="true" layoutX="-6.0" prefHeight="38.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="0.0">
+            <MenuBar fx:id="menuBar" disable="true" layoutX="-6.0" prefHeight="38.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="Account">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#openHome" text="Home" />
                         <MenuItem mnemonicParsing="false" onAction="#openAccount" text="My Account" />
+                        <MenuItem mnemonicParsing="false" onAction="#logOut" text="Log Out" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Driver">

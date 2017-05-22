@@ -19,13 +19,13 @@ public class Ride {
     private int direction;
     private LocalDate date;
     private Vehicle vehicle;
-    private int driverID;
-    private List<Integer> passengers;
+    private String driverID;
+    private List<String> passengers;
 
     /**
      * The constructor for a proper ride after finding out the true meaning of the story.
      */
-    public Ride(String name, Route route, int direction, LocalDate date, Vehicle vehicle, int availableSeats, int driverID) {
+    public Ride(String name, Route route, int direction, LocalDate date, Vehicle vehicle, int availableSeats, String driverID) {
         this.name = name;
         this.route = route;
         this.direction = direction;
@@ -54,7 +54,7 @@ public class Ride {
      */
     public void addPassenger(Account account) {
         if (!full) {
-            passengers.add(account.getId());
+            passengers.add(account.getUniversityID());
             availableSeats -= 1;
             if (availableSeats == 0) {
                 full = true;
@@ -143,11 +143,11 @@ public class Ride {
         this.vehicle = vehicle;
     }
 
-    public int getDriverID() {
+    public String getDriverID() {
         return driverID;
     }
 
-    public void setDriverID(int driverID) {
+    public void setDriverID(String driverID) {
         this.driverID = driverID;
     }
 }

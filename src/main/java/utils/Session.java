@@ -58,4 +58,8 @@ public class Session {
     public void setCurrentAccount(Account currentAccount) {
         this.currentAccount = currentAccount;
     }
+
+    public static void reset() {
+        instance = new Session();
+    }
 }

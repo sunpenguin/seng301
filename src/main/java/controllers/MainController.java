@@ -2,7 +2,12 @@ package controllers;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuBar;
+import utils.Session;
+
+import java.util.Optional;
 
 
 /**
@@ -30,12 +35,26 @@ public class MainController extends Controller {
 
     @FXML
     private void openHome() {
-        replaceSceneContent("home.fxml");
+//        replaceSceneContent("home.fxml");
     }
 
     @FXML
     private void openAccount() {
         replaceSceneContent("viewAccountDetails.fxml");
+    }
+
+    @FXML
+    private void logOut() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Log Out Confirmation");
+        alert.setHeaderText("You are about log out.");
+        alert.setContentText("Are you sure you want to log out?");
+        Optional<ButtonType> action = alert.showAndWait();
+        if (action.get() == ButtonType.OK) {
+            Session.reset();
+            getParent().toggleMenuDisable();
+            replaceSceneContent("home.fxml");
+        }
     }
 
     @FXML

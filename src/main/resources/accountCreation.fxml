@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AccountCreationController">
   <columnConstraints>
@@ -27,7 +28,8 @@
     <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="652.0" minHeight="0.0" prefHeight="75.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
@@ -46,57 +48,42 @@
             <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Email" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+      <Label text="Password" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Confirm Password" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Email" GridPane.halignment="LEFT" GridPane.rowIndex="6">
          <GridPane.margin>
             <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Name" GridPane.rowIndex="6">
+      <Label text="Name" GridPane.rowIndex="7">
          <GridPane.margin>
             <Insets left="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Address" GridPane.rowIndex="7">
+      <Label text="Address" GridPane.rowIndex="8">
          <GridPane.margin>
             <Insets left="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Home Number" GridPane.rowIndex="8">
+      <Label text="Home Number" GridPane.rowIndex="9">
          <GridPane.margin>
             <Insets left="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Mobile Number" GridPane.rowIndex="9">
+      <Label text="Mobile Number" GridPane.rowIndex="10">
          <GridPane.margin>
             <Insets left="25.0" />
          </GridPane.margin>
       </Label>
       <TextField fx:id="universityIDText" maxWidth="325.0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="emailText" GridPane.columnIndex="1" GridPane.rowIndex="5">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="nameText" GridPane.columnIndex="1" GridPane.rowIndex="6">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="addressText" GridPane.columnIndex="1" GridPane.rowIndex="7">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="homeNumberText" GridPane.columnIndex="1" GridPane.rowIndex="8">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="mobileNumberText" GridPane.columnIndex="1" GridPane.rowIndex="9">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
@@ -111,40 +98,55 @@
             <Insets right="25.0" />
          </GridPane.margin>
       </PasswordField>
-      <Label text="Password" GridPane.rowIndex="2">
+      <TextField fx:id="emailText" GridPane.columnIndex="1" GridPane.rowIndex="6">
          <GridPane.margin>
-            <Insets left="25.0" />
+            <Insets right="25.0" />
          </GridPane.margin>
-      </Label>
-      <Label text="Confirm Password" GridPane.rowIndex="3">
+      </TextField>
+      <TextField fx:id="nameText" GridPane.columnIndex="1" GridPane.rowIndex="7">
          <GridPane.margin>
-            <Insets left="25.0" />
+            <Insets right="25.0" />
          </GridPane.margin>
-      </Label>
-      <Label text="Other Information" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+      </TextField>
+      <TextField fx:id="addressText" GridPane.columnIndex="1" GridPane.rowIndex="8">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="homeNumberText" GridPane.columnIndex="1" GridPane.rowIndex="9">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="mobileNumberText" GridPane.columnIndex="1" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label text="Other Information" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.rowSpan="6" />
-      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" GridPane.valignment="TOP" />
-      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="10" GridPane.valignment="TOP" />
-      <Label text="Type" GridPane.columnIndex="2" GridPane.rowIndex="5">
+      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.rowSpan="6" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="11" GridPane.valignment="TOP" />
+      <Label text="Type" GridPane.columnIndex="2" GridPane.rowIndex="6">
          <GridPane.margin>
             <Insets left="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Number" GridPane.columnIndex="2" GridPane.rowIndex="6">
+      <Label text="Number" GridPane.columnIndex="2" GridPane.rowIndex="7">
          <GridPane.margin>
             <Insets left="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Issue Date" GridPane.columnIndex="2" GridPane.rowIndex="7">
+      <Label text="Issue Date" GridPane.columnIndex="2" GridPane.rowIndex="8">
          <GridPane.margin>
             <Insets left="25.0" />
          </GridPane.margin>
       </Label>
-      <Label text="Expiry Date" GridPane.columnIndex="2" GridPane.rowIndex="8">
+      <Label text="Expiry Date" GridPane.columnIndex="2" GridPane.rowIndex="9">
          <GridPane.margin>
             <Insets left="25.0" />
          </GridPane.margin>
@@ -158,35 +160,36 @@
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
-      <Label text="Driver Licence Information (Drivers Only)" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+      <Label text="Driver Licence Information (Drivers Only)" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="licenceNumberText" GridPane.columnIndex="3" GridPane.rowIndex="6">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <DatePicker fx:id="licenceIssueDate" prefHeight="31.0" prefWidth="348.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </DatePicker>
-      <DatePicker fx:id="licenceExpiryDate" prefHeight="31.0" prefWidth="483.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </DatePicker>
-      <ComboBox fx:id="licenceTypeCheckBox" prefHeight="31.0" prefWidth="345.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+      <ComboBox fx:id="licenceTypeCheckBox" prefHeight="31.0" prefWidth="345.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </ComboBox>
-      <Button mnemonicParsing="false" onAction="#registerAccount" text="Register Account" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+      <TextField fx:id="licenceNumberText" GridPane.columnIndex="3" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </TextField>
+      <DatePicker fx:id="licenceIssueDate" prefHeight="31.0" prefWidth="348.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <DatePicker fx:id="licenceExpiryDate" prefHeight="31.0" prefWidth="483.0" GridPane.columnIndex="3" GridPane.rowIndex="9">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <Button fx:id="registerAccountButton" mnemonicParsing="false" onAction="#registerAccount" text="Register Account" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </Button>
+      <Text fx:id="passwordCheckText" strokeType="OUTSIDE" strokeWidth="0.0" text="Password Check" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
    </children>
 </GridPane>

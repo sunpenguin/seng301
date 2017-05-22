@@ -8,10 +8,10 @@ import java.util.*;
  * @author Sunguin Peng
  */
 public class GeneralData {
-    private Map<Integer, Account> accountMap;
+    private Map<String, Account> accountMap;
     private Map<String, StopPoint> stopPoints;
     private Map<String, Route> routes;
-    private Map<Integer, List<Ride>> rides;
+    private Map<String, List<Ride>> rides;
     private String currentTrip;
     private Integer automaticID;
 
@@ -23,7 +23,7 @@ public class GeneralData {
 
 //        automaticID = 0;
 
-        generateFalseData();// For easier GUI testing
+//        generateFalseData();// For easier GUI testing
     }
 
     /**
@@ -48,10 +48,10 @@ public class GeneralData {
 
     public void addAccount(Account account) {
 //        automaticID += automaticID;
-        accountMap.put(account.getId(), account);
+        accountMap.put(account.getUniversityID(), account);
     }
 
-    public Map<Integer, Account> getAccountMap() {
+    public Map<String, Account> getAccountMap() {
         return accountMap;
     }
 
@@ -75,7 +75,7 @@ public class GeneralData {
         this.currentTrip = currentTrip;
     }
 
-    public Map<Integer, List<Ride>> getRides() {
+    public Map<String, List<Ride>> getRides() {
         return rides;
     }
 }

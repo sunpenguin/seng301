@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import model.Account;
 import model.Vehicle;
+import utils.Session;
 
 
 /**
@@ -34,7 +35,7 @@ public class AddVehicleController extends Controller {
      * @see controllers.Controller
      */
     public void load() {
-        currentUser = getParent().getUserAccount();
+        currentUser = Session.getInstance().getCurrentAccount();
     }
 
     /**

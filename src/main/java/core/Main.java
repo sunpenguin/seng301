@@ -54,13 +54,9 @@ public class Main extends Application {
         generalData = new GeneralData();
         generalData.addAccount(userAccount);
         Session.getInstance().setCurrentAccount(userAccount);
-        generalData.getRides().put(userAccount.getId(), new ArrayList<>());
+        generalData.getRides().put(userAccount.getUniversityID(), new ArrayList<>());
 
         generalData.setCurrentTrip("Test 1");
-    }
-
-    public Account getUserAccount() {
-        return userAccount;
     }
 
     public GeneralData getGeneralData() {
@@ -74,8 +70,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         generalData = load();
-        userAccount = generalData.getAccountMap().get(420);
-        Session.getInstance().setCurrentAccount(userAccount);
 //        testStartUp();
 
         this.primaryStage = primaryStage;

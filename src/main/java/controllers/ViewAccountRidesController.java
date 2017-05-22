@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import javafx.util.Callback;
 import model.*;
+import utils.Session;
 
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -35,13 +36,13 @@ public class ViewAccountRidesController extends Controller {
     private GeneralData generalData;
 
     public void load() {
-        account = getParent().getUserAccount();
+        account = Session.getInstance().getCurrentAccount();
         generalData = getParent().getGeneralData();
 
-        if (generalData.getRides().containsKey(account.getId()) && generalData.getRides().get(account.getId()).size() > 0){
+        if (generalData.getRides().containsKey(account.getUniversityID()) && generalData.getRides().get(account.getUniversityID()).size() > 0){
             setUpRidesTable();
         } else {//if (generalData.getRides().containsKey(account.getId()) && generalData.getRides().get(account.getId()).size() <= 0) {
-            generalData.getRides().put(account.getId(), new ArrayList<>());
+            generalData.getRides().put(account.getUniversityID(), new ArrayList<>());
         }
         setListeners();
     }
@@ -103,7 +104,7 @@ public class ViewAccountRidesController extends Controller {
             }
         });
 
-        ridesTable.setItems(FXCollections.observableArrayList(generalData.getRides().get(account.getId())));
+        ridesTable.setItems(FXCollections.observableArrayList(generalData.getRides().get(account.getUniversityID())));
     }
 
     private void setListeners() {

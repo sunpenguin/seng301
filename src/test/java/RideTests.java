@@ -32,9 +32,9 @@ public class RideTests {
         route1 = new Route("route1", stopPoints);
         route2 = new Route("route2", stopPoints);
         testRide1 = new Ride("Test Ride 1", route1, 0,
-                LocalDate.parse("15/12/2020", formatter), car, 2, 1);
+                LocalDate.parse("15/12/2020", formatter), car, 2, "user420");
         testRide2 = new Ride("Test Ride 2", route2, 1,
-                LocalDate.parse("15/01/2001", formatter), car, 2, 1);
+                LocalDate.parse("15/01/2001", formatter), car, 2, "user420");
     }
 
     @Test

@@ -52,6 +52,7 @@ public class Account {
         this.homeNumber = homeNumber;
         this.mobileNumber = mobileNumber;
         this.licence = licence;
+        vehicles = new HashMap<>();
         type = "Driver";
     }
 
@@ -59,8 +60,9 @@ public class Account {
      * The updated constructor for an account. This will be used from backlog 2 onwards.
      * This is for a passenger type account.
      */
-    public Account(String universityID, String email, String name, String address, Integer homeNumber, Integer mobileNumber) {
+    public Account(String universityID, String password, String email, String name, String address, Integer homeNumber, Integer mobileNumber) {
         this.universityID = universityID;
+        this.password = password;
         this.email = email;
         this.name = name;
         this.address = address;
@@ -114,5 +116,33 @@ public class Account {
 
     public String getName() {
         return name;
+    }
+
+    public String getUniversityID() {
+        return universityID;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public Integer getHomeNumber() {
+        return homeNumber;
+    }
+
+    public Integer getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public Licence getLicence() {
+        return licence;
     }
 }

@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import model.Account;
+import utils.Session;
 
 /**
  * The controller class for viewing user account data.
@@ -20,7 +21,7 @@ public class ViewAccountDetailsController extends Controller {
     private Account account;
 
     public void load() {
-        account = getParent().getUserAccount();
+        account =  Session.getInstance().getCurrentAccount();
 
         nameText.setText(account.getName());
         statusText.setText(account.getType());

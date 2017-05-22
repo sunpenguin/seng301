@@ -7,6 +7,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Account;
 import model.Vehicle;
+import utils.Session;
 
 /**
  * The controller class for viewing vehicles.
@@ -24,7 +25,7 @@ public class ViewVehiclesController extends Controller {
     private Account account;
 
     public void load() {
-        account = getParent().getUserAccount();
+        account = Session.getInstance().getCurrentAccount();
         setUpTable();
     }
 

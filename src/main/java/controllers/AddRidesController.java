@@ -60,7 +60,7 @@ public class AddRidesController extends Controller {
      */
     public void load() {
         generalData = getParent().getGeneralData();
-        account = getParent().getUserAccount();
+        account = Session.getInstance().getCurrentAccount();
 
         routeComboBox.setItems(FXCollections.observableArrayList(generalData.getRoutes().keySet()));
         directionComboBox.setItems(FXCollections.observableArrayList("To University", "From University"));
@@ -153,7 +153,7 @@ public class AddRidesController extends Controller {
                              startDateText.getValue(),
                              account.getVehicles().get(vehicleComboBox.getValue()),
                              Integer.parseInt(passengersText.getText()),
-                             account.getId());
+                             account.getUniversityID());
             rides.add(rideToAdd);
         } else {
             LocalDate date = startDateText.getValue();
@@ -165,13 +165,13 @@ public class AddRidesController extends Controller {
                             date,
                             account.getVehicles().get(vehicleComboBox.getValue()),
                             Integer.parseInt(passengersText.getText()),
-                            account.getId());
+                            account.getUniversityID());
                     rides.add(rideToAdd);
                 }
                 date = date.plusDays(1);
             }
         }
-        generalData.getRides().put(account.getId(), rides);
+        generalData.getRides().put(account.getUniversityID(), rides);
     }
 
     /**
