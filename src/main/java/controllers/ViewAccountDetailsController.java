@@ -38,7 +38,7 @@ public class ViewAccountDetailsController extends Controller {
 
     @FXML
     private void goToVehicles() {
-        replaceSceneContent("viewVehicles.fxml");
+        replaceSceneContent(SceneType.VIEW_VEHICLES);
     }
 
     @FXML

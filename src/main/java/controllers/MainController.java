@@ -40,7 +40,7 @@ public class MainController extends Controller {
 
     @FXML
     private void openAccount() {
-        replaceSceneContent("viewAccountDetails.fxml");
+        replaceSceneContent(SceneType.VIEW_ACCOUNT_DETAILS);
     }
 
     @FXML
@@ -53,28 +53,28 @@ public class MainController extends Controller {
         if (action.get() == ButtonType.OK) {
             Session.reset();
             getParent().toggleMenuDisable();
-            replaceSceneContent("home.fxml");
+            replaceSceneContent(SceneType.LOG_IN_SCREEN);
         }
     }
 
     @FXML
     private void openViewVehicles() {
-        replaceSceneContent("viewVehicles.fxml");
+        replaceSceneContent(SceneType.VIEW_VEHICLES);
     }
 
     @FXML
     private void openMyRides() {
-        replaceSceneContent("viewAccountRides.fxml");
+        replaceSceneContent(SceneType.VIEW_ACCOUNT_RIDES);
     }
 
     @FXML
     private void openStopPoints() {
-        replaceSceneContent("viewStopPoints.fxml");
+        replaceSceneContent(SceneType.VIEW_STOP_POINTS);
     }
 
     @FXML
     private void openRoutes() {
-        replaceSceneContent("viewRoutes.fxml");
+        replaceSceneContent(SceneType.VIEW_ROUTES);
     }
 
     @FXML

@@ -4,7 +4,6 @@ import core.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -42,7 +41,7 @@ public abstract class Controller implements Initializable {
      * Replaces content and loads the content with the load method
      * @param filePath  The name of the file path as a string
      */
-    public void replaceSceneContent(String filePath){
+    public void replaceSceneContent(SceneType filePath){
         try {
             Controller controller = (Controller)
                     parent.replaceSceneContent(filePath);
@@ -59,9 +58,9 @@ public abstract class Controller implements Initializable {
      * @param width The width of the window
      * @param height    The length of the window
      */
-    public Stage createPopUpStage(String filePath, int width, int height) {
+    public Stage createPopUpStage(SceneType filePath, int width, int height) {
         FXMLLoader loader = new FXMLLoader();
-        InputStream in = getClass().getClassLoader().getResourceAsStream(filePath);
+        InputStream in = getClass().getClassLoader().getResourceAsStream(filePath.getFilePath());
         Parent page = null;
         try {
             page = loader.load(in);
@@ -84,7 +83,7 @@ public abstract class Controller implements Initializable {
         //inner layout constraints
         VBox container = new VBox();
         container.getChildren().add(page);
-        Scene popupScene = new Scene(container, width, height);
+        javafx.scene.Scene popupScene = new javafx.scene.Scene(container, width, height);
         //show
         popupStage.setScene(popupScene);
         popupStage.showAndWait();
@@ -104,13 +103,4 @@ public abstract class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
-//    /**
-//     * Override this method to load something from a unique name
-//     * Override is used since only selected controller classes will use it
-//     * @param name
-//     */
-//    public void loadSelected(String name) {
-//
-//    }
 }

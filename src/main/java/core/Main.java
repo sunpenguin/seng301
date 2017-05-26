@@ -2,17 +2,15 @@ package core;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import controllers.SceneType;
 import controllers.MainController;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import model.Account;
 import model.GeneralData;
 import utils.Session;
@@ -28,7 +26,6 @@ public class Main extends Application {
 
     static Gson gson = new GsonBuilder().create();
 
-    // TODO add @FXML tags above all fxml methods
     private Stage primaryStage = null;
     private VBox mainContainer = null;
     private MainController mainController = null;
@@ -70,33 +67,32 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         generalData = load();
-//        testStartUp();
 
         this.primaryStage = primaryStage;
 
         FXMLLoader loader = new FXMLLoader();
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("main.fxml");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("menuBar.fxml");
         mainContainer = loader.load(inputStream);
-        Scene scene = new Scene(mainContainer, 1000, 800);
+        javafx.scene.Scene scene = new javafx.scene.Scene(mainContainer, 1000, 800);
         primaryStage.setTitle("UC RSS");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false); // While it cannot be scaled while resizing
         primaryStage.show();
         mainController = loader.getController();
         mainController.setApp(this);
-        mainController.replaceSceneContent("home.fxml");
+        mainController.replaceSceneContent(SceneType.LOG_IN_SCREEN);
         inputStream.close();
     }
 
     /**
-     * Replace Scene Content with fxml file code from oracle.
+     * Replace SceneType Content with fxml file code from oracle.
      * @param filePath
      * @return
      * @throws Exception
      */
-    public Initializable replaceSceneContent(String filePath) throws Exception {
+    public Initializable replaceSceneContent(SceneType filePath) throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath.getFilePath());
         Parent page = loader.load(inputStream);
         inputStream.close();
         while(mainContainer.getChildren().size() > 1) {

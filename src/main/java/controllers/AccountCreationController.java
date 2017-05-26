@@ -128,7 +128,7 @@ public class AccountCreationController extends Controller {
             alert.setContentText(content);
             alert.showAndWait();
             generalData.addAccount(accountToAdd);
-            replaceSceneContent("home.fxml");
+            replaceSceneContent(SceneType.LOG_IN_SCREEN);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Account Creation Error");
@@ -172,6 +172,11 @@ public class AccountCreationController extends Controller {
             return true;
         }
         return false;
+    }
+
+    @FXML
+    private void goBackLogIn() {
+        replaceSceneContent(SceneType.LOG_IN_SCREEN);
     }
 
 }

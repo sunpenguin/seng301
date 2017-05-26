@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The controller class for the FXML file "addRoutes.fxml".
+ * The controller class for the FXML file "addTrips.fxml".
  *
  * @author Sunguin Peng
  * @see controllers.Controller
@@ -85,7 +85,7 @@ public class AddRidesController extends Controller {
 
         stopPointTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                createPopUpStage("timeSetterRide.fxml", 300, 200);
+                createPopUpStage(SceneType.TIME_SETTER_RIDE_POP_UP, 300, 200);
                 StopPoint sp = (StopPoint) newSelection;
                 sp.setTime(Session.getInstance().getTime());
                 stopPointTable.refresh();
@@ -95,7 +95,7 @@ public class AddRidesController extends Controller {
 
 
     /**
-     * This method takes in all the parameters entered in the form "addRoutes.fxml" and creates a new trip.
+     * This method takes in all the parameters entered in the form "addTrips.fxml" and creates a new trip.
      * This trip is added into the user account.
      * @see Account
      */

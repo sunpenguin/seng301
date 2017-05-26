@@ -1,15 +1,12 @@
 package controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import model.Account;
 import model.GeneralData;
 import utils.Session;
-
-import java.io.IOException;
 
 /**
  * The controller class for the FXML file "home.fxml", the home page that appears when the app is first launched.
@@ -34,7 +31,7 @@ public class HomeController extends Controller {
             if (accountToCheck.getPassword().equals(passwordText.getText())) {
                 getParent().toggleMenuDisable();
                 Session.getInstance().setCurrentAccount(accountToCheck);
-                replaceSceneContent("viewVehicles.fxml");
+                replaceSceneContent(SceneType.VIEW_VEHICLES);
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Log In Error");
@@ -53,6 +50,6 @@ public class HomeController extends Controller {
 
     @FXML
     private void createAccount() {
-        replaceSceneContent("accountCreation.fxml");
+        replaceSceneContent(SceneType.ADD_ACCOUNT);
     }
 }

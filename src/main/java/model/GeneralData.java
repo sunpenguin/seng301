@@ -13,17 +13,12 @@ public class GeneralData {
     private Map<String, Route> routes;
     private Map<String, List<Ride>> rides;
     private String currentTrip;
-    private Integer automaticID;
 
     public GeneralData() {
         accountMap = new HashMap<>();
         stopPoints = new HashMap<>();
         routes = new HashMap<>();
         rides = new HashMap<>();
-
-//        automaticID = 0;
-
-//        generateFalseData();// For easier GUI testing
     }
 
     /**
@@ -47,7 +42,6 @@ public class GeneralData {
     }
 
     public void addAccount(Account account) {
-//        automaticID += automaticID;
         accountMap.put(account.getUniversityID(), account);
     }
 

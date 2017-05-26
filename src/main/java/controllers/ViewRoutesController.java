@@ -43,7 +43,7 @@ public class ViewRoutesController extends Controller {
 
     @FXML
     private void addRoute() {
-        createPopUpStage("addRoute.fxml", 1000, 800);
+        createPopUpStage(SceneType.ADD_ROUTE, 1000, 800);
         routesTable.setItems(FXCollections.observableArrayList(generalData.getRoutes().values()));
     }
 }

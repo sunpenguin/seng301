@@ -8,15 +8,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import model.*;
 import utils.Session;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +120,7 @@ public class ViewAvailableRidesController extends Controller {
     public void viewRideDetails() {
         if (ridesTable.getSelectionModel().getSelectedItem() != null)
         Session.getInstance().setRide((Ride) ridesTable.getSelectionModel().getSelectedItem());
-        createPopUpStage("viewSingleRideDetails.fxml", 1000, 800);
+        createPopUpStage(SceneType.VIEW_SINGLE_RIDE_DETAILS, 1000, 800);
         setUpRidesTable();
     }
 
@@ -131,7 +128,7 @@ public class ViewAvailableRidesController extends Controller {
         ridesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 Session.getInstance().setRide((Ride) newSelection);
-                createPopUpStage("viewSingleRideDetails.fxml", 1000, 800);
+                createPopUpStage(SceneType.VIEW_SINGLE_RIDE_DETAILS, 1000, 800);
 //                setUpRidesTable();
 //                if (!Session.getInstance().getRide().isShared()) {
 //

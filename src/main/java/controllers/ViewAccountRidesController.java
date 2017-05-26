@@ -136,7 +136,7 @@ public class ViewAccountRidesController extends Controller {
 
     @FXML
     private void openRideCreator() {
-        createPopUpStage("addRoutes.fxml", 1000, 800);
+        createPopUpStage(SceneType.ADD_TRIPS, 1000, 800);
         setUpRidesTable();
     }
 }

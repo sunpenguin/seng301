@@ -41,7 +41,7 @@ public class ViewVehiclesController extends Controller {
 
     @FXML
     private void addVehicle() {
-        createPopUpStage("addVehicle.fxml", 1000, 800);
+        createPopUpStage(SceneType.ADD_VEHICLE, 1000, 800);
         vehiclesTable.setItems(FXCollections.observableArrayList(account.getVehicles().values()));
     }
 }
