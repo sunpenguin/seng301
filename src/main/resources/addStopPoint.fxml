@@ -19,7 +19,6 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <Label text="Register New Stop Point" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
@@ -27,37 +26,27 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label text="Street of Stop Point" GridPane.rowIndex="2">
+      <Label text="Street of Stop Point" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </GridPane.margin>
       </Label>
-      <Button fx:id="addStopPointButton" mnemonicParsing="false" onAction="#addStopPoint" text="Register New Stop Point" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+      <Button fx:id="addStopPointButton" mnemonicParsing="false" onAction="#addStopPoint" text="Register New Stop Point" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </Button>
-      <TextField fx:id="numberText" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <TextField fx:id="streetText" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </TextField>
-      <TextField fx:id="streetText" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <TextField fx:id="suburbText" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </TextField>
-      <TextField fx:id="suburbText" GridPane.columnIndex="1" GridPane.rowIndex="3">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <Label text="Number of Street" GridPane.rowIndex="1">
-         <GridPane.margin>
-            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-         </GridPane.margin>
-      </Label>
-      <Label text="Suburb of Street" GridPane.rowIndex="3">
+      <Label text="Suburb of Street" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </GridPane.margin>

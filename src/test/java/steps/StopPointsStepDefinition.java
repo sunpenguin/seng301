@@ -7,7 +7,7 @@ import model.StopPoint;
 import org.junit.Assert;
 
 /**
- * Created by sungu on 4/04/2017.
+ * Cucumber Test for adding stop points
  */
 public class StopPointsStepDefinition {
     StopPoint sp;

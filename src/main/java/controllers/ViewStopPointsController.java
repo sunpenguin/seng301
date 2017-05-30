@@ -14,7 +14,6 @@ import utils.StopPointsSearcher;
  */
 public class ViewStopPointsController extends Controller {
     @FXML private TableView stopPointsTable;
-    @FXML private TableColumn streetNumberColumn;
     @FXML private TableColumn streetNameColumn;
     @FXML private TableColumn streetSuburbColumn;
     @FXML private TextField searchField;
@@ -27,7 +26,6 @@ public class ViewStopPointsController extends Controller {
         generalData = getParent().getGeneralData();
         stopPointsSearcher = new StopPointsSearcher(generalData.getStopPoints().values());
 
-        streetNumberColumn.setCellValueFactory(new PropertyValueFactory<StopPoint, Integer>("Number"));
         streetNameColumn.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Address"));
         streetSuburbColumn.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Suburb"));
 

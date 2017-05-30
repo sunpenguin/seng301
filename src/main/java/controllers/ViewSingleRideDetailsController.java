@@ -45,7 +45,7 @@ public class ViewSingleRideDetailsController extends Controller {
 
         String direction = "The course for this route is as below:\n";
         for (StopPoint stopPoint : rideToDisplay.getRoute().getRouteStops()) {
-            direction += stopPoint.getNumber() + " " + stopPoint.getAddress() + ", " + stopPoint.getSuburb() + "\n";
+            direction += stopPoint.getAddress() + ", " + stopPoint.getSuburb() + "\n";
         }
         routeText.setText(direction);
         Integer stops = rideToDisplay.getRoute().getRouteStops().size();

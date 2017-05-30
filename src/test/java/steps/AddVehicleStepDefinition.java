@@ -9,7 +9,7 @@ import model.Vehicle;
 import org.junit.Assert;
 
 /**
- * Created by sungu on 1/04/2017.
+ * Cucumber Test for adding vehicles
  */
 public class AddVehicleStepDefinition {
     Account account = new Account("Test", 420);

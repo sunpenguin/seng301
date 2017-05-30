@@ -4,15 +4,15 @@
     "elements": [
       {
         "line": 2,
-        "name": "Add a Route",
+        "name": "Add a Ride",
         "description": "",
-        "id": "add-route;add-a-route",
+        "id": "add-ride;add-a-ride",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 128503911,
+              "duration": 104533961,
               "status": "passed"
             },
             "line": 3,
@@ -30,7 +30,98 @@
           },
           {
             "result": {
-              "duration": 9741035,
+              "status": "undefined"
+            },
+            "line": 4,
+            "name": "I have a route",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "I can create a ride",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "that I am a \"driver\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 8,
+            "name": "I have a route",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9,
+            "name": "I can create multiple rides",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Add Ride",
+    "description": "",
+    "id": "add-ride",
+    "keyword": "Feature",
+    "uri": "addRide.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Add a Route",
+        "description": "",
+        "id": "add-route;add-a-route",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 89500,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that I am a \"driver\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1044433,
               "status": "passed"
             },
             "line": 4,
@@ -42,7 +133,7 @@
           },
           {
             "result": {
-              "duration": 1298969,
+              "duration": 58184814,
               "status": "passed"
             },
             "line": 5,
@@ -74,7 +165,7 @@
         "steps": [
           {
             "result": {
-              "duration": 156008,
+              "duration": 66098,
               "status": "passed"
             },
             "line": 3,
@@ -92,7 +183,7 @@
           },
           {
             "result": {
-              "duration": 1546529,
+              "duration": 70203,
               "status": "passed"
             },
             "line": 4,
@@ -110,7 +201,7 @@
           },
           {
             "result": {
-              "duration": 1466472,
+              "duration": 1497266,
               "status": "passed"
             },
             "line": 5,
@@ -152,7 +243,7 @@
         "steps": [
           {
             "result": {
-              "duration": 98121,
+              "duration": 89088,
               "status": "passed"
             },
             "line": 3,
@@ -170,20 +261,38 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 119059,
+              "status": "passed"
             },
             "line": 4,
             "name": "I add \"76 Happy Lane\" as a stop point",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "76 Happy Lane",
+                  "offset": 7
+                }
+              ],
+              "location": "StopPointsStepDefinition.iAddAsAStopPoint(String)"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 92373,
+              "status": "passed"
             },
             "line": 5,
             "name": "the stop point with address \"76 Happy Lane\" is created",
-            "match": {},
+            "match": {
+              "arguments": [
+                {
+                  "val": "76 Happy Lane",
+                  "offset": 29
+                }
+              ],
+              "location": "StopPointsStepDefinition.theStopPointWithAddressIsCreated(String)"
+            },
             "keyword": "Then "
           }
         ]

@@ -32,7 +32,7 @@ public class ViewRoutesController extends Controller {
                 List<StopPoint> stopPoints = route.getRouteStops();
                 String direction = "The course for this route is as below:\n";
                 for (StopPoint stopPoint : stopPoints) {
-                    direction += stopPoint.getNumber() + " " + stopPoint.getAddress() + ", " + stopPoint.getSuburb() + "\n";
+                    direction += stopPoint.getAddress() + ", " + stopPoint.getSuburb() + "\n";
                 }
                 return new SimpleStringProperty(direction);
             }

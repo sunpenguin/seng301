@@ -71,7 +71,7 @@ public class Main extends Application {
         this.primaryStage = primaryStage;
 
         FXMLLoader loader = new FXMLLoader();
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("menuBar.fxml");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(SceneType.MENU_BAR.getFilePath());
         mainContainer = loader.load(inputStream);
         javafx.scene.Scene scene = new javafx.scene.Scene(mainContainer, 1000, 800);
         primaryStage.setTitle("UC RSS");

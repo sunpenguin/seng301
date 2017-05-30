@@ -37,9 +37,8 @@
       </Button>
       <TableView fx:id="stopPointsTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="streetNumberColumn" prefWidth="128.0" text="Street Number" />
-          <TableColumn fx:id="streetNameColumn" prefWidth="434.0" text="Street Name" />
-            <TableColumn fx:id="streetSuburbColumn" prefWidth="357.0" text="Suburb" />
+          <TableColumn fx:id="streetNameColumn" prefWidth="524.0" text="Street Name" />
+            <TableColumn fx:id="streetSuburbColumn" prefWidth="395.0" text="Suburb" />
         </columns>
          <GridPane.margin>
             <Insets left="25.0" right="25.0" />

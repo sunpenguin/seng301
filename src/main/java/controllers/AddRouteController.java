@@ -117,7 +117,7 @@ public class AddRouteController extends Controller {
                 if (empty || stopPoint == null || stopPoint.getAddress() == null) {
                     setText(null);
                 } else {
-                    setText(stopPoint.getNumber() + " " + stopPoint.getAddress());
+                    setText(stopPoint.getAddress());
                 }
             }
         });

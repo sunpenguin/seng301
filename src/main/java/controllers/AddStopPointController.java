@@ -16,7 +16,6 @@ import utils.Checkers;
  * @see controllers.Controller
  */
 public class AddStopPointController extends Controller {
-    @FXML private TextField numberText;
     @FXML private TextField streetText;
     @FXML private TextField suburbText;
     @FXML private Button addStopPointButton;
@@ -39,12 +38,7 @@ public class AddStopPointController extends Controller {
      */
     @FXML
     private void addStopPoint() {
-        if (numberText.getText() == null || !Checkers.isNumeric(numberText.getText())) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Add Stop Point Error");
-            alert.setHeaderText("The number field must have the number of your street.");
-            alert.showAndWait();
-        } else if (streetText.getText() == null) {
+         if (streetText.getText() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Stop Point Error");
             alert.setHeaderText("The street field must have the name of the street for your stop point.");
@@ -56,8 +50,8 @@ public class AddStopPointController extends Controller {
             alert.showAndWait();
         } else {
             generalData.addStopPoint(
-                    numberText.getText() + streetText.getText() + suburbText.getText(),
-                    new StopPoint(Integer.parseInt(numberText.getText()), streetText.getText(), suburbText.getText()));
+                    streetText.getText() + suburbText.getText(),
+                    new StopPoint(streetText.getText(), suburbText.getText()));
             Stage stage = (Stage) addStopPointButton.getScene().getWindow();
             stage.close();
         }

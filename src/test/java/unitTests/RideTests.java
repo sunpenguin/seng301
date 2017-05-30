@@ -1,3 +1,5 @@
+package unitTests;
+
 import model.*;
 import org.junit.Assert;
 import org.junit.Before;
@@ -24,8 +26,8 @@ public class RideTests {
     @Before
     public void setUp() {
         car = new Vehicle("Car", "VoltsWagon Beetle", "Red", "G00DC4R", 2016, 2);
-        sp1 = new StopPoint(1, "Address", "Suburb");
-        sp2 = new StopPoint(2, "Random Address", "Random Suburb");
+        sp1 = new StopPoint("Address", "Suburb");
+        sp2 = new StopPoint("Random Address", "Random Suburb");
         List<StopPoint> stopPoints= Arrays.asList(sp1, sp2);
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
