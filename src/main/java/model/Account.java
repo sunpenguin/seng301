@@ -17,7 +17,7 @@ public class Account {
     private String name;
     private String address;
     private Integer homeNumber;
-    private Integer mobileNumber;
+    private Long mobileNumber;
     private Licence licence;
     private Map<String, Vehicle> vehicles;
     private String type;
@@ -43,7 +43,7 @@ public class Account {
      * This is for a driver type account.
      */
     public Account(String universityID, String password, String email,
-                   String name, String address, Integer homeNumber, Integer mobileNumber, Licence licence) {
+                   String name, String address, Integer homeNumber, Long mobileNumber, Licence licence) {
         this.universityID = universityID;
         this.password = password;
         this.email = email;
@@ -60,7 +60,7 @@ public class Account {
      * The updated constructor for an account. This will be used from backlog 2 onwards.
      * This is for a passenger type account.
      */
-    public Account(String universityID, String password, String email, String name, String address, Integer homeNumber, Integer mobileNumber) {
+    public Account(String universityID, String password, String email, String name, String address, Integer homeNumber, Long mobileNumber) {
         this.universityID = universityID;
         this.password = password;
         this.email = email;
@@ -138,7 +138,7 @@ public class Account {
         return homeNumber;
     }
 
-    public Integer getMobileNumber() {
+    public Long getMobileNumber() {
         return mobileNumber;
     }
 

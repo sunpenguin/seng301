@@ -1,12 +1,10 @@
 package steps;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import model.Ride;
-import model.Route;
-import model.StopPoint;
-import model.Vehicle;
+import model.*;
 import org.junit.Assert;
 
 import java.time.LocalDate;
@@ -19,45 +17,51 @@ import java.util.List;
  * Cucumber tests for creating a ride.
  */
 public class AddRideStepDefinition {
-    StopPoint sp1;
-    StopPoint sp2;
+    Account account;
     Route route;
     Vehicle car;
     Ride ride;
 
+    String routeName;
+    String carName;
+
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    @When("^I have a route$")
-    public void iHaveARoute() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        sp1 = new StopPoint("Street Name", "Suburb 1");
-        sp2 = new StopPoint("15 Steed Road", "Lincoln");
-        route = new Route("Test Route", new ArrayList<>(Arrays.asList(sp1, sp2)));
+    @Given("^that I am using a \"([^\"]*)\" account$")
+    public void thatIAmUsingAAccount(String accountType) throws Throwable {
+        if (accountType.equals("driver")) {
+            createDriver();
+        } else {
+            createPassenger();
+        }
     }
 
-    @Then("^I can create a ride$")
-    public void iCanCreateARide() throws Throwable {
+    @When("^I have a route called \"([^\"]*)\"$")
+    public void iHaveARouteCalled(String routeName) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        sp1 = new StopPoint("Street Name", "Suburb 1");
-        sp2 = new StopPoint("15 Steed Road", "Lincoln");
-        route = new Route("Test Route", new ArrayList<>(Arrays.asList(sp1, sp2)));
-//        (String type, String model, String colour, String licencePlate, int year, int seats)
-        car = new Vehicle("Car", "G6", "Red", "ABC123", 1881, 50);
+        this.routeName = routeName;
+        createRoute(routeName);
+    }
 
-//        (String name, Route route, int direction, LocalDate date, Vehicle vehicle, int availableSeats, String driverID)
-        ride = new Ride("Test Ride", route, 0, LocalDate.parse("15/12/2020", formatter),
+    @When("^a vehicle called \"([^\"]*)\"$")
+    public void aVehicleCalled(String vehicleName) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        carName = vehicleName;
+        createVehicle(vehicleName);
+    }
+
+    @Then("^I can create a ride called \"([^\"]*)\"$")
+    public void iCanCreateARideCalled(String rideName) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        createRoute(routeName);
+        createVehicle(carName);
+        ride = new Ride(rideName, route, 0, LocalDate.parse("15/12/2020", formatter),
                 car, 30, "jax12");
     }
 
-    @Then("^I can create multiple rides$")
-    public void iCanCreateMultipleRides() throws Throwable {
+    @Then("^I can create multiple rides called \"([^\"]*)\"$")
+    public void iCanCreateMultipleRidesCalled(String rideName) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        sp1 = new StopPoint("Street Name", "Suburb 1");
-        sp2 = new StopPoint("15 Steed Road", "Lincoln");
-        route = new Route("Test Route", new ArrayList<>(Arrays.asList(sp1, sp2)));
-//        (String type, String model, String colour, String licencePlate, int year, int seats)
-        car = new Vehicle("Car", "G6", "Red", "ABC123", 1881, 50);
-
         List<Ride> multipleRides = new ArrayList<>();
 
         LocalDate start = LocalDate.parse("15/12/2017", formatter);
@@ -67,13 +71,39 @@ public class AddRideStepDefinition {
 
         while (start.isBefore(end.plusDays(1))) {
             if (days.get(start.getDayOfWeek().getValue() - 1)) {
-                ride = new Ride("Test Ride", route, 0, LocalDate.parse("15/12/2020", formatter),
+                ride = new Ride(rideName, route, 0, LocalDate.parse("15/12/2020", formatter),
                         car, 30, "jax12");
                 multipleRides.add(ride);
             }
             start = start.plusDays(1);
         }
         Assert.assertEquals(multipleRides.size(), 7);
+    }
+
+    private void createVehicle(String name) {
+        car = new Vehicle(name, "G6", "Red", "ABC123", 1881, 50);
+    }
+
+    private void createRoute(String name) {
+        StopPoint sp1 = new StopPoint("Street Name", "Suburb 1");
+        StopPoint sp2 = new StopPoint("15 Steed Road", "Lincoln");
+        route = new Route(name, new ArrayList<>(Arrays.asList(sp1, sp2)));
+    }
+
+    private void createDriver() {
+//        (String universityID, String password, String email,
+//                String name, String address, Integer homeNumber, Integer mobileNumber, Licence licence)
+        account = new Account("driver", "password", "driver@uclive.ac.nz",
+                "Dan", "20 Howard Street", 1234567, 64278182123L,
+                new Licence("Full for over 2 years", "YXF87231",
+                        LocalDate.parse("12/12/2015", formatter),
+                        LocalDate.parse("12/12/2020", formatter)));
+    }
+
+    private void createPassenger() {
+//        (String universityID, String password, String email, String name, String address, Integer homeNumber, Integer mobileNumber)
+        account = new Account("driver", "password", "driver@uclive.ac.nz",
+        "Dan", "20 Howard Street", 1234567, 64278182123L);
     }
 }
 

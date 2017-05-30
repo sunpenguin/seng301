@@ -16,94 +16,154 @@ formatter.scenario({
 });
 formatter.step({
   "line": 3,
-  "name": "that I am a \"driver\"",
+  "name": "that I am using a \"driver\" account",
   "keyword": "Given "
 });
 formatter.step({
   "line": 4,
-  "name": "I have a route",
+  "name": "I have a route called \"Route 1\"",
   "keyword": "When "
 });
 formatter.step({
   "line": 5,
-  "name": "I can create a ride",
+  "name": "a vehicle called \"car\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 6,
+  "name": "I can create a ride called \"Ride 1\"",
   "keyword": "Then "
 });
 formatter.match({
   "arguments": [
     {
       "val": "driver",
-      "offset": 13
+      "offset": 19
     }
   ],
-  "location": "AddVehicleStepDefinition.thatIAmA(String)"
+  "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 90114720,
+  "duration": 157563944,
   "status": "passed"
 });
 formatter.match({
-  "location": "AddRideStepDefinition.iHaveARoute()"
+  "arguments": [
+    {
+      "val": "Route 1",
+      "offset": 23
+    }
+  ],
+  "location": "AddRideStepDefinition.iHaveARouteCalled(String)"
 });
 formatter.result({
-  "duration": 73967483,
+  "duration": 11386529,
   "status": "passed"
 });
 formatter.match({
-  "location": "AddRideStepDefinition.iCanCreateARide()"
+  "arguments": [
+    {
+      "val": "car",
+      "offset": 18
+    }
+  ],
+  "location": "AddRideStepDefinition.aVehicleCalled(String)"
 });
 formatter.result({
-  "duration": 1774385,
+  "duration": 875697,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Ride 1",
+      "offset": 28
+    }
+  ],
+  "location": "AddRideStepDefinition.iCanCreateARideCalled(String)"
+});
+formatter.result({
+  "duration": 1566238,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 7,
-  "name": "",
+  "line": 8,
+  "name": "Add Multiple Rides",
   "description": "",
-  "id": "add-ride;",
+  "id": "add-ride;add-multiple-rides",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 8,
-  "name": "that I am a \"driver\"",
+  "line": 9,
+  "name": "that I am using a \"driver\" account",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 9,
-  "name": "I have a route",
+  "line": 10,
+  "name": "I have a route called \"Route 1\"",
   "keyword": "When "
 });
 formatter.step({
-  "line": 10,
-  "name": "I can create multiple rides",
+  "line": 11,
+  "name": "a vehicle called \"car\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I can create multiple rides called \"Ride 1\"",
   "keyword": "Then "
 });
 formatter.match({
   "arguments": [
     {
       "val": "driver",
-      "offset": 13
+      "offset": 19
     }
   ],
-  "location": "AddVehicleStepDefinition.thatIAmA(String)"
+  "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 105921,
+  "duration": 234422,
   "status": "passed"
 });
 formatter.match({
-  "location": "AddRideStepDefinition.iHaveARoute()"
+  "arguments": [
+    {
+      "val": "Route 1",
+      "offset": 23
+    }
+  ],
+  "location": "AddRideStepDefinition.iHaveARouteCalled(String)"
 });
 formatter.result({
-  "duration": 777577,
+  "duration": 669192,
   "status": "passed"
 });
 formatter.match({
-  "location": "AddRideStepDefinition.iCanCreateMultipleRides()"
+  "arguments": [
+    {
+      "val": "car",
+      "offset": 18
+    }
+  ],
+  "location": "AddRideStepDefinition.aVehicleCalled(String)"
 });
 formatter.result({
-  "duration": 2739171,
+  "duration": 64045,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Ride 1",
+      "offset": 36
+    }
+  ],
+  "location": "AddRideStepDefinition.iCanCreateMultipleRidesCalled(String)"
+});
+formatter.result({
+  "duration": 1902065,
   "status": "passed"
 });
 formatter.uri("addRoute.feature");
@@ -129,7 +189,7 @@ formatter.step({
 });
 formatter.step({
   "line": 4,
-  "name": "I have stop points",
+  "name": "I have 2 stop points",
   "keyword": "When "
 });
 formatter.step({
@@ -147,21 +207,27 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 66509,
+  "duration": 189262,
   "status": "passed"
 });
 formatter.match({
-  "location": "AddRouteStepDefinition.iHaveStopPoints()"
+  "arguments": [
+    {
+      "val": "2",
+      "offset": 7
+    }
+  ],
+  "location": "AddRouteStepDefinition.iHaveStopPoints(int)"
 });
 formatter.result({
-  "duration": 45982,
+  "duration": 1106836,
   "status": "passed"
 });
 formatter.match({
   "location": "AddRouteStepDefinition.iShouldCreateARoute()"
 });
 formatter.result({
-  "duration": 325564,
+  "duration": 800567,
   "status": "passed"
 });
 formatter.uri("addVehicle.feature");
@@ -205,7 +271,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 116185,
+  "duration": 121112,
   "status": "passed"
 });
 formatter.match({
@@ -218,7 +284,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.iAdd(String)"
 });
 formatter.result({
-  "duration": 144102,
+  "duration": 122754,
   "status": "passed"
 });
 formatter.match({
@@ -235,7 +301,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.theShouldBeAddedToThe(String,String)"
 });
 formatter.result({
-  "duration": 125628,
+  "duration": 141228,
   "status": "passed"
 });
 formatter.uri("bookRide.feature");
@@ -279,7 +345,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 103047,
+  "duration": 104279,
   "status": "passed"
 });
 formatter.match({
@@ -293,7 +359,7 @@ formatter.match({
   "location": "BookRideStepDefinition.iAssignMyselfToASharedRide()"
 });
 formatter.result({
-  "duration": 13959,
+  "duration": 33254,
   "status": "passed"
 });
 formatter.uri("searchStopPoints.feature");
@@ -337,21 +403,21 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iAmA(String)"
 });
 formatter.result({
-  "duration": 100995,
+  "duration": 135070,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchStopPointsStepDefinition.iWantToSearchStopPoints()"
 });
 formatter.result({
-  "duration": 1007483,
+  "duration": 1183197,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchStopPointsStepDefinition.iTypeInTheCriteriaAndSearchStopPoints()"
 });
 formatter.result({
-  "duration": 216358,
+  "duration": 330901,
   "status": "passed"
 });
 formatter.uri("seeRidesGivenStopPoint.feature");
@@ -395,21 +461,21 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 130554,
+  "duration": 93194,
   "status": "passed"
 });
 formatter.match({
   "location": "SeeRidesGivenStopPointStepDefinition.iSelectAStopPoint()"
 });
 formatter.result({
-  "duration": 63224,
+  "duration": 64456,
   "status": "passed"
 });
 formatter.match({
   "location": "SeeRidesGivenStopPointStepDefinition.iWantToSeeTheRidesAssociatedWithTheStopPoints()"
 });
 formatter.result({
-  "duration": 17243,
+  "duration": 28738,
   "status": "passed"
 });
 formatter.uri("shareRide.feature");
@@ -453,21 +519,21 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 100995,
+  "duration": 74309,
   "status": "passed"
 });
 formatter.match({
   "location": "ShareRideStepDefinition.iHaveCreatedARide()"
 });
 formatter.result({
-  "duration": 2734656,
+  "duration": 1771922,
   "status": "passed"
 });
 formatter.match({
   "location": "ShareRideStepDefinition.iCanShareMyRide()"
 });
 formatter.result({
-  "duration": 2713718,
+  "duration": 2308918,
   "status": "passed"
 });
 formatter.uri("stopPoints.feature");
@@ -511,7 +577,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 93605,
+  "duration": 70203,
   "status": "passed"
 });
 formatter.match({
@@ -524,7 +590,7 @@ formatter.match({
   "location": "StopPointsStepDefinition.iAddAsAStopPoint(String)"
 });
 formatter.result({
-  "duration": 117006,
+  "duration": 113722,
   "status": "passed"
 });
 formatter.match({
@@ -537,7 +603,7 @@ formatter.match({
   "location": "StopPointsStepDefinition.theStopPointWithAddressIsCreated(String)"
 });
 formatter.result({
-  "duration": 82520,
+  "duration": 97711,
   "status": "passed"
 });
 formatter.uri("viewRideDetails.feature");
@@ -581,21 +647,21 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 105921,
+  "duration": 83752,
   "status": "passed"
 });
 formatter.match({
   "location": "ViewRideDetailsStepDefinition.iChooseARide()"
 });
 formatter.result({
-  "duration": 68561,
+  "duration": 94837,
   "status": "passed"
 });
 formatter.match({
   "location": "ViewRideDetailsStepDefinition.iWantToSeeTheDetailsOfTheRide()"
 });
 formatter.result({
-  "duration": 25044,
+  "duration": 19296,
   "status": "passed"
 });
 });

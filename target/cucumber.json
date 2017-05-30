@@ -12,95 +12,155 @@
         "steps": [
           {
             "result": {
-              "duration": 90114720,
+              "duration": 157563944,
               "status": "passed"
             },
             "line": 3,
-            "name": "that I am a \"driver\"",
+            "name": "that I am using a \"driver\" account",
             "match": {
               "arguments": [
                 {
                   "val": "driver",
-                  "offset": 13
+                  "offset": 19
                 }
               ],
-              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+              "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 73967483,
+              "duration": 11386529,
               "status": "passed"
             },
             "line": 4,
-            "name": "I have a route",
+            "name": "I have a route called \"Route 1\"",
             "match": {
-              "location": "AddRideStepDefinition.iHaveARoute()"
+              "arguments": [
+                {
+                  "val": "Route 1",
+                  "offset": 23
+                }
+              ],
+              "location": "AddRideStepDefinition.iHaveARouteCalled(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1774385,
+              "duration": 875697,
               "status": "passed"
             },
             "line": 5,
-            "name": "I can create a ride",
+            "name": "a vehicle called \"car\"",
             "match": {
-              "location": "AddRideStepDefinition.iCanCreateARide()"
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 18
+                }
+              ],
+              "location": "AddRideStepDefinition.aVehicleCalled(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1566238,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I can create a ride called \"Ride 1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Ride 1",
+                  "offset": 28
+                }
+              ],
+              "location": "AddRideStepDefinition.iCanCreateARideCalled(String)"
             },
             "keyword": "Then "
           }
         ]
       },
       {
-        "line": 7,
-        "name": "",
+        "line": 8,
+        "name": "Add Multiple Rides",
         "description": "",
-        "id": "add-ride;",
+        "id": "add-ride;add-multiple-rides",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 105921,
+              "duration": 234422,
               "status": "passed"
             },
-            "line": 8,
-            "name": "that I am a \"driver\"",
+            "line": 9,
+            "name": "that I am using a \"driver\" account",
             "match": {
               "arguments": [
                 {
                   "val": "driver",
-                  "offset": 13
+                  "offset": 19
                 }
               ],
-              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+              "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 777577,
+              "duration": 669192,
               "status": "passed"
             },
-            "line": 9,
-            "name": "I have a route",
+            "line": 10,
+            "name": "I have a route called \"Route 1\"",
             "match": {
-              "location": "AddRideStepDefinition.iHaveARoute()"
+              "arguments": [
+                {
+                  "val": "Route 1",
+                  "offset": 23
+                }
+              ],
+              "location": "AddRideStepDefinition.iHaveARouteCalled(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 2739171,
+              "duration": 64045,
               "status": "passed"
             },
-            "line": 10,
-            "name": "I can create multiple rides",
+            "line": 11,
+            "name": "a vehicle called \"car\"",
             "match": {
-              "location": "AddRideStepDefinition.iCanCreateMultipleRides()"
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 18
+                }
+              ],
+              "location": "AddRideStepDefinition.aVehicleCalled(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1902065,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I can create multiple rides called \"Ride 1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Ride 1",
+                  "offset": 36
+                }
+              ],
+              "location": "AddRideStepDefinition.iCanCreateMultipleRidesCalled(String)"
             },
             "keyword": "Then "
           }
@@ -126,7 +186,7 @@
         "steps": [
           {
             "result": {
-              "duration": 66509,
+              "duration": 189262,
               "status": "passed"
             },
             "line": 3,
@@ -144,19 +204,25 @@
           },
           {
             "result": {
-              "duration": 45982,
+              "duration": 1106836,
               "status": "passed"
             },
             "line": 4,
-            "name": "I have stop points",
+            "name": "I have 2 stop points",
             "match": {
-              "location": "AddRouteStepDefinition.iHaveStopPoints()"
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 7
+                }
+              ],
+              "location": "AddRouteStepDefinition.iHaveStopPoints(int)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 325564,
+              "duration": 800567,
               "status": "passed"
             },
             "line": 5,
@@ -188,7 +254,7 @@
         "steps": [
           {
             "result": {
-              "duration": 116185,
+              "duration": 121112,
               "status": "passed"
             },
             "line": 3,
@@ -206,7 +272,7 @@
           },
           {
             "result": {
-              "duration": 144102,
+              "duration": 122754,
               "status": "passed"
             },
             "line": 4,
@@ -224,7 +290,7 @@
           },
           {
             "result": {
-              "duration": 125628,
+              "duration": 141228,
               "status": "passed"
             },
             "line": 5,
@@ -266,7 +332,7 @@
         "steps": [
           {
             "result": {
-              "duration": 103047,
+              "duration": 104279,
               "status": "passed"
             },
             "line": 3,
@@ -296,7 +362,7 @@
           },
           {
             "result": {
-              "duration": 13959,
+              "duration": 33254,
               "status": "passed"
             },
             "line": 5,
@@ -328,7 +394,7 @@
         "steps": [
           {
             "result": {
-              "duration": 100995,
+              "duration": 135070,
               "status": "passed"
             },
             "line": 3,
@@ -346,7 +412,7 @@
           },
           {
             "result": {
-              "duration": 1007483,
+              "duration": 1183197,
               "status": "passed"
             },
             "line": 4,
@@ -358,7 +424,7 @@
           },
           {
             "result": {
-              "duration": 216358,
+              "duration": 330901,
               "status": "passed"
             },
             "line": 5,
@@ -390,7 +456,7 @@
         "steps": [
           {
             "result": {
-              "duration": 130554,
+              "duration": 93194,
               "status": "passed"
             },
             "line": 3,
@@ -408,7 +474,7 @@
           },
           {
             "result": {
-              "duration": 63224,
+              "duration": 64456,
               "status": "passed"
             },
             "line": 4,
@@ -420,7 +486,7 @@
           },
           {
             "result": {
-              "duration": 17243,
+              "duration": 28738,
               "status": "passed"
             },
             "line": 5,
@@ -452,7 +518,7 @@
         "steps": [
           {
             "result": {
-              "duration": 100995,
+              "duration": 74309,
               "status": "passed"
             },
             "line": 3,
@@ -470,7 +536,7 @@
           },
           {
             "result": {
-              "duration": 2734656,
+              "duration": 1771922,
               "status": "passed"
             },
             "line": 4,
@@ -482,7 +548,7 @@
           },
           {
             "result": {
-              "duration": 2713718,
+              "duration": 2308918,
               "status": "passed"
             },
             "line": 5,
@@ -514,7 +580,7 @@
         "steps": [
           {
             "result": {
-              "duration": 93605,
+              "duration": 70203,
               "status": "passed"
             },
             "line": 3,
@@ -532,7 +598,7 @@
           },
           {
             "result": {
-              "duration": 117006,
+              "duration": 113722,
               "status": "passed"
             },
             "line": 4,
@@ -550,7 +616,7 @@
           },
           {
             "result": {
-              "duration": 82520,
+              "duration": 97711,
               "status": "passed"
             },
             "line": 5,
@@ -588,7 +654,7 @@
         "steps": [
           {
             "result": {
-              "duration": 105921,
+              "duration": 83752,
               "status": "passed"
             },
             "line": 3,
@@ -606,7 +672,7 @@
           },
           {
             "result": {
-              "duration": 68561,
+              "duration": 94837,
               "status": "passed"
             },
             "line": 4,
@@ -618,7 +684,7 @@
           },
           {
             "result": {
-              "duration": 25044,
+              "duration": 19296,
               "status": "passed"
             },
             "line": 5,

@@ -105,7 +105,7 @@ public class AccountCreationController extends Controller {
                         nameText.getText(),
                         addressText.getText(),
                         Integer.parseInt(homeNumberText.getText()),
-                        Integer.parseInt(mobileNumberText.getText()),
+                        Long.parseLong(mobileNumberText.getText()),
                         licenceToAdd);
                 content = "You have created a driver account with the User ID: " + universityIDText.getText() +
                         "\nYou will now be taken back to the log in screen.";
@@ -117,7 +117,7 @@ public class AccountCreationController extends Controller {
                         nameText.getText(),
                         addressText.getText(),
                         Integer.parseInt(homeNumberText.getText()),
-                        Integer.parseInt(mobileNumberText.getText()));
+                        Long.parseLong(mobileNumberText.getText()));
                 content = "You have created a passenger account with the User ID: " + universityIDText.getText() +
                         ".\nIf this is incorrect and you had licence details, you can add it in later." +
                         "\nYou will now be taken back to the log in screen.";

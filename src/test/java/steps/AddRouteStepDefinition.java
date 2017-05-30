@@ -16,11 +16,11 @@ public class AddRouteStepDefinition {
     StopPoint sp2;
     Route route1;
 
-    @When("^I have stop points$")
-    public void iHaveStopPoints() throws Throwable {
+    @When("^I have (\\d+) stop points$")
+    public void iHaveStopPoints(int arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        sp1 = new StopPoint("1 Test Street");
-        sp2 = new StopPoint("9999 Jack Place");
+        sp1 = new StopPoint("1 Test Street", "Suburb 1");
+        sp2 = new StopPoint("9999 Jack Place", "Suburb 2");
     }
 
     @Then("^I should create a route$")
