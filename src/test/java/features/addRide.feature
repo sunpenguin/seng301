@@ -4,6 +4,7 @@ Feature: Add Ride
     When I have a route
     Then I can create a ride
 
+  Scenario:
     Given that I am a "driver"
     When I have a route
     Then I can create multiple rides

@@ -34,7 +34,6 @@ public class Ride {
         this.availableSeats = availableSeats;
         this.driverID = driverID;
         passengers = new ArrayList();
-
     }
 
     /**

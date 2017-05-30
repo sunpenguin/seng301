@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 104533961,
+              "duration": 90114720,
               "status": "passed"
             },
             "line": 3,
@@ -30,27 +30,44 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 73967483,
+              "status": "passed"
             },
             "line": 4,
             "name": "I have a route",
-            "match": {},
+            "match": {
+              "location": "AddRideStepDefinition.iHaveARoute()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 1774385,
+              "status": "passed"
             },
             "line": 5,
             "name": "I can create a ride",
-            "match": {},
+            "match": {
+              "location": "AddRideStepDefinition.iCanCreateARide()"
+            },
             "keyword": "Then "
-          },
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "id": "add-ride;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
           {
             "result": {
-              "status": "skipped"
+              "duration": 105921,
+              "status": "passed"
             },
-            "line": 7,
+            "line": 8,
             "name": "that I am a \"driver\"",
             "match": {
               "arguments": [
@@ -65,20 +82,26 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 777577,
+              "status": "passed"
             },
-            "line": 8,
+            "line": 9,
             "name": "I have a route",
-            "match": {},
+            "match": {
+              "location": "AddRideStepDefinition.iHaveARoute()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 2739171,
+              "status": "passed"
             },
-            "line": 9,
+            "line": 10,
             "name": "I can create multiple rides",
-            "match": {},
+            "match": {
+              "location": "AddRideStepDefinition.iCanCreateMultipleRides()"
+            },
             "keyword": "Then "
           }
         ]
@@ -103,7 +126,7 @@
         "steps": [
           {
             "result": {
-              "duration": 89500,
+              "duration": 66509,
               "status": "passed"
             },
             "line": 3,
@@ -121,7 +144,7 @@
           },
           {
             "result": {
-              "duration": 1044433,
+              "duration": 45982,
               "status": "passed"
             },
             "line": 4,
@@ -133,7 +156,7 @@
           },
           {
             "result": {
-              "duration": 58184814,
+              "duration": 325564,
               "status": "passed"
             },
             "line": 5,
@@ -165,7 +188,7 @@
         "steps": [
           {
             "result": {
-              "duration": 66098,
+              "duration": 116185,
               "status": "passed"
             },
             "line": 3,
@@ -183,7 +206,7 @@
           },
           {
             "result": {
-              "duration": 70203,
+              "duration": 144102,
               "status": "passed"
             },
             "line": 4,
@@ -201,7 +224,7 @@
           },
           {
             "result": {
-              "duration": 1497266,
+              "duration": 125628,
               "status": "passed"
             },
             "line": 5,
@@ -235,15 +258,201 @@
     "elements": [
       {
         "line": 2,
-        "name": "Add a Stop Point",
+        "name": "Book a Ride",
         "description": "",
-        "id": "stop-points;add-a-stop-point",
+        "id": "book-a-ride;book-a-ride",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 89088,
+              "duration": 103047,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that I am a \"passenger\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "passenger",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 68562,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I want to book a ride",
+            "match": {
+              "location": "BookRideStepDefinition.iWantToBookARide()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 13959,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I assign myself to a shared ride",
+            "match": {
+              "location": "BookRideStepDefinition.iAssignMyselfToASharedRide()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Book a Ride",
+    "description": "",
+    "id": "book-a-ride",
+    "keyword": "Feature",
+    "uri": "bookRide.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Search Stop Points",
+        "description": "",
+        "id": "searching-stop-points;search-stop-points",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 100995,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "I am a \"user\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "user",
+                  "offset": 8
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1007483,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I want to search stop points",
+            "match": {
+              "location": "SearchStopPointsStepDefinition.iWantToSearchStopPoints()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 216358,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I type in the criteria and search stop points",
+            "match": {
+              "location": "SearchStopPointsStepDefinition.iTypeInTheCriteriaAndSearchStopPoints()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Searching Stop Points",
+    "description": "",
+    "id": "searching-stop-points",
+    "keyword": "Feature",
+    "uri": "searchStopPoints.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "See Rides Given a Stop Point",
+        "description": "",
+        "id": "see-rides-given-a-stop-point;see-rides-given-a-stop-point",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 130554,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that I am a \"passenger\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "passenger",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 63224,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I select a stop point",
+            "match": {
+              "location": "SeeRidesGivenStopPointStepDefinition.iSelectAStopPoint()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 17243,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I want to see the rides associated with the stop points",
+            "match": {
+              "location": "SeeRidesGivenStopPointStepDefinition.iWantToSeeTheRidesAssociatedWithTheStopPoints()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "See Rides Given a Stop Point",
+    "description": "",
+    "id": "see-rides-given-a-stop-point",
+    "keyword": "Feature",
+    "uri": "seeRidesGivenStopPoint.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Share a Ride",
+        "description": "",
+        "id": "share-ride;share-a-ride",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 100995,
               "status": "passed"
             },
             "line": 3,
@@ -261,7 +470,69 @@
           },
           {
             "result": {
-              "duration": 119059,
+              "duration": 2734656,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I have created a ride",
+            "match": {
+              "location": "ShareRideStepDefinition.iHaveCreatedARide()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2713718,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I can share my ride",
+            "match": {
+              "location": "ShareRideStepDefinition.iCanShareMyRide()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Share Ride",
+    "description": "",
+    "id": "share-ride",
+    "keyword": "Feature",
+    "uri": "shareRide.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Add a Stop Point",
+        "description": "",
+        "id": "stop-points;add-a-stop-point",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 93605,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that I am a \"driver\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 117006,
               "status": "passed"
             },
             "line": 4,
@@ -279,7 +550,7 @@
           },
           {
             "result": {
-              "duration": 92373,
+              "duration": 82520,
               "status": "passed"
             },
             "line": 5,
@@ -303,5 +574,67 @@
     "id": "stop-points",
     "keyword": "Feature",
     "uri": "stopPoints.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Viewing Ride Details",
+        "description": "",
+        "id": "viewing-ride-details;viewing-ride-details",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 105921,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that I am a \"passenger\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "passenger",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 68561,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I choose a ride",
+            "match": {
+              "location": "ViewRideDetailsStepDefinition.iChooseARide()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 25044,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I want to see the details of the ride",
+            "match": {
+              "location": "ViewRideDetailsStepDefinition.iWantToSeeTheDetailsOfTheRide()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Viewing Ride Details",
+    "description": "",
+    "id": "viewing-ride-details",
+    "keyword": "Feature",
+    "uri": "viewRideDetails.feature"
   }
 ]
