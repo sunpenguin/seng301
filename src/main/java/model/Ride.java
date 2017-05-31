@@ -39,18 +39,6 @@ public class Ride {
     /**
      * The method to add passengers. The boolean for full becomes true when there are no more available seats.
      */
-    public void addPassenger() {
-        if (!full) {
-            availableSeats -= 1;
-            if (availableSeats == 0)
-                full = true;
-        }
-    }
-
-
-    /**
-     * The method to add passengers. The boolean for full becomes true when there are no more available seats.
-     */
     public void addPassenger(Account account) {
         if (!full) {
             passengers.add(account.getUniversityID());

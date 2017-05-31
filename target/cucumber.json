@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 157563944,
+              "duration": 182703397,
               "status": "passed"
             },
             "line": 3,
@@ -30,7 +30,7 @@
           },
           {
             "result": {
-              "duration": 11386529,
+              "duration": 13392052,
               "status": "passed"
             },
             "line": 4,
@@ -48,7 +48,7 @@
           },
           {
             "result": {
-              "duration": 875697,
+              "duration": 950828,
               "status": "passed"
             },
             "line": 5,
@@ -66,7 +66,7 @@
           },
           {
             "result": {
-              "duration": 1566238,
+              "duration": 1915614,
               "status": "passed"
             },
             "line": 6,
@@ -94,7 +94,7 @@
         "steps": [
           {
             "result": {
-              "duration": 234422,
+              "duration": 264803,
               "status": "passed"
             },
             "line": 9,
@@ -112,7 +112,7 @@
           },
           {
             "result": {
-              "duration": 669192,
+              "duration": 1080561,
               "status": "passed"
             },
             "line": 10,
@@ -130,7 +130,7 @@
           },
           {
             "result": {
-              "duration": 64045,
+              "duration": 82520,
               "status": "passed"
             },
             "line": 11,
@@ -148,7 +148,7 @@
           },
           {
             "result": {
-              "duration": 1902065,
+              "duration": 2960457,
               "status": "passed"
             },
             "line": 12,
@@ -178,57 +178,203 @@
     "elements": [
       {
         "line": 2,
-        "name": "Add a Route",
+        "name": "Add a Route 2 Stop Points",
         "description": "",
-        "id": "add-route;add-a-route",
+        "id": "add-route;add-a-route-2-stop-points",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 189262,
+              "duration": 417527,
               "status": "passed"
             },
             "line": 3,
-            "name": "that I am a \"driver\"",
+            "name": "that I am a using a \"driver\" account",
             "match": {
               "arguments": [
                 {
                   "val": "driver",
-                  "offset": 13
+                  "offset": 21
                 }
               ],
-              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+              "location": "AddRouteStepDefinition.thatIAmAUsingAAccount(String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1106836,
+              "duration": 187620,
               "status": "passed"
             },
             "line": 4,
-            "name": "I have 2 stop points",
+            "name": "I have a StopPoint called \"122B Walker Road\"",
             "match": {
               "arguments": [
                 {
-                  "val": "2",
-                  "offset": 7
+                  "val": "122B Walker Road",
+                  "offset": 27
                 }
               ],
-              "location": "AddRouteStepDefinition.iHaveStopPoints(int)"
+              "location": "AddRouteStepDefinition.iHaveAStopPointCalled(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 800567,
+              "duration": 132607,
               "status": "passed"
             },
             "line": 5,
-            "name": "I should create a route",
+            "name": "I have a StopPoint called \"2 Head Lane\"",
             "match": {
-              "location": "AddRouteStepDefinition.iShouldCreateARoute()"
+              "arguments": [
+                {
+                  "val": "2 Head Lane",
+                  "offset": 27
+                }
+              ],
+              "location": "AddRouteStepDefinition.iHaveAStopPointCalled(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 805494,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I can create a route called \"Route\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Route",
+                  "offset": 29
+                }
+              ],
+              "location": "AddRouteStepDefinition.iCanCreateARouteCalled(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "Add a Route 1 Stop Point",
+        "description": "",
+        "id": "add-route;add-a-route-1-stop-point",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 282046,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "that I am a using a \"driver\" account",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 21
+                }
+              ],
+              "location": "AddRouteStepDefinition.thatIAmAUsingAAccount(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 229085,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I have a StopPoint called \"76 Jackson Street\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "76 Jackson Street",
+                  "offset": 27
+                }
+              ],
+              "location": "AddRouteStepDefinition.iHaveAStopPointCalled(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1801482,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I can create a route called \"Route\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Route",
+                  "offset": 29
+                }
+              ],
+              "location": "AddRouteStepDefinition.iCanCreateARouteCalled(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 13,
+        "name": "Add a Route no Stop Points",
+        "description": "",
+        "id": "add-route;add-a-route-no-stop-points",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 298468,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "that I am a using a \"driver\" account",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 21
+                }
+              ],
+              "location": "AddRouteStepDefinition.thatIAmAUsingAAccount(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 93194,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I have no stop points",
+            "match": {
+              "location": "AddRouteStepDefinition.iHaveNoStopPoints()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 99352,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I can create a route called \"Route\" with no stop points",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Route",
+                  "offset": 29
+                }
+              ],
+              "location": "AddRouteStepDefinition.iCanCreateARouteCalledWithNoStopPoints(String)"
             },
             "keyword": "Then "
           }
@@ -246,15 +392,15 @@
     "elements": [
       {
         "line": 2,
-        "name": "Add a Car",
+        "name": "Add a Stop Point",
         "description": "",
-        "id": "add-vehicle;add-a-car",
+        "id": "stop-points;add-a-stop-point",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 121112,
+              "duration": 295184,
               "status": "passed"
             },
             "line": 3,
@@ -272,41 +418,269 @@
           },
           {
             "result": {
-              "duration": 122754,
+              "duration": 312837,
               "status": "passed"
             },
             "line": 4,
-            "name": "I add \"car\"",
+            "name": "I add \"76 Happy Lane\" as a stop point",
             "match": {
               "arguments": [
                 {
-                  "val": "car",
+                  "val": "76 Happy Lane",
                   "offset": 7
                 }
               ],
-              "location": "AddVehicleStepDefinition.iAdd(String)"
+              "location": "AddStopPointsStepDefinition.iAddAsAStopPoint(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 141228,
+              "duration": 1553921,
               "status": "passed"
             },
             "line": 5,
-            "name": "the \"car\" should be added to the \"account\"",
+            "name": "the stop point with address \"76 Happy Lane\" is created",
+            "match": {
+              "arguments": [
+                {
+                  "val": "76 Happy Lane",
+                  "offset": 29
+                }
+              ],
+              "location": "AddStopPointsStepDefinition.theStopPointWithAddressIsCreated(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "Add a Stop Point already available",
+        "description": "",
+        "id": "stop-points;add-a-stop-point-already-available",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 417937,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "that I am a \"driver\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 225390,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I add \"76 Happy Lane\" as a stop point",
+            "match": {
+              "arguments": [
+                {
+                  "val": "76 Happy Lane",
+                  "offset": 7
+                }
+              ],
+              "location": "AddStopPointsStepDefinition.iAddAsAStopPoint(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 164630,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "\"76 Happy Lane\" is already in the data",
+            "match": {
+              "arguments": [
+                {
+                  "val": "76 Happy Lane",
+                  "offset": 1
+                }
+              ],
+              "location": "AddStopPointsStepDefinition.isAlreadyInTheData(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 271782,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the stop point with address \"76 Happy Lane\" is not added again",
+            "match": {
+              "arguments": [
+                {
+                  "val": "76 Happy Lane",
+                  "offset": 29
+                }
+              ],
+              "location": "AddStopPointsStepDefinition.theStopPointWithAddressIsNotAddedAgain(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Stop Points",
+    "description": "",
+    "id": "stop-points",
+    "keyword": "Feature",
+    "uri": "addStopPoints.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Add a Car",
+        "description": "",
+        "id": "add-vehicle;add-a-car",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 265625,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "that I am a \"driver\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 242634,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I add a car \"Lamborghini\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Lamborghini",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.iAddACar(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 302573,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the \"car\" should be added to my account",
             "match": {
               "arguments": [
                 {
                   "val": "car",
                   "offset": 5
-                },
-                {
-                  "val": "account",
-                  "offset": 34
                 }
               ],
-              "location": "AddVehicleStepDefinition.theShouldBeAddedToThe(String,String)"
+              "location": "AddVehicleStepDefinition.theShouldBeAddedToMyAccount(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "id": "add-vehicle;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 340344,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "that I am a \"driver\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 13
+                }
+              ],
+              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 102226,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I want to add a car \"Beetle\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Beetle",
+                  "offset": 21
+                }
+              ],
+              "location": "AddVehicleStepDefinition.iWantToAddACar(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 234012,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I want to add a car \"Porsche\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Porsche",
+                  "offset": 21
+                }
+              ],
+              "location": "AddVehicleStepDefinition.iWantToAddACar(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1083845,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I can add them all to my account",
+            "match": {
+              "location": "AddVehicleStepDefinition.iCanAddThemAllToMyAccount()"
             },
             "keyword": "Then "
           }
@@ -324,51 +698,127 @@
     "elements": [
       {
         "line": 2,
-        "name": "Book a Ride",
+        "name": "Book a Ride as Passenger",
         "description": "",
-        "id": "book-a-ride;book-a-ride",
+        "id": "book-a-ride;book-a-ride-as-passenger",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 104279,
+              "duration": 161755,
               "status": "passed"
             },
             "line": 3,
-            "name": "that I am a \"passenger\"",
+            "name": "that I am using a \"passenger\" account",
             "match": {
               "arguments": [
                 {
                   "val": "passenger",
-                  "offset": 13
+                  "offset": 19
                 }
               ],
-              "location": "AddVehicleStepDefinition.thatIAmA(String)"
+              "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 68562,
+              "duration": 2155373,
               "status": "passed"
             },
             "line": 4,
-            "name": "I want to book a ride",
+            "name": "I want to book a ride called \"Ride\"",
             "match": {
-              "location": "BookRideStepDefinition.iWantToBookARide()"
+              "arguments": [
+                {
+                  "val": "Ride",
+                  "offset": 30
+                }
+              ],
+              "location": "BookRideStepDefinition.iWantToBookARideCalled(String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 33254,
+              "duration": 1138448,
               "status": "passed"
             },
             "line": 5,
-            "name": "I assign myself to a shared ride",
+            "name": "I assign myself to the ride called \"Ride\"",
             "match": {
-              "location": "BookRideStepDefinition.iAssignMyselfToASharedRide()"
+              "arguments": [
+                {
+                  "val": "Ride",
+                  "offset": 36
+                }
+              ],
+              "location": "BookRideStepDefinition.iAssignMyselfToTheRideCalled(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "Book a Ride as Driver",
+        "description": "",
+        "id": "book-a-ride;book-a-ride-as-driver",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 252487,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "that I am using a \"driver\" account",
+            "match": {
+              "arguments": [
+                {
+                  "val": "driver",
+                  "offset": 19
+                }
+              ],
+              "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1893444,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I want to book a ride called \"Ride\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Ride",
+                  "offset": 30
+                }
+              ],
+              "location": "BookRideStepDefinition.iWantToBookARideCalled(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1101499,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I assign myself to the ride called \"Ride\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Ride",
+                  "offset": 36
+                }
+              ],
+              "location": "BookRideStepDefinition.iAssignMyselfToTheRideCalled(String)"
             },
             "keyword": "Then "
           }
@@ -394,7 +844,7 @@
         "steps": [
           {
             "result": {
-              "duration": 135070,
+              "duration": 169966,
               "status": "passed"
             },
             "line": 3,
@@ -412,7 +862,7 @@
           },
           {
             "result": {
-              "duration": 1183197,
+              "duration": 3602553,
               "status": "passed"
             },
             "line": 4,
@@ -424,13 +874,141 @@
           },
           {
             "result": {
-              "duration": 330901,
+              "duration": 1472223,
               "status": "passed"
             },
             "line": 5,
             "name": "I type in the criteria and search stop points",
             "match": {
               "location": "SearchStopPointsStepDefinition.iTypeInTheCriteriaAndSearchStopPoints()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "id": "searching-stop-points;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 95658,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am a \"user\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "user",
+                  "offset": 8
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 73078,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I want to find the stop point with the address \"Rose\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Rose",
+                  "offset": 48
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iWantToFindTheStopPointWithTheAddress(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 358818,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I type \"Rose\" in and search by address",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Rose",
+                  "offset": 8
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iTypeInAndSearchByAddress(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "",
+        "description": "",
+        "id": "searching-stop-points;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 206505,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I am a \"user\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "user",
+                  "offset": 8
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iAmA(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 124396,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I want to find the stop point with the suburb \"Halswell\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Halswell",
+                  "offset": 47
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iWantToFindTheStopPointWithTheSuburb(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 606378,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I type \"Halswell\" in and search by suburb",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Halswell",
+                  "offset": 8
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iTypeInAndSearchBySuburb(String)"
             },
             "keyword": "Then "
           }
@@ -456,7 +1034,7 @@
         "steps": [
           {
             "result": {
-              "duration": 93194,
+              "duration": 424916,
               "status": "passed"
             },
             "line": 3,
@@ -474,7 +1052,7 @@
           },
           {
             "result": {
-              "duration": 64456,
+              "duration": 586261,
               "status": "passed"
             },
             "line": 4,
@@ -486,7 +1064,7 @@
           },
           {
             "result": {
-              "duration": 28738,
+              "duration": 8349300,
               "status": "passed"
             },
             "line": 5,
@@ -518,7 +1096,7 @@
         "steps": [
           {
             "result": {
-              "duration": 74309,
+              "duration": 246739,
               "status": "passed"
             },
             "line": 3,
@@ -536,7 +1114,7 @@
           },
           {
             "result": {
-              "duration": 1771922,
+              "duration": 3009722,
               "status": "passed"
             },
             "line": 4,
@@ -548,7 +1126,7 @@
           },
           {
             "result": {
-              "duration": 2308918,
+              "duration": 1105603,
               "status": "passed"
             },
             "line": 5,
@@ -572,80 +1150,6 @@
     "elements": [
       {
         "line": 2,
-        "name": "Add a Stop Point",
-        "description": "",
-        "id": "stop-points;add-a-stop-point",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 70203,
-              "status": "passed"
-            },
-            "line": 3,
-            "name": "that I am a \"driver\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "driver",
-                  "offset": 13
-                }
-              ],
-              "location": "AddVehicleStepDefinition.thatIAmA(String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 113722,
-              "status": "passed"
-            },
-            "line": 4,
-            "name": "I add \"76 Happy Lane\" as a stop point",
-            "match": {
-              "arguments": [
-                {
-                  "val": "76 Happy Lane",
-                  "offset": 7
-                }
-              ],
-              "location": "StopPointsStepDefinition.iAddAsAStopPoint(String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 97711,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "the stop point with address \"76 Happy Lane\" is created",
-            "match": {
-              "arguments": [
-                {
-                  "val": "76 Happy Lane",
-                  "offset": 29
-                }
-              ],
-              "location": "StopPointsStepDefinition.theStopPointWithAddressIsCreated(String)"
-            },
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "Stop Points",
-    "description": "",
-    "id": "stop-points",
-    "keyword": "Feature",
-    "uri": "stopPoints.feature"
-  },
-  {
-    "line": 1,
-    "elements": [
-      {
-        "line": 2,
         "name": "Viewing Ride Details",
         "description": "",
         "id": "viewing-ride-details;viewing-ride-details",
@@ -654,7 +1158,7 @@
         "steps": [
           {
             "result": {
-              "duration": 83752,
+              "duration": 272604,
               "status": "passed"
             },
             "line": 3,
@@ -672,7 +1176,7 @@
           },
           {
             "result": {
-              "duration": 94837,
+              "duration": 4129695,
               "status": "passed"
             },
             "line": 4,
@@ -684,7 +1188,7 @@
           },
           {
             "result": {
-              "duration": 19296,
+              "duration": 721742,
               "status": "passed"
             },
             "line": 5,

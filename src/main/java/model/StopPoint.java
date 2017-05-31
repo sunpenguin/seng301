@@ -46,10 +46,6 @@ public class StopPoint implements Serializable {
         this.time = LocalTime.parse(time);
     }
 
-    public StopPoint copy() {
-        return new StopPoint(address, suburb, time.toString());
-    }
-
     public String getAddress() {
         return address;
     }

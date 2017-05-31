@@ -88,14 +88,16 @@ public class Account {
         vehicles.put(name, vehicle);
     }
 
-    public void setType(String type) {
-        if (type == "Driver" || type == "Passenger")
-            this.type = type;
-    }
-
     public void upgrade(String licenceNumber) {
         type = "Driver";
         this.licenceNumber = licenceNumber;
+    }
+
+    public void upgrade(Licence licence) {
+        if (!licence.isExpired() && !type.equals("Driver")) {
+            this.licence = licence;
+            type = "Driver";
+        }
     }
 
     public Map<String, Vehicle> getVehicles() {

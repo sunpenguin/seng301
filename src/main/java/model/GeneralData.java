@@ -30,9 +30,18 @@ public class GeneralData {
     }
 
     public void addStopPoint(String name, StopPoint stopPoint) {
-        stopPoints.put(name, stopPoint);
+        if (!stopPoints.containsKey(name)) {
+            stopPoints.put(name, stopPoint);
+        }
     }
 
+    /**
+     * The key to each StopPoint is the address and suburb together.
+     * e.g. StopPoint with address "Address" and suburb "Suburb"
+     *      will have the key "AddressSuburb".
+     *
+     * @return the stop point map
+     */
     public Map<String, StopPoint> getStopPoints() {
         return stopPoints;
     }

@@ -67,7 +67,7 @@ public class AddRideStepDefinition {
         LocalDate start = LocalDate.parse("15/12/2017", formatter);
         LocalDate end = LocalDate.parse("21/12/2017", formatter);
 
-        List<Boolean> days = new ArrayList(Arrays.asList(true, true, true, true, true, true, true));
+        List<Boolean> days = new ArrayList(Arrays.asList(true, true, true, true, false, true, true));
 
         while (start.isBefore(end.plusDays(1))) {
             if (days.get(start.getDayOfWeek().getValue() - 1)) {
@@ -77,7 +77,7 @@ public class AddRideStepDefinition {
             }
             start = start.plusDays(1);
         }
-        Assert.assertEquals(multipleRides.size(), 7);
+        Assert.assertEquals(6, multipleRides.size());
     }
 
     private void createVehicle(String name) {

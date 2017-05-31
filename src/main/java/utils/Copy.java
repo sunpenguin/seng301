@@ -75,6 +75,10 @@ public class Copy {
         return obj;
     }
 
+    /**
+     * Returns a copy of the object, or null if the object cannot
+     * be serialized.
+     */
     public static List<StopPoint> copy(List<StopPoint> orig) {
         List<StopPoint> obj = null;
         try {

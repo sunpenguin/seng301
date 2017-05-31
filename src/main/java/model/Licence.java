@@ -35,4 +35,8 @@ public class Licence {
     public boolean isExpired() {
         return expired;
     }
+
+    public String getNumber() {
+        return number;
+    }
 }

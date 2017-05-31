@@ -19,7 +19,11 @@ public class SearchStopPointsStepDefinition {
     Account account;
     StopPoint sp1;
     StopPoint sp2;
+    StopPoint sp3;
     StopPointsSearcher searcher;
+
+    String addressToSearch;
+    String suburbToSearch;
 
     private void setAccount() {
         account = new Account("User", 2);
@@ -28,8 +32,9 @@ public class SearchStopPointsStepDefinition {
     private void setSearcher() {
         sp1 = new StopPoint("Street Name", "Suburb 1");
         sp2 = new StopPoint("15 Steed Road", "Lincoln");
+        sp3 = new StopPoint("Rose Street", "Halswell");
 
-        searcher = new StopPointsSearcher(new ArrayList<>(Arrays.asList(sp1, sp2)));
+        searcher = new StopPointsSearcher(new ArrayList<>(Arrays.asList(sp1, sp2, sp3)));
     }
 
     @Given("^I am a \"([^\"]*)\"$")
@@ -49,6 +54,39 @@ public class SearchStopPointsStepDefinition {
         // Write code here that turns the phrase above into concrete actions
         setSearcher();
         searcher.searchBySuburbName("in");
-        Assert.assertEquals(searcher.getSearchStopPoints().size(), 1);
+
+        Assert.assertEquals(1, searcher.getSearchStopPoints().size());
+    }
+
+    @When("^I want to find the stop point with the address \"([^\"]*)\"$")
+    public void iWantToFindTheStopPointWithTheAddress(String address) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        addressToSearch = address;
+    }
+
+    @Then("^I type \"([^\"]*)\" in and search by address$")
+    public void iTypeInAndSearchByAddress(String address) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        setSearcher();
+        addressToSearch = address;
+        searcher.searchByStreetName(addressToSearch);
+
+        Assert.assertEquals(1, searcher.getSearchStopPoints().size());
+    }
+
+    @When("^I want to find the stop point with the suburb \"([^\"]*)\"$")
+    public void iWantToFindTheStopPointWithTheSuburb(String suburb) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        suburbToSearch = suburb;
+    }
+
+    @Then("^I type \"([^\"]*)\" in and search by suburb$")
+    public void iTypeInAndSearchBySuburb(String suburb) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        setSearcher();
+        suburbToSearch = suburb;
+        searcher.searchBySuburbName(suburbToSearch);
+
+        Assert.assertEquals(1, searcher.getSearchStopPoints().size());
     }
 }

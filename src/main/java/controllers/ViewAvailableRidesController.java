@@ -113,11 +113,13 @@ public class ViewAvailableRidesController extends Controller {
         ridesTable.setItems(FXCollections.observableArrayList(filteredRides));
     }
 
-    public void viewRideDetails() {
-        if (ridesTable.getSelectionModel().getSelectedItem() != null)
-        Session.getInstance().setRide((Ride) ridesTable.getSelectionModel().getSelectedItem());
-        createPopUpStage(SceneType.VIEW_SINGLE_RIDE_DETAILS, 1000, 800);
-        setUpRidesTable();
+    @FXML
+    private void viewRideDetails() {
+        if (ridesTable.getSelectionModel().getSelectedItem() != null) {
+            Session.getInstance().setRide((Ride) ridesTable.getSelectionModel().getSelectedItem());
+            createPopUpStage(SceneType.VIEW_SINGLE_RIDE_DETAILS, 1000, 800);
+            setUpRidesTable();
+        }
     }
 
     private void setListeners() {

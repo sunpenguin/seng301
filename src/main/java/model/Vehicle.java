@@ -30,14 +30,6 @@ public class Vehicle {
         this.seats = seats;
     }
 
-    /**
-     * A constructor method created from referencing cucumber
-     * @param type the type of vehicle
-     */
-    public Vehicle(String type) {
-        this.type = type;
-    }
-
     public String getModel() {
         return model;
     }

@@ -8,7 +8,7 @@ public enum SceneType {
     ADD_TRIPS("addTrips.fxml"), ADD_VEHICLE("addVehicle.fxml"), LOG_IN_SCREEN("home.fxml"), MENU_BAR("menuBar.fxml"),
     TIME_SETTER_RIDE_POP_UP("timeSetterRide.fxml"), VIEW_ACCOUNT_DETAILS("viewAccountDetails.fxml"),
     VIEW_ACCOUNT_RIDES("viewAccountRides.fxml"), VIEW_AVAILABLE_RIDES("viewAvailableRides.fxml"),
-    VIEW_ROUTES("viewRoutes.fxml"), VIEW_SINGLE_RIDE_DETAILS("viewSingleRideDetails"),
+    VIEW_ROUTES("viewRoutes.fxml"), VIEW_SINGLE_RIDE_DETAILS("viewSingleRideDetails.fxml"),
     VIEW_STOP_POINTS("viewStopPoints.fxml"), VIEW_VEHICLES("viewVehicles.fxml");
 
     private String filePath;
