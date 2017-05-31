@@ -31,7 +31,14 @@ public class HomeController extends Controller {
             if (accountToCheck.getPassword().equals(passwordText.getText())) {
                 getParent().toggleMenuDisable();
                 Session.getInstance().setCurrentAccount(accountToCheck);
-                replaceSceneContent(SceneType.VIEW_VEHICLES);
+
+                if (accountToCheck.getType().equals("Passenger")) {
+                    getParent().setPassengerSettings(true);
+                } else {
+                    getParent().setPassengerSettings(false);
+                }
+
+                replaceSceneContent(SceneType.VIEW_ACCOUNT_DETAILS);
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Log In Error");

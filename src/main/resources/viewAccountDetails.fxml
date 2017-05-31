@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -13,20 +15,27 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViewAccountDetailsController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="171.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="192.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="144.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="257.0" minWidth="10.0" prefWidth="204.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="92.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="207.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="195.0" minHeight="0.0" prefHeight="88.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="598.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="598.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="598.0" minHeight="0.0" prefHeight="53.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="598.0" minHeight="0.0" prefHeight="83.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="598.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="589.0" minHeight="10.0" prefHeight="354.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="195.0" minHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="598.0" minHeight="0.0" prefHeight="42.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="598.0" minHeight="0.0" prefHeight="78.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="0.0" prefHeight="71.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="598.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="589.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label text="My Account" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
@@ -34,14 +43,14 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label text="Account Status" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+      <Label text="Account Status" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </Label>
-      <Text fx:id="statusText" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+      <Text fx:id="statusText" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3">
          <GridPane.margin>
-            <Insets left="25.0" />
+            <Insets />
          </GridPane.margin>
       </Text>
       <Label text="Account Name" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
@@ -51,36 +60,128 @@
       </Label>
       <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
-            <Insets left="25.0" />
+            <Insets />
          </GridPane.margin>
       </Text>
-      <Text fx:id="numberVehiclesText" strokeType="OUTSIDE" strokeWidth="0.0" text="200" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+      <Text fx:id="numberVehiclesText" strokeType="OUTSIDE" strokeWidth="0.0" text="200" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4">
          <GridPane.margin>
-            <Insets left="50.0" />
+            <Insets />
          </GridPane.margin>
       </Text>
-      <Label text="Number of Vehicles" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-      <Button fx:id="viewVehiclesButton" mnemonicParsing="false" onAction="#goToVehicles" text="View My Vehicles" GridPane.columnIndex="3" GridPane.rowIndex="2">
+      <Label text="Number of Vehicles" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <Button fx:id="viewVehiclesButton" mnemonicParsing="false" onAction="#goToVehicles" text="View My Vehicles" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
          <GridPane.margin>
-            <Insets left="25.0" />
+            <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </Button>
-      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
-      <Label text="Become a Driver" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+      <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
+      <Label text="Become a Driver by entering your Licence details" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="7">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="licenceText" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <Label text="Driver Licence Number" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+      <TextField fx:id="licenceText" prefWidth="263.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+      <Label text="Driver Licence Number" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </Label>
-      <Button fx:id="verifyLicenceButton" mnemonicParsing="false" onAction="#verifyLicence" text="Verify" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5">
+      <Button fx:id="verifyLicenceButton" mnemonicParsing="false" onAction="#verifyLicence" text="Verify Licence" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="12">
          <GridPane.margin>
-            <Insets left="25.0" />
+            <Insets />
          </GridPane.margin>
       </Button>
+      <Label text="Name" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Home Number" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Address" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Mobile Number" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Email Address" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Driver Licence Type" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Issue Date" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Expiry Date" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="11">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <DatePicker fx:id="issueDate" maxHeight="-Infinity" prefWidth="350.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+      <DatePicker fx:id="expiryDate" maxHeight="-Infinity" prefWidth="350.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+      <Text fx:id="emailText" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Text>
+      <Text fx:id="properNameText" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Text>
+      <Text fx:id="addressText" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Text>
+      <Text fx:id="homeText" strokeType="OUTSIDE" strokeWidth="0.0" text="H" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Text>
+      <Text fx:id="mobileText" strokeType="OUTSIDE" strokeWidth="0.0" text="M" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Text>
+      <Label text="Type" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Number" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text=" Issue" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Expiry" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Text fx:id="typeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <Text fx:id="numberText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+      <Text fx:id="issueText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+      <Text fx:id="expiryText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <ComboBox fx:id="typeComboBox" prefWidth="350.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="8" />
    </children>
 </GridPane>

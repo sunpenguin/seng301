@@ -5,10 +5,13 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import model.Account;
+import model.Licence;
 import model.StopPoint;
 import org.junit.Assert;
 import utils.StopPointsSearcher;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -25,8 +28,10 @@ public class SearchStopPointsStepDefinition {
     String addressToSearch;
     String suburbToSearch;
 
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
     private void setAccount() {
-        account = new Account("User", 2);
+        createPassenger();
     }
 
     private void setSearcher() {
@@ -88,5 +93,11 @@ public class SearchStopPointsStepDefinition {
         searcher.searchBySuburbName(suburbToSearch);
 
         Assert.assertEquals(1, searcher.getSearchStopPoints().size());
+    }
+
+    private void createPassenger() {
+//        (String universityID, String password, String email, String name, String address, Integer homeNumber, Integer mobileNumber)
+        account = new Account("driver", "password", "driver@uclive.ac.nz",
+                "Dan", "20 Howard Street", 1234567, 64278182123L);
     }
 }

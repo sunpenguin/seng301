@@ -15,11 +15,11 @@ public class Licence {
 
     private boolean expired;
 
-    public Licence(String type, String number, LocalDate issue, LocalDate exipry) {
+    public Licence(String type, String number, LocalDate issue, LocalDate expiry) {
         this.type = type;
         this.number = number;
         this.issue = issue;
-        this.expiry = exipry;
+        this.expiry = expiry;
 
         expired = false;
         checkExpiry();
@@ -38,5 +38,17 @@ public class Licence {
 
     public String getNumber() {
         return number;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public LocalDate getIssue() {
+        return issue;
+    }
+
+    public LocalDate getExpiry() {
+        return expiry;
     }
 }

@@ -20,10 +20,10 @@
                         <MenuItem mnemonicParsing="false" onAction="#logOut" text="Log Out" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Driver">
+                <Menu fx:id="driverMenu" mnemonicParsing="false" text="Driver">
                   <items>
                         <MenuItem mnemonicParsing="false" onAction="#openMyRides" text="View My Rides" />
-                    <MenuItem mnemonicParsing="false" onAction="#openViewVehicles" text="View My Vehicles" />
+                    <MenuItem fx:id="vehicleMenuItem" mnemonicParsing="false" onAction="#openViewVehicles" text="View My Vehicles" />
                         <MenuItem mnemonicParsing="false" onAction="#openRoutes" text="View My Routes" />
                   </items>
                 </Menu>

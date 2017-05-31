@@ -11,6 +11,7 @@ import model.Licence;
 import utils.Checkers;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The controller class for creating accounts.
@@ -167,8 +168,8 @@ public class AccountCreationController extends Controller {
         LocalDate dateTomorrow = LocalDate.now().plusDays(1);
         if (!licenceTypeCheckBox.getSelectionModel().isEmpty()
                 && !licenceNumberText.getText().isEmpty()
-                && !licenceIssueDate.getValue().isBefore(dateTomorrow)
-                && !licenceExpiryDate.getValue().isAfter(dateTomorrow)) {
+                && licenceIssueDate.getValue().isBefore(dateTomorrow)
+                && licenceExpiryDate.getValue().isAfter(dateTomorrow)) {
             return true;
         }
         return false;

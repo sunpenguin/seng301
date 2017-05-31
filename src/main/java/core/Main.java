@@ -30,7 +30,6 @@ public class Main extends Application {
     private VBox mainContainer = null;
     private MainController mainController = null;
 
-    private Account userAccount = null;
     private GeneralData generalData;
 
     public static void main( String[] args )
@@ -42,26 +41,16 @@ public class Main extends Application {
         return primaryStage;
     }
 
-    /**
-     * Starts up the test data. ALso adds a trip in for testing rides.
-     */
-    public void testStartUp() {
-        // TODO Find a better way to initialize rides dictionary
-        userAccount = new Account("User", 420);
-        generalData = new GeneralData();
-        generalData.addAccount(userAccount);
-        Session.getInstance().setCurrentAccount(userAccount);
-        generalData.getRides().put(userAccount.getUniversityID(), new ArrayList<>());
-
-        generalData.setCurrentTrip("Test 1");
-    }
-
     public GeneralData getGeneralData() {
         return generalData;
     }
 
     public void toggleMenuDisable() {
         mainController.toggleMenuDisable();
+    }
+
+    public void setPassengerSettings(Boolean toPassenger) {
+        mainController.setPassengerSettings(toPassenger);
     }
 
     @Override

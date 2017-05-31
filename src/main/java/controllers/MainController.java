@@ -1,14 +1,10 @@
 package controllers;
 
-
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.MenuBar;
+import javafx.scene.control.*;
 import utils.Session;
 
 import java.util.Optional;
-
 
 /**
  * The main controller class that manages the top menu.
@@ -18,6 +14,8 @@ import java.util.Optional;
 public class MainController extends Controller {
 
     @FXML private MenuBar menuBar;
+    @FXML private Menu driverMenu;
+    @FXML private MenuItem vehicleMenuItem;
 
     private boolean menuToggle = true;
 
@@ -31,6 +29,10 @@ public class MainController extends Controller {
     public void toggleMenuDisable() {
         menuToggle = !menuToggle;
         menuBar.setDisable(menuToggle);
+    }
+
+    public void setPassengerSettings(Boolean toPassenger) {
+        driverMenu.setDisable(toPassenger);
     }
 
     @FXML
