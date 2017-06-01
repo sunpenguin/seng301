@@ -35,7 +35,7 @@ public class ViewSingleRideDetailsController extends Controller {
         driverAccount = generalData.getAccountMap().get(rideToDisplay.getDriverID());
 
         nameText.setText(driverAccount.getName());
-        licenceText.setText(driverAccount.getLicenceNumber());
+        licenceText.setText(driverAccount.getLicence().getNumber());
         carModelText.setText(rideToDisplay.getVehicle().getModel());
         carColourText.setText(rideToDisplay.getVehicle().getColour());
         Integer year = rideToDisplay.getVehicle().getYear();

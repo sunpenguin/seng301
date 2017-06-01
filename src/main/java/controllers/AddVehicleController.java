@@ -2,7 +2,9 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Account;
 import model.Vehicle;
 import utils.Session;
@@ -14,18 +16,15 @@ import utils.Session;
  * @see controllers.Controller
  */
 public class AddVehicleController extends Controller {
-    @FXML
-    private TextField typeText;
-    @FXML
-    private TextField modelText;
-    @FXML
-    private TextField colourText;
-    @FXML
-    private TextField lpText;
-    @FXML
-    private TextField yearText;
-    @FXML
-    private TextField seatsText;
+    @FXML private TextField typeText;
+    @FXML private TextField modelText;
+    @FXML private TextField colourText;
+    @FXML private TextField lpText;
+    @FXML private TextField yearText;
+    @FXML private TextField seatsText;
+    @FXML private TextField performanceText;
+    @FXML private DatePicker expiryWOFText;
+    @FXML private DatePicker expiryRegistrationText;
 
     private Account currentUser;
 
@@ -52,18 +51,25 @@ public class AddVehicleController extends Controller {
                     colourText.getText(),
                     lpText.getText(),
                     Integer.parseInt(yearText.getText()),
-                    Integer.parseInt(seatsText.getText())
+                    Integer.parseInt(seatsText.getText()),
+                    Integer.parseInt(performanceText.getText()),
+                    expiryWOFText.getValue(),
+                    expiryRegistrationText.getValue()
             ));
-            typeText.clear();
-            modelText.clear();
-            colourText.clear();;
-            lpText.clear();
-            yearText.clear();
-            seatsText.clear();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Add Vehicle");
+            alert.setHeaderText("Add Vehicle Successful");
+            alert.setContentText("Your vehicle has been added to your account!");
+            alert.showAndWait();
+
+            Stage stage = (Stage) typeText.getScene().getWindow();
+            stage.close();
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Add Vehicle Error");
             alert.setHeaderText("There was an error adding your vehicle.");
+            alert.setContentText("Please check your fields and try again.");
             alert.showAndWait();
         }
     }

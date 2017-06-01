@@ -22,7 +22,8 @@ public class AddVehicleStepDefinition {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     private void createCar(String carName) {
-        car = new Vehicle(carName, "Newest", "Blue", "XD101XD", 2017, 3);
+        car = new Vehicle(carName, "Newest", "Blue", "XD101XD", 2017, 3,
+                1, LocalDate.parse("12/12/2020"), LocalDate.parse("12/12/2020"));
     }
 
     @Given("^that I am a \"([^\"]*)\"$")

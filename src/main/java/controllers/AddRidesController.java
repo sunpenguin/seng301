@@ -139,8 +139,8 @@ public class AddRidesController extends Controller {
         else direction = 1;
 
         List<Ride> rides;
-        if (generalData.getRides().containsKey(account.getId())) {
-            rides = generalData.getRides().get(account.getId());
+        if (generalData.getRides().containsKey(account.getUniversityID())) {
+            rides = generalData.getRides().get(account.getUniversityID());
         } else {
             rides = new ArrayList<>();
         }

@@ -13,10 +13,15 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Account;
 import model.GeneralData;
+import model.Vehicle;
 import utils.Session;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**

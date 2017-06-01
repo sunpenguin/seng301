@@ -31,7 +31,8 @@ public class SkeletonMethods {
     }
 
     private void createVehicle(String name) {
-        car = new Vehicle(name, "G6", "Red", "ABC123", 1881, 50);
+        car = new Vehicle(name, "G6", "Red", "ABC123", 1881, 50, 10,
+                LocalDate.parse("12/12/2017"), LocalDate.parse("12/12/2017"));
     }
 
     private void createRoute2(String name) {

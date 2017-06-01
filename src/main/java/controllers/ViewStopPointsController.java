@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import model.GeneralData;
 import model.StopPoint;
 import utils.Session;
@@ -18,6 +19,7 @@ public class ViewStopPointsController extends Controller {
     @FXML private TableColumn streetSuburbColumn;
     @FXML private TextField searchField;
     @FXML private ComboBox searchByComboBox;
+    @FXML private Text distanceText;
 
     private GeneralData generalData;
     private StopPointsSearcher stopPointsSearcher;
@@ -25,6 +27,8 @@ public class ViewStopPointsController extends Controller {
     public void load() {
         generalData = getParent().getGeneralData();
         stopPointsSearcher = new StopPointsSearcher(generalData.getStopPoints().values());
+
+        distanceText.setText("Select a Stop Point!");
 
         streetNameColumn.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Address"));
         streetSuburbColumn.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Suburb"));
@@ -40,10 +44,26 @@ public class ViewStopPointsController extends Controller {
     private void setListener() {
         stopPointsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                Session.getInstance().setStopPoint((StopPoint) newSelection);
-                createPopUpStage(SceneType.VIEW_AVAILABLE_RIDES, 1000, 800);
+//                Session.getInstance().setStopPoint((StopPoint) newSelection);
+//                createPopUpStage(SceneType.VIEW_AVAILABLE_RIDES, 1000, 800);
+                StopPoint stopPoint = (StopPoint) newSelection;
+                distanceText.setText(String.valueOf(stopPoint.getDistance()) + " L/100km");
             }
         });
+    }
+
+    @FXML
+    private void openAvailableRides() {
+        if (stopPointsTable.getSelectionModel().getSelectedItem() != null) {
+            Session.getInstance().setStopPoint((StopPoint) stopPointsTable.getSelectionModel().getSelectedItem());
+            createPopUpStage(SceneType.VIEW_AVAILABLE_RIDES, 1000, 800);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Selection Error");
+            alert.setHeaderText("Stop Point Selection Error");
+            alert.setContentText("Please select a Stop Point in the table and try again!");
+            alert.showAndWait();
+        }
     }
 
     @FXML
@@ -61,11 +81,13 @@ public class ViewStopPointsController extends Controller {
                     stopPointsSearcher.searchByStreetName(searchField.getText());
                     stopPointsTable.setItems(
                             FXCollections.observableArrayList(stopPointsSearcher.getSearchStopPoints()));
+                    distanceText.setText("Select a Stop Point!");
                     break;
                 case "Suburb Name":
                     stopPointsSearcher.searchBySuburbName(searchField.getText());
                     stopPointsTable.setItems(
                             FXCollections.observableArrayList(stopPointsSearcher.getSearchStopPoints()));
+                    distanceText.setText("Select a Stop Point!");
                     break;
                 default:
                     break;

@@ -12,6 +12,8 @@ public class StopPoint implements Serializable {
     private String suburb;
     private LocalTime time;
 
+    private int distance;
+
     /**
      * The constructor only requires an address
      * @param address
@@ -70,11 +72,12 @@ public class StopPoint implements Serializable {
         this.time = time;
     }
 
-    //    /**
-//     * A test method to try make stop points more dynamic
-//     * @return a copy of the stop point
-//     */
-//    public StopPoint copy() {
-//        return new StopPoint(address);
-//    }
+    // --new--
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
 }
