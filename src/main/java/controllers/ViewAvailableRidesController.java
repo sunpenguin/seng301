@@ -14,6 +14,7 @@ import javafx.util.Callback;
 import model.*;
 import utils.Session;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -90,7 +91,7 @@ public class ViewAvailableRidesController extends Controller {
                 for (StopPoint sp : ride.getRoute().getRouteStops()) {
                     if (sp.getAddress().equals(stopPoint.getAddress())
                             && sp.getSuburb().equals(stopPoint.getSuburb())) {
-                        result = sp.getTime().format(DateTimeFormatter.ofPattern("HH:mm"));
+                        result = sp.getTime().format(DateTimeFormatter.ofPattern("hh:mm a"));
                         break;
                     }
                 }
@@ -117,10 +118,11 @@ public class ViewAvailableRidesController extends Controller {
             public ObservableValue call(TableColumn.CellDataFeatures param) {
                 Ride ride = (Ride) param.getValue();
                 String result = "00.00";
+                DecimalFormat decimalFormat = new DecimalFormat("#.00");
                 for (StopPoint sp : ride.getRoute().getRouteStops()) {
                     if (sp.getAddress().equals(stopPoint.getAddress())
                             && sp.getSuburb().equals(stopPoint.getSuburb())) {
-                        result = String.valueOf(sp.getCost());
+                        result = "$" + String.valueOf(decimalFormat.format(sp.getCost()));
                         break;
                     }
                 }

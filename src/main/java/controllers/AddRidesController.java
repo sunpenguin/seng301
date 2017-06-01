@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -7,16 +8,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.*;
 import utils.Copy;
 import utils.Session;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The controller class for the FXML file "addTrips.fxml".
+ * Controller class for adding rides associated with the current account.
  *
  * @author Sunguin Peng
  * @see controllers.Controller
@@ -51,6 +54,7 @@ public class AddRidesController extends Controller {
 
     private Route routeCopy;
     private List<StopPoint> stopPoints;
+    private DateTimeFormatter timeFormat;
 
     /**
      * The method to load files from the abstract class.
@@ -67,6 +71,8 @@ public class AddRidesController extends Controller {
         directionComboBox.getSelectionModel().selectFirst();
         vehicleComboBox.setItems(FXCollections.observableArrayList(account.getVehicles().keySet()));
 
+        timeFormat = DateTimeFormatter.ofPattern("hh:mm a");
+
         setListeners();
     }
 
@@ -76,7 +82,14 @@ public class AddRidesController extends Controller {
             @Override
             public void changed(ObservableValue ov, String oldValue, String newValue) {
                 stopPointNameList.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Address"));
-                stopPointTimeList.setCellValueFactory(new PropertyValueFactory<StopPoint, Integer>("Time"));
+                stopPointTimeList.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
+                    @Override
+                    public ObservableValue call(TableColumn.CellDataFeatures param) {
+                        StopPoint stopPoint = (StopPoint) param.getValue();
+                        String result =stopPoint.getTime().format(timeFormat);
+                        return new SimpleStringProperty(result);
+                    }
+                });
                 routeCopy = Copy.copy(generalData.getRoutes().get(newValue));
                 stopPoints = Copy.copy(routeCopy.getRouteStops());
                 stopPointTable.setItems(FXCollections.observableArrayList(stopPoints));

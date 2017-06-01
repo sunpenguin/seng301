@@ -89,7 +89,8 @@ public class AccountCreationController extends Controller {
 
     /**
      * Creates a new account and adds it to GeneralData.
-     *
+     * Depends on how complete the client has filled the form. If the client has only filled a few fields on the licence
+     * then they will still become a passenger.
      */
     @FXML
     private void registerAccount() {
@@ -147,8 +148,8 @@ public class AccountCreationController extends Controller {
     private boolean validateText() {
         String email = emailText.getText();
         if ((email.matches(".*@uclive.ac.nz$") || email.matches(".*@canterbury.ac.nz$"))
-                && Checkers.isNumeric(homeNumberText.getText())
-                && Checkers.isNumeric(mobileNumberText.getText())) {
+                && Checkers.isNumeric(homeNumberText.getText()) && Integer.parseInt(homeNumberText.getText()) > 0
+                && Checkers.isNumeric(mobileNumberText.getText()) && Long.parseLong(mobileNumberText.getText()) > 0) {
             return true;
         } else if (universityIDText.getText().isEmpty()) {
             content = "You must fill in your University ID since this will be your username.";

@@ -44,7 +44,7 @@ formatter.match({
   "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 173230428,
+  "duration": 198215926,
   "status": "passed"
 });
 formatter.match({
@@ -57,7 +57,7 @@ formatter.match({
   "location": "AddRideStepDefinition.iHaveARouteCalled(String)"
 });
 formatter.result({
-  "duration": 13310354,
+  "duration": 14063297,
   "status": "passed"
 });
 formatter.match({
@@ -70,7 +70,7 @@ formatter.match({
   "location": "AddRideStepDefinition.aVehicleCalled(String)"
 });
 formatter.result({
-  "duration": 1216041,
+  "duration": 1344542,
   "status": "passed"
 });
 formatter.match({
@@ -83,7 +83,7 @@ formatter.match({
   "location": "AddRideStepDefinition.iCanCreateARideCalled(String)"
 });
 formatter.result({
-  "duration": 2193964,
+  "duration": 1808051,
   "status": "passed"
 });
 formatter.scenario({
@@ -124,7 +124,7 @@ formatter.match({
   "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 289846,
+  "duration": 439285,
   "status": "passed"
 });
 formatter.match({
@@ -137,7 +137,7 @@ formatter.match({
   "location": "AddRideStepDefinition.iHaveARouteCalled(String)"
 });
 formatter.result({
-  "duration": 854349,
+  "duration": 961502,
   "status": "passed"
 });
 formatter.match({
@@ -150,7 +150,7 @@ formatter.match({
   "location": "AddRideStepDefinition.aVehicleCalled(String)"
 });
 formatter.result({
-  "duration": 142049,
+  "duration": 139996,
   "status": "passed"
 });
 formatter.match({
@@ -163,7 +163,7 @@ formatter.match({
   "location": "AddRideStepDefinition.iCanCreateMultipleRidesCalled(String)"
 });
 formatter.result({
-  "duration": 2400059,
+  "duration": 2445630,
   "status": "passed"
 });
 formatter.uri("addRoute.feature");
@@ -212,7 +212,7 @@ formatter.match({
   "location": "AddRouteStepDefinition.thatIAmAUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 311605,
+  "duration": 346092,
   "status": "passed"
 });
 formatter.match({
@@ -225,7 +225,7 @@ formatter.match({
   "location": "AddRouteStepDefinition.iHaveAStopPointCalled(String)"
 });
 formatter.result({
-  "duration": 106742,
+  "duration": 112079,
   "status": "passed"
 });
 formatter.match({
@@ -238,7 +238,7 @@ formatter.match({
   "location": "AddRouteStepDefinition.iHaveAStopPointCalled(String)"
 });
 formatter.result({
-  "duration": 69382,
+  "duration": 89088,
   "status": "passed"
 });
 formatter.match({
@@ -251,7 +251,7 @@ formatter.match({
   "location": "AddRouteStepDefinition.iCanCreateARouteCalled(String)"
 });
 formatter.result({
-  "duration": 719279,
+  "duration": 1086308,
   "status": "passed"
 });
 formatter.scenario({
@@ -287,7 +287,7 @@ formatter.match({
   "location": "AddRouteStepDefinition.thatIAmAUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 267266,
+  "duration": 234422,
   "status": "passed"
 });
 formatter.match({
@@ -300,7 +300,7 @@ formatter.match({
   "location": "AddRouteStepDefinition.iHaveAStopPointCalled(String)"
 });
 formatter.result({
-  "duration": 118649,
+  "duration": 89499,
   "status": "passed"
 });
 formatter.match({
@@ -313,7 +313,7 @@ formatter.match({
   "location": "AddRouteStepDefinition.iCanCreateARouteCalled(String)"
 });
 formatter.result({
-  "duration": 822737,
+  "duration": 584209,
   "status": "passed"
 });
 formatter.scenario({
@@ -349,14 +349,14 @@ formatter.match({
   "location": "AddRouteStepDefinition.thatIAmAUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 277530,
+  "duration": 236475,
   "status": "passed"
 });
 formatter.match({
   "location": "AddRouteStepDefinition.iHaveNoStopPoints()"
 });
 formatter.result({
-  "duration": 36950,
+  "duration": 33254,
   "status": "passed"
 });
 formatter.match({
@@ -369,7 +369,7 @@ formatter.match({
   "location": "AddRouteStepDefinition.iCanCreateARouteCalledWithNoStopPoints(String)"
 });
 formatter.result({
-  "duration": 62813,
+  "duration": 63634,
   "status": "passed"
 });
 formatter.uri("addStopPoints.feature");
@@ -413,7 +413,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 311605,
+  "duration": 311195,
   "status": "passed"
 });
 formatter.match({
@@ -426,7 +426,7 @@ formatter.match({
   "location": "AddStopPointsStepDefinition.iAddAsAStopPoint(String)"
 });
 formatter.result({
-  "duration": 146155,
+  "duration": 459813,
   "status": "passed"
 });
 formatter.match({
@@ -439,7 +439,7 @@ formatter.match({
   "location": "AddStopPointsStepDefinition.theStopPointWithAddressIsCreated(String)"
 });
 formatter.result({
-  "duration": 1190587,
+  "duration": 1318267,
   "status": "passed"
 });
 formatter.scenario({
@@ -480,7 +480,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 275888,
+  "duration": 281225,
   "status": "passed"
 });
 formatter.match({
@@ -493,7 +493,7 @@ formatter.match({
   "location": "AddStopPointsStepDefinition.iAddAsAStopPoint(String)"
 });
 formatter.result({
-  "duration": 164629,
+  "duration": 143691,
   "status": "passed"
 });
 formatter.match({
@@ -506,7 +506,7 @@ formatter.match({
   "location": "AddStopPointsStepDefinition.isAlreadyInTheData(String)"
 });
 formatter.result({
-  "duration": 156418,
+  "duration": 157239,
   "status": "passed"
 });
 formatter.match({
@@ -519,7 +519,7 @@ formatter.match({
   "location": "AddStopPointsStepDefinition.theStopPointWithAddressIsNotAddedAgain(String)"
 });
 formatter.result({
-  "duration": 149439,
+  "duration": 205273,
   "status": "passed"
 });
 formatter.uri("addVehicle.feature");
@@ -563,7 +563,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 322280,
+  "duration": 272193,
   "status": "passed"
 });
 formatter.match({
@@ -576,7 +576,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.iAddACar(String)"
 });
 formatter.result({
-  "duration": 259466,
+  "duration": 248791,
   "status": "passed"
 });
 formatter.match({
@@ -589,7 +589,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.theShouldBeAddedToMyAccount(String)"
 });
 formatter.result({
-  "duration": 345270,
+  "duration": 585030,
   "status": "passed"
 });
 formatter.scenario({
@@ -630,7 +630,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 241812,
+  "duration": 311606,
   "status": "passed"
 });
 formatter.match({
@@ -643,7 +643,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.iWantToAddACar(String)"
 });
 formatter.result({
-  "duration": 117006,
+  "duration": 169967,
   "status": "passed"
 });
 formatter.match({
@@ -656,14 +656,14 @@ formatter.match({
   "location": "AddVehicleStepDefinition.iWantToAddACar(String)"
 });
 formatter.result({
-  "duration": 167503,
+  "duration": 193368,
   "status": "passed"
 });
 formatter.match({
   "location": "AddVehicleStepDefinition.iCanAddThemAllToMyAccount()"
 });
 formatter.result({
-  "duration": 277530,
+  "duration": 307090,
   "status": "passed"
 });
 formatter.uri("bookRide.feature");
@@ -707,7 +707,7 @@ formatter.match({
   "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 126448,
+  "duration": 142460,
   "status": "passed"
 });
 formatter.match({
@@ -720,7 +720,7 @@ formatter.match({
   "location": "BookRideStepDefinition.iWantToBookARideCalled(String)"
 });
 formatter.result({
-  "duration": 765670,
+  "duration": 970533,
   "status": "passed"
 });
 formatter.match({
@@ -733,7 +733,7 @@ formatter.match({
   "location": "BookRideStepDefinition.iAssignMyselfToTheRideCalled(String)"
 });
 formatter.result({
-  "duration": 1177450,
+  "duration": 1088771,
   "status": "passed"
 });
 formatter.scenario({
@@ -769,7 +769,7 @@ formatter.match({
   "location": "AddRideStepDefinition.thatIAmUsingAAccount(String)"
 });
 formatter.result({
-  "duration": 247150,
+  "duration": 266445,
   "status": "passed"
 });
 formatter.match({
@@ -782,7 +782,7 @@ formatter.match({
   "location": "BookRideStepDefinition.iWantToBookARideCalled(String)"
 });
 formatter.result({
-  "duration": 1545300,
+  "duration": 1649990,
   "status": "passed"
 });
 formatter.match({
@@ -795,7 +795,7 @@ formatter.match({
   "location": "BookRideStepDefinition.iAssignMyselfToTheRideCalled(String)"
 });
 formatter.result({
-  "duration": 904025,
+  "duration": 795640,
   "status": "passed"
 });
 formatter.uri("calculateCost.feature");
@@ -848,7 +848,7 @@ formatter.match({
   "location": "CalculateCostStepDefinition.iHaveAVehicleWithPerformance(String,String)"
 });
 formatter.result({
-  "duration": 209790,
+  "duration": 257413,
   "status": "passed"
 });
 formatter.match({
@@ -861,7 +861,7 @@ formatter.match({
   "location": "CalculateCostStepDefinition.iWantToGoFromStopPointToUniversity(String)"
 });
 formatter.result({
-  "duration": 79235,
+  "duration": 171199,
   "status": "passed"
 });
 formatter.match({
@@ -878,7 +878,7 @@ formatter.match({
   "location": "CalculateCostStepDefinition.iCreateARideUsingWithDistance(String,int)"
 });
 formatter.result({
-  "duration": 992292,
+  "duration": 1491108,
   "status": "passed"
 });
 formatter.match({
@@ -895,7 +895,7 @@ formatter.match({
   "location": "CalculateCostStepDefinition.theCostOfTheRideFromTheStopPointWillBe$(String,String)"
 });
 formatter.result({
-  "duration": 123985,
+  "duration": 183104,
   "status": "passed"
 });
 formatter.uri("cancelRideDriver.feature");
@@ -943,7 +943,7 @@ formatter.match({
   "location": "CancelRideDriverStepDefinition.iHaveAPassengerInMyRide(String,String)"
 });
 formatter.result({
-  "duration": 2435777,
+  "duration": 4629331,
   "status": "passed"
 });
 formatter.match({
@@ -956,7 +956,7 @@ formatter.match({
   "location": "CancelRideDriverStepDefinition.iCancelMyRide(String)"
 });
 formatter.result({
-  "duration": 123985,
+  "duration": 133838,
   "status": "passed"
 });
 formatter.match({
@@ -969,7 +969,7 @@ formatter.match({
   "location": "CancelRideDriverStepDefinition.passengerWillBeNotified(String)"
 });
 formatter.result({
-  "duration": 148208,
+  "duration": 185568,
   "status": "passed"
 });
 formatter.scenario({
@@ -1018,7 +1018,7 @@ formatter.match({
   "location": "CancelRideDriverStepDefinition.iHaveTwoPassengersAndInMyRide(String,String,String)"
 });
 formatter.result({
-  "duration": 700804,
+  "duration": 1256685,
   "status": "passed"
 });
 formatter.match({
@@ -1031,7 +1031,7 @@ formatter.match({
   "location": "CancelRideDriverStepDefinition.isFull(String)"
 });
 formatter.result({
-  "duration": 52139,
+  "duration": 100994,
   "status": "passed"
 });
 formatter.match({
@@ -1044,7 +1044,7 @@ formatter.match({
   "location": "CancelRideDriverStepDefinition.iCancelMyRide(String)"
 });
 formatter.result({
-  "duration": 35307,
+  "duration": 78825,
   "status": "passed"
 });
 formatter.match({
@@ -1061,7 +1061,7 @@ formatter.match({
   "location": "CancelRideDriverStepDefinition.passengersAndWillBeNotified(String,String)"
 });
 formatter.result({
-  "duration": 61992,
+  "duration": 121522,
   "status": "passed"
 });
 formatter.uri("cancelRidePassenger.feature");
@@ -1114,7 +1114,7 @@ formatter.match({
   "location": "CancelRidePassengerStepDefinition.iHaveBookedTheRideByDriver(String,String)"
 });
 formatter.result({
-  "duration": 1315804,
+  "duration": 1074812,
   "status": "passed"
 });
 formatter.match({
@@ -1127,7 +1127,7 @@ formatter.match({
   "location": "CancelRidePassengerStepDefinition.iCancelMyBookingOn(String)"
 });
 formatter.result({
-  "duration": 100995,
+  "duration": 96478,
   "status": "passed"
 });
 formatter.match({
@@ -1140,7 +1140,7 @@ formatter.match({
   "location": "CancelRidePassengerStepDefinition.myReasonIs(String)"
 });
 formatter.result({
-  "duration": 64456,
+  "duration": 40234,
   "status": "passed"
 });
 formatter.match({
@@ -1153,7 +1153,7 @@ formatter.match({
   "location": "CancelRidePassengerStepDefinition.theDriverWillReceiveTheNotification(String)"
 });
 formatter.result({
-  "duration": 181051,
+  "duration": 163808,
   "status": "passed"
 });
 formatter.uri("createAccount.feature");
@@ -1196,7 +1196,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.iWantToUseTheApplication()"
 });
 formatter.result({
-  "duration": 92374,
+  "duration": 87857,
   "status": "passed"
 });
 formatter.match({
@@ -1209,7 +1209,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.iCreateAnAccountWithId(String)"
 });
 formatter.result({
-  "duration": 49266,
+  "duration": 66509,
   "status": "passed"
 });
 formatter.match({
@@ -1242,7 +1242,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.haveOtherDetails(String,String,String,String,int,int)"
 });
 formatter.result({
-  "duration": 160935,
+  "duration": 276298,
   "status": "passed"
 });
 formatter.match({
@@ -1255,7 +1255,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.iCreateAAccount(String)"
 });
 formatter.result({
-  "duration": 43929,
+  "duration": 72257,
   "status": "passed"
 });
 formatter.scenario({
@@ -1301,7 +1301,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.iAttend(String)"
 });
 formatter.result({
-  "duration": 123574,
+  "duration": 121933,
   "status": "passed"
 });
 formatter.match({
@@ -1314,7 +1314,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.iCreateAnAccountWithId(String)"
 });
 formatter.result({
-  "duration": 45571,
+  "duration": 41876,
   "status": "passed"
 });
 formatter.match({
@@ -1347,7 +1347,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.haveOtherDetails(String,String,String,String,int,int)"
 });
 formatter.result({
-  "duration": 179409,
+  "duration": 199116,
   "status": "passed"
 });
 formatter.match({
@@ -1372,7 +1372,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.haveALicenceWithDetailsIssueExpiry(String,String,String,String)"
 });
 formatter.result({
-  "duration": 270961,
+  "duration": 288614,
   "status": "passed"
 });
 formatter.match({
@@ -1385,7 +1385,7 @@ formatter.match({
   "location": "CreateAccountStepDefinition.iCreateAAccount(String)"
 });
 formatter.result({
-  "duration": 204863,
+  "duration": 181462,
   "status": "passed"
 });
 formatter.uri("editAccount.feature");
@@ -1434,7 +1434,7 @@ formatter.match({
   "location": "EditAccountStepDefinition.iHaveALicenceWithExpiry(String)"
 });
 formatter.result({
-  "duration": 305858,
+  "duration": 296826,
   "status": "passed"
 });
 formatter.match({
@@ -1447,7 +1447,7 @@ formatter.match({
   "location": "EditAccountStepDefinition.itIsLinkedToTheAccount(String)"
 });
 formatter.result({
-  "duration": 88267,
+  "duration": 97710,
   "status": "passed"
 });
 formatter.match({
@@ -1460,7 +1460,7 @@ formatter.match({
   "location": "EditAccountStepDefinition.iUpdateExpiryTo(String)"
 });
 formatter.result({
-  "duration": 163398,
+  "duration": 182283,
   "status": "passed"
 });
 formatter.match({
@@ -1477,7 +1477,7 @@ formatter.match({
   "location": "EditAccountStepDefinition.accountWillHaveALicenceWithExpiryDate(String,String)"
 });
 formatter.result({
-  "duration": 160114,
+  "duration": 103458,
   "status": "passed"
 });
 formatter.scenario({
@@ -1517,7 +1517,7 @@ formatter.match({
   "location": "EditAccountStepDefinition.iHaveAnAccountWithAddress(String,String)"
 });
 formatter.result({
-  "duration": 188852,
+  "duration": 94426,
   "status": "passed"
 });
 formatter.match({
@@ -1530,7 +1530,7 @@ formatter.match({
   "location": "EditAccountStepDefinition.iUpdateAddressTo(String)"
 });
 formatter.result({
-  "duration": 52550,
+  "duration": 55013,
   "status": "passed"
 });
 formatter.match({
@@ -1547,7 +1547,7 @@ formatter.match({
   "location": "EditAccountStepDefinition.accountWillHaveAnAddressOf(String,String)"
 });
 formatter.result({
-  "duration": 66919,
+  "duration": 84573,
   "status": "passed"
 });
 formatter.uri("editVehicle.feature");
@@ -1595,7 +1595,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.iHaveAVehicleWithPerformance(String,int)"
 });
 formatter.result({
-  "duration": 294362,
+  "duration": 342397,
   "status": "passed"
 });
 formatter.match({
@@ -1612,7 +1612,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.iEditThePerformanceFromTo(int,int)"
 });
 formatter.result({
-  "duration": 78825,
+  "duration": 113722,
   "status": "passed"
 });
 formatter.match({
@@ -1629,7 +1629,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.theVehicleWillHaveAPerformanceOf(String,int)"
 });
 formatter.result({
-  "duration": 63225,
+  "duration": 89089,
   "status": "passed"
 });
 formatter.scenario({
@@ -1669,7 +1669,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.iHaveAVehicleWithSeat(String,int)"
 });
 formatter.result({
-  "duration": 226622,
+  "duration": 238117,
   "status": "passed"
 });
 formatter.match({
@@ -1686,7 +1686,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.iEditTheSeatsFromTo(int,int)"
 });
 formatter.result({
-  "duration": 135481,
+  "duration": 104279,
   "status": "passed"
 });
 formatter.match({
@@ -1703,7 +1703,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.theVehicleWillHaveSeats(String,int)"
 });
 formatter.result({
-  "duration": 89910,
+  "duration": 80057,
   "status": "passed"
 });
 formatter.scenario({
@@ -1743,7 +1743,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.iHaveAVehicleWithRegistrationExpiry(String,String)"
 });
 formatter.result({
-  "duration": 159292,
+  "duration": 224980,
   "status": "passed"
 });
 formatter.match({
@@ -1760,7 +1760,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.iEditTheExpiryDateFromTo(String,String)"
 });
 formatter.result({
-  "duration": 438875,
+  "duration": 403157,
   "status": "passed"
 });
 formatter.match({
@@ -1777,7 +1777,7 @@ formatter.match({
   "location": "EditVehicleStepDefinition.theVehicleWillHaveARegistrationExpiryOf(String,String)"
 });
 formatter.result({
-  "duration": 57066,
+  "duration": 96068,
   "status": "passed"
 });
 formatter.uri("logIn.feature");
@@ -1825,7 +1825,7 @@ formatter.match({
   "location": "LogInStepDefinition.thatIHaveAnAccountWithUsernameAndPassword(String,String)"
 });
 formatter.result({
-  "duration": 179820,
+  "duration": 181052,
   "status": "passed"
 });
 formatter.match({
@@ -1842,7 +1842,7 @@ formatter.match({
   "location": "LogInStepDefinition.iEnterAndToTheLogInScreen(String,String)"
 });
 formatter.result({
-  "duration": 65277,
+  "duration": 93194,
   "status": "passed"
 });
 formatter.match({
@@ -1855,7 +1855,7 @@ formatter.match({
   "location": "LogInStepDefinition.iWillGetMyAccountDetailsEmail(String)"
 });
 formatter.result({
-  "duration": 99353,
+  "duration": 85804,
   "status": "passed"
 });
 formatter.scenario({
@@ -1891,7 +1891,7 @@ formatter.match({
   "location": "LogInStepDefinition.iHaveTheUsername(String)"
 });
 formatter.result({
-  "duration": 77183,
+  "duration": 84983,
   "status": "passed"
 });
 formatter.match({
@@ -1908,14 +1908,14 @@ formatter.match({
   "location": "LogInStepDefinition.iEnterAndToTheLogInScreen(String,String)"
 });
 formatter.result({
-  "duration": 61583,
+  "duration": 43107,
   "status": "passed"
 });
 formatter.match({
   "location": "LogInStepDefinition.iWillFailToLogIn()"
 });
 formatter.result({
-  "duration": 32022,
+  "duration": 21349,
   "status": "passed"
 });
 formatter.scenario({
@@ -1955,7 +1955,7 @@ formatter.match({
   "location": "LogInStepDefinition.thatIHaveAnAccountWithUsernameAndPassword(String,String)"
 });
 formatter.result({
-  "duration": 83341,
+  "duration": 557113,
   "status": "passed"
 });
 formatter.match({
@@ -1972,14 +1972,14 @@ formatter.match({
   "location": "LogInStepDefinition.iEnterAndToTheLogInScreen(String,String)"
 });
 formatter.result({
-  "duration": 56245,
+  "duration": 87036,
   "status": "passed"
 });
 formatter.match({
   "location": "LogInStepDefinition.iWillFailToLogIn()"
 });
 formatter.result({
-  "duration": 16832,
+  "duration": 24633,
   "status": "passed"
 });
 formatter.uri("notifications.feature");
@@ -2027,7 +2027,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.thatMyLicenceExpiryDateIsOnLicenceNumber(String,String)"
 });
 formatter.result({
-  "duration": 392894,
+  "duration": 312427,
   "status": "passed"
 });
 formatter.match({
@@ -2040,7 +2040,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.iLogInToMyAccountWithLicence(String)"
 });
 formatter.result({
-  "duration": 94015,
+  "duration": 74719,
   "status": "passed"
 });
 formatter.match({
@@ -2053,7 +2053,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.iGetANotificationWithTheMessage(String)"
 });
 formatter.result({
-  "duration": 128090,
+  "duration": 122343,
   "status": "passed"
 });
 formatter.scenario({
@@ -2093,7 +2093,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.iHaveAVehicleWithWOFExpiryOn(String,String)"
 });
 formatter.result({
-  "duration": 248792,
+  "duration": 314068,
   "status": "passed"
 });
 formatter.match({
@@ -2106,7 +2106,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.iLogInToMyAccountWithVehicle(String)"
 });
 formatter.result({
-  "duration": 43928,
+  "duration": 85394,
   "status": "passed"
 });
 formatter.match({
@@ -2119,7 +2119,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.iGetTheNotificationMessage(String)"
 });
 formatter.result({
-  "duration": 121522,
+  "duration": 226623,
   "status": "passed"
 });
 formatter.scenario({
@@ -2159,7 +2159,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.iHaveAVehicleWithRegistrationExpriyOn(String,String)"
 });
 formatter.result({
-  "duration": 274656,
+  "duration": 329259,
   "status": "passed"
 });
 formatter.match({
@@ -2172,7 +2172,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.iLogInToMyAccountWithVehicle(String)"
 });
 formatter.result({
-  "duration": 45981,
+  "duration": 67740,
   "status": "passed"
 });
 formatter.match({
@@ -2185,7 +2185,7 @@ formatter.match({
   "location": "NotificationsStepDefinition.iGetTheNotificationMessage(String)"
 });
 formatter.result({
-  "duration": 135891,
+  "duration": 162166,
   "status": "passed"
 });
 formatter.uri("searchStopPoints.feature");
@@ -2229,21 +2229,21 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iAmA(String)"
 });
 formatter.result({
-  "duration": 141639,
+  "duration": 254539,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchStopPointsStepDefinition.iWantToSearchStopPoints()"
 });
 formatter.result({
-  "duration": 845727,
+  "duration": 1426651,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchStopPointsStepDefinition.iTypeInTheCriteriaAndSearchStopPoints()"
 });
 formatter.result({
-  "duration": 261519,
+  "duration": 385915,
   "status": "passed"
 });
 formatter.scenario({
@@ -2279,7 +2279,7 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iAmA(String)"
 });
 formatter.result({
-  "duration": 86215,
+  "duration": 123575,
   "status": "passed"
 });
 formatter.match({
@@ -2292,7 +2292,7 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iWantToFindTheStopPointWithTheAddress(String)"
 });
 formatter.result({
-  "duration": 84983,
+  "duration": 82520,
   "status": "passed"
 });
 formatter.match({
@@ -2305,7 +2305,7 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iTypeInAndSearchByAddress(String)"
 });
 formatter.result({
-  "duration": 226212,
+  "duration": 221696,
   "status": "passed"
 });
 formatter.scenario({
@@ -2341,7 +2341,7 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iAmA(String)"
 });
 formatter.result({
-  "duration": 379756,
+  "duration": 117827,
   "status": "passed"
 });
 formatter.match({
@@ -2354,7 +2354,7 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iWantToFindTheStopPointWithTheSuburb(String)"
 });
 formatter.result({
-  "duration": 53782,
+  "duration": 88678,
   "status": "passed"
 });
 formatter.match({
@@ -2367,7 +2367,7 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iTypeInAndSearchBySuburb(String)"
 });
 formatter.result({
-  "duration": 183925,
+  "duration": 327207,
   "status": "passed"
 });
 formatter.scenario({
@@ -2408,7 +2408,7 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iWantToSearchForStopPoint(String)"
 });
 formatter.result({
-  "duration": 270140,
+  "duration": 295595,
   "status": "passed"
 });
 formatter.match({
@@ -2421,21 +2421,21 @@ formatter.match({
   "location": "SearchStopPointsStepDefinition.iSearchWithAsTheAddress(String)"
 });
 formatter.result({
-  "duration": 57066,
+  "duration": 62404,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchStopPointsStepDefinition.theResultsWillBeDisplayed()"
 });
 formatter.result({
-  "duration": 164219,
+  "duration": 187620,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchStopPointsStepDefinition.aMapOfTheLocationWillBeShown()"
 });
 formatter.result({
-  "duration": 31612,
+  "duration": 52960,
   "status": "passed"
 });
 formatter.uri("seeRidesGivenStopPoint.feature");
@@ -2479,21 +2479,21 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 239349,
+  "duration": 334596,
   "status": "passed"
 });
 formatter.match({
   "location": "SeeRidesGivenStopPointStepDefinition.iSelectAStopPoint()"
 });
 formatter.result({
-  "duration": 165040,
+  "duration": 278351,
   "status": "passed"
 });
 formatter.match({
   "location": "SeeRidesGivenStopPointStepDefinition.iWantToSeeTheRidesAssociatedWithTheStopPoints()"
 });
 formatter.result({
-  "duration": 964786,
+  "duration": 1209883,
   "status": "passed"
 });
 formatter.uri("shareRide.feature");
@@ -2537,21 +2537,21 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 229086,
+  "duration": 268908,
   "status": "passed"
 });
 formatter.match({
   "location": "ShareRideStepDefinition.iHaveCreatedARide()"
 });
 formatter.result({
-  "duration": 1205777,
+  "duration": 1461548,
   "status": "passed"
 });
 formatter.match({
   "location": "ShareRideStepDefinition.iCanShareMyRide()"
 });
 formatter.result({
-  "duration": 959449,
+  "duration": 1249296,
   "status": "passed"
 });
 formatter.uri("storeData.feature");
@@ -2595,7 +2595,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 272193,
+  "duration": 293952,
   "status": "passed"
 });
 formatter.match({
@@ -2608,14 +2608,14 @@ formatter.match({
   "location": "StoreDataStepDefinition.iWantToSaveMyAccount(String)"
 });
 formatter.result({
-  "duration": 284920,
+  "duration": 310373,
   "status": "passed"
 });
 formatter.match({
   "location": "StoreDataStepDefinition.iCloseTheApplication()"
 });
 formatter.result({
-  "duration": 27096,
+  "duration": 29559,
   "status": "passed"
 });
 formatter.scenario({
@@ -2651,7 +2651,7 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 343628,
+  "duration": 259876,
   "status": "passed"
 });
 formatter.match({
@@ -2664,14 +2664,14 @@ formatter.match({
   "location": "StoreDataStepDefinition.iWantToSaveTheStopPoint(String)"
 });
 formatter.result({
-  "duration": 215537,
+  "duration": 149439,
   "status": "passed"
 });
 formatter.match({
   "location": "StoreDataStepDefinition.iCloseTheApplication()"
 });
 formatter.result({
-  "duration": 16832,
+  "duration": 13138,
   "status": "passed"
 });
 formatter.uri("viewBookedRides.feature");
@@ -2719,7 +2719,7 @@ formatter.match({
   "location": "ViewBookedRidesStepDefinition.iHaveBookedTheRideOnMyAccount(String,String)"
 });
 formatter.result({
-  "duration": 723385,
+  "duration": 953701,
   "status": "passed"
 });
 formatter.match({
@@ -2732,7 +2732,7 @@ formatter.match({
   "location": "ViewBookedRidesStepDefinition.iViewMyBookedRidesInMyAccount(String)"
 });
 formatter.result({
-  "duration": 66919,
+  "duration": 113311,
   "status": "passed"
 });
 formatter.match({
@@ -2745,7 +2745,7 @@ formatter.match({
   "location": "ViewBookedRidesStepDefinition.iShouldSeeTheRide(String)"
 });
 formatter.result({
-  "duration": 33665,
+  "duration": 52550,
   "status": "passed"
 });
 formatter.scenario({
@@ -2785,7 +2785,7 @@ formatter.match({
   "location": "ViewBookedRidesStepDefinition.iHaveSharedTheRideOnMyAccount(String,String)"
 });
 formatter.result({
-  "duration": 936048,
+  "duration": 960680,
   "status": "passed"
 });
 formatter.match({
@@ -2798,7 +2798,7 @@ formatter.match({
   "location": "ViewBookedRidesStepDefinition.iViewMySharedRidesInMyAccount(String)"
 });
 formatter.result({
-  "duration": 84983,
+  "duration": 146155,
   "status": "passed"
 });
 formatter.match({
@@ -2811,7 +2811,7 @@ formatter.match({
   "location": "ViewBookedRidesStepDefinition.iShouldSeeTheRide(String)"
 });
 formatter.result({
-  "duration": 48444,
+  "duration": 62814,
   "status": "passed"
 });
 formatter.uri("viewRideDetails.feature");
@@ -2855,21 +2855,21 @@ formatter.match({
   "location": "AddVehicleStepDefinition.thatIAmA(String)"
 });
 formatter.result({
-  "duration": 266445,
+  "duration": 242223,
   "status": "passed"
 });
 formatter.match({
   "location": "ViewRideDetailsStepDefinition.iChooseARide()"
 });
 formatter.result({
-  "duration": 1063318,
+  "duration": 763208,
   "status": "passed"
 });
 formatter.match({
   "location": "ViewRideDetailsStepDefinition.iWantToSeeTheDetailsOfTheRide()"
 });
 formatter.result({
-  "duration": 689720,
+  "duration": 670835,
   "status": "passed"
 });
 });
