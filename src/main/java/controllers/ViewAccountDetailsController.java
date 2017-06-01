@@ -138,6 +138,11 @@ public class ViewAccountDetailsController extends Controller {
         }
     }
 
+    @FXML
+    private void editAccountDetails() {
+        replaceSceneContent(SceneType.EDIT_ACCOUNT);
+    }
+
     /**
      * Checks that the text are existing and correct for creating a licence.
      *

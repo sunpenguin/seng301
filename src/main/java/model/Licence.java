@@ -51,4 +51,21 @@ public class Licence {
     public LocalDate getExpiry() {
         return expiry;
     }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public void setIssue(LocalDate issue) {
+        this.issue = issue;
+    }
+
+    public void setExpiry(LocalDate expiry) {
+        this.expiry = expiry;
+        checkExpiry();
+    }
 }

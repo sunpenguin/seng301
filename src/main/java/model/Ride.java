@@ -69,7 +69,7 @@ public class Ride {
     /**
      * Currently, it will set the ride back to shared regardless of the ride creator.
      *
-     * @param account
+     * @param account the passenger account to be removed.
      */
     public void removePassenger(Account account) {
         if (passengers.contains(account.getUniversityID())) {
