@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Account;
 import model.GeneralData;
+import model.Notification;
 import model.Vehicle;
 import utils.Session;
 

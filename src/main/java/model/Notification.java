@@ -10,8 +10,8 @@ import java.time.LocalDate;
 public class Notification {
 
     private Account account;
-    private boolean rideCancel;
-    private boolean unbookRide;
+    private boolean rideCancel = false;
+    private boolean unbookRide = false;
 
     public Notification(Account account) {
         this.account = account;
@@ -19,14 +19,34 @@ public class Notification {
 
     public String checkNotifications() {
         String result = "";
+        result += rideChecks();
         result += checkLicence();
         result += checkWOF();
         result += checkRegistration();
         return result;
     }
 
+    private String rideChecks() {
+        String result = "Status of my rides:\n";
+        Boolean none = true;
+        if (rideCancel) {
+            result += "A ride you have booked has been cancelled.\n";
+            rideCancel = false;
+            none = false;
+        }
+        if (unbookRide) {
+            result += "One or more passenger(s) un-booked your ride.\n";
+            unbookRide = false;
+            none = false;
+        }
+        if (none) {
+            result += "Nothing has been changed since your last log in.\n";
+        }
+        return result;
+    }
+
     private String checkLicence() {
-        String result = "";
+        String result = "\nStatus of my account:\n";
         if (account.getType().equals("Driver")) {
             LocalDate expiry = account.getLicence().getExpiry();
             LocalDate now = LocalDate.now();
@@ -133,5 +153,13 @@ public class Notification {
 
     public void updateAccount(Account account) {
         this.account = account;
+    }
+
+    public void setRideCancel(boolean rideCancel) {
+        this.rideCancel = rideCancel;
+    }
+
+    public void setUnbookRide(boolean unbookRide) {
+        this.unbookRide = unbookRide;
     }
 }

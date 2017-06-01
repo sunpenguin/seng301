@@ -41,7 +41,6 @@ public class ViewAccountRidesController extends Controller {
         } else {
             generalData.getRides().put(account.getUniversityID(), new ArrayList<>());
         }
-        setListeners();
     }
 
     private void setUpRidesTable() {
@@ -118,44 +117,82 @@ public class ViewAccountRidesController extends Controller {
         });
     }
 
-    private void setListeners() {
-        ridesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            if (newSelection != null) {
-                Ride ride = (Ride) newSelection;
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Ride Share Confirmation");
-                alert.setHeaderText("You are about to share this ride.");
-                alert.setContentText("Ride on: " + ride.getDate().toString() + " with " +
-                        ride.getAvailableSeats() + " seats.");
-                Optional<ButtonType> action = alert.showAndWait();
-                if (ride.isShared() && action.get() == ButtonType.OK) {
-                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                    errorAlert.setTitle("Ride Share Confirmation");
-                    errorAlert.setHeaderText("You have already shared this ride!");
-                    errorAlert.showAndWait();
-                } else if (ride.getAvailableSeats() == 0 && action.get() == ButtonType.OK) {
-                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                    errorAlert.setTitle("Ride Share Confirmation");
-                    errorAlert.setHeaderText("You have already shared this ride and it is full!");
-                    errorAlert.showAndWait();
-                } else if (action.isPresent() && action.get() == ButtonType.OK) {
-                    ride.shareRide();
-                    ridesTable.setRowFactory(r -> new TableRow<Ride>() {
-                        @Override
-                        public void updateItem(Ride item, boolean empty) {
-                            super.updateItem(item, empty) ;
-                            if (item == null) {
-                                setStyle("");
-                            } else if (item.isShared()) {
-                                setStyle("-fx-background-color: green;");
-                            } else {
-                                setStyle("-fx-background-color: indianred;");
-                            }
+    @FXML
+    private void shareSelectedRide() {
+        if (ridesTable.getSelectionModel().getSelectedItem() != null) {
+            Ride ride = (Ride) ridesTable.getSelectionModel().getSelectedItem();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ride Share Confirmation");
+            alert.setHeaderText("You are about to share this ride.");
+            alert.setContentText("Ride on: " + ride.getDate().toString() + " with " +
+                    ride.getAvailableSeats() + " seats.");
+            Optional<ButtonType> action = alert.showAndWait();
+            if (ride.isShared() && action.get() == ButtonType.OK) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setTitle("Ride Share Confirmation");
+                errorAlert.setHeaderText("You have already shared this ride!");
+                errorAlert.showAndWait();
+            } else if (ride.getAvailableSeats() == 0 && action.get() == ButtonType.OK) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setTitle("Ride Share Confirmation");
+                errorAlert.setHeaderText("You have already shared this ride and it is full!");
+                errorAlert.showAndWait();
+            } else if (action.isPresent() && action.get() == ButtonType.OK) {
+                ride.shareRide();
+                ridesTable.setRowFactory(r -> new TableRow<Ride>() {
+                    @Override
+                    public void updateItem(Ride item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item == null) {
+                            setStyle("");
+                        } else if (item.isShared()) {
+                            setStyle("-fx-background-color: green;");
+                        } else {
+                            setStyle("-fx-background-color: indianred;");
                         }
-                    });
-                }
+                    }
+                });
             }
-        });
+        }
+    }
+
+    @FXML
+    private void cancelSelectedRide() {
+        if (ridesTable.getSelectionModel().getSelectedItem() != null) {
+            Ride ride = (Ride) ridesTable.getSelectionModel().getSelectedItem();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ride Share Confirmation");
+            alert.setHeaderText("You are about to cancel this ride.");
+            alert.setContentText("Ride on: " + ride.getDate().toString() + " with " +
+                    ride.getAvailableSeats() + " seats.");
+            Optional<ButtonType> action = alert.showAndWait();
+            if (!ride.isShared() && action.get() == ButtonType.OK) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setTitle("Ride Share Cancellation");
+                errorAlert.setHeaderText("This ride is already not shared!");
+                errorAlert.showAndWait();
+            } else if (action.isPresent() && action.get() == ButtonType.OK) {
+                ride.setShared(false);
+                if (ride.getPassengers().size() > 0) {
+                    for (String accountName : ride.getPassengers()) {
+                        generalData.getNotifications().get(accountName).setUnbookRide(true);
+                    }
+                }
+                ridesTable.setRowFactory(r -> new TableRow<Ride>() {
+                    @Override
+                    public void updateItem(Ride item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item == null) {
+                            setStyle("");
+                        } else if (item.isShared()) {
+                            setStyle("-fx-background-color: green;");
+                        } else {
+                            setStyle("-fx-background-color: indianred;");
+                        }
+                    }
+                });
+            }
+        }
     }
 
     @FXML

@@ -84,6 +84,7 @@ public abstract class Controller implements Initializable {
         VBox container = new VBox();
         container.getChildren().add(page);
         javafx.scene.Scene popupScene = new javafx.scene.Scene(container, width, height);
+        popupStage.setResizable(false);
         //show
         popupStage.setScene(popupScene);
         popupStage.showAndWait();

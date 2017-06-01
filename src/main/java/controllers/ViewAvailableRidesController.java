@@ -56,7 +56,7 @@ public class ViewAvailableRidesController extends Controller {
         }
 
         for (Ride ride : rides) {
-            if (ride.isShared() && !ride.isFull() && ride.getDate().isBefore(LocalDate.now().plusDays(1))) {
+            if (ride.isShared() && !ride.isFull() && ride.getDate().isAfter(LocalDate.now())) {
                 for (StopPoint sp : ride.getRoute().getRouteStops()) {
                     if (sp.getAddress().equals(stopPoint.getAddress())
                             || sp.getSuburb().equals(stopPoint.getAddress())) {
