@@ -1,6 +1,7 @@
 package model;
 
 import javafx.scene.control.Alert;
+import utils.Session;
 
 import java.time.LocalDate;
 
@@ -10,8 +11,12 @@ import java.time.LocalDate;
 public class Notification {
 
     private Account account;
+
     private boolean rideCancel = false;
+    private String cancelReason = "";
+
     private boolean unbookRide = false;
+    private String unbookReason = "";
 
     public Notification(Account account) {
         this.account = account;
@@ -30,13 +35,17 @@ public class Notification {
         String result = "Status of my rides:\n";
         Boolean none = true;
         if (rideCancel) {
-            result += "A ride you have booked has been cancelled.\n";
+            result += "One or more rides have been cancelled.\n";
+            result += "The reason(s) being: " + cancelReason;
             rideCancel = false;
+            cancelReason = "";
             none = false;
         }
         if (unbookRide) {
             result += "One or more passenger(s) un-booked your ride.\n";
+            result += "The reason(s) being: " + unbookReason;
             unbookRide = false;
+            unbookReason = "";
             none = false;
         }
         if (none) {
@@ -155,11 +164,13 @@ public class Notification {
         this.account = account;
     }
 
-    public void setRideCancel(boolean rideCancel) {
-        this.rideCancel = rideCancel;
+    public void setRideCancel(String cancelReason) {
+        rideCancel = true;
+        this.cancelReason += cancelReason + "\n";
     }
 
-    public void setUnbookRide(boolean unbookRide) {
-        this.unbookRide = unbookRide;
+    public void setUnbookRide(String unbookReason) {
+        this.unbookRide = true;
+        this.unbookReason += unbookReason + "\n";
     }
 }

@@ -56,7 +56,7 @@ public class ViewStopPointsController extends Controller {
     private void openAvailableRides() {
         if (stopPointsTable.getSelectionModel().getSelectedItem() != null) {
             Session.getInstance().setStopPoint((StopPoint) stopPointsTable.getSelectionModel().getSelectedItem());
-            createPopUpStage(SceneType.VIEW_AVAILABLE_RIDES, 1000, 800);
+            createPopUpStage(SceneType.VIEW_AVAILABLE_RIDES, 1000, 750);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Selection Error");
@@ -97,7 +97,7 @@ public class ViewStopPointsController extends Controller {
 
     @FXML
     private void addStopPoint() {
-        createPopUpStage(SceneType.ADD_STOP_POINT, 1000, 800);
+        createPopUpStage(SceneType.ADD_STOP_POINT, 1000, 750);
         stopPointsTable.setItems(FXCollections.observableArrayList(generalData.getStopPoints().values()));
         searchField.clear();
         stopPointsTable.getSelectionModel().clearSelection();

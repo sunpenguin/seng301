@@ -27,6 +27,11 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Label text="Time format (24h): HH:MM" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </Label>
             <TextField fx:id="timeText" prefHeight="38.0" prefWidth="260.0" promptText="Time format (24h): HH:MM" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets left="20.0" right="20.0" />

@@ -38,6 +38,14 @@ public class ViewMyRidesController extends Controller {
         account = Session.getInstance().getCurrentAccount();
         generalData = getParent().getGeneralData();
 
+       checkMyRides();
+
+        if (myRides.size() > 0) {
+            setUpRidesTable();
+        }
+    }
+
+    private void checkMyRides() {
         myRides = new ArrayList<>();
         List<Ride> allRides = new ArrayList<>();
 
@@ -46,13 +54,9 @@ public class ViewMyRidesController extends Controller {
         }
 
         for (Ride ride : allRides) {
-            if (ride.isShared() && ride.getPassengers().contains(account.getUniversityID())) {
+            if (ride.getPassengers().contains(account.getUniversityID())) {
                 myRides.add(ride);
             }
-        }
-
-        if (myRides.size() > 0) {
-            setUpRidesTable();
         }
     }
 
@@ -123,53 +127,30 @@ public class ViewMyRidesController extends Controller {
                     setStyle("");
                 } else if (item.getDate().isBefore(LocalDate.now().plusDays(1))) {
                     setStyle("-fx-background-color: green;");
-                } else if (!item.isShared()) {
+                } else if (!item.isShared() && item.getPassengers().size() == 0) {
                     setStyle("-fx-background-color: indianred;");
                 }
             }
         });
     }
 
-    /**
-     * Listeners from another scene. Change first!
-     */
-    private void setListeners() {
-        ridesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            if (newSelection != null) {
-                Ride ride = (Ride) newSelection;
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Ride Share Confirmation");
-                alert.setHeaderText("You are about to share this ride.");
-                alert.setContentText("Ride on: " + ride.getDate().toString() + " with " +
-                        ride.getAvailableSeats() + " seats.");
-                Optional<ButtonType> action = alert.showAndWait();
-                if (ride.isShared() && action.get() == ButtonType.OK) {
-                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                    errorAlert.setTitle("Ride Share Confirmation");
-                    errorAlert.setHeaderText("You have already shared this ride!");
-                    errorAlert.showAndWait();
-                } else if (ride.getAvailableSeats() == 0 && action.get() == ButtonType.OK) {
-                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                    errorAlert.setTitle("Ride Share Confirmation");
-                    errorAlert.setHeaderText("You have already shared this ride and it is full!");
-                    errorAlert.showAndWait();
-                } else if (action.isPresent() && action.get() == ButtonType.OK) {
-                    ride.shareRide();
-                    ridesTable.setRowFactory(r -> new TableRow<Ride>() {
-                        @Override
-                        public void updateItem(Ride item, boolean empty) {
-                            super.updateItem(item, empty) ;
-                            if (item == null) {
-                                setStyle("");
-                            } else if (item.isShared()) {
-                                setStyle("-fx-background-color: green;");
-                            } else {
-                                setStyle("-fx-background-color: indianred;");
-                            }
-                        }
-                    });
-                }
+    @FXML
+    private void unBookSelectedRide() {
+        if (ridesTable.getSelectionModel().getSelectedItem() != null) {
+            Ride ride = (Ride) ridesTable.getSelectionModel().getSelectedItem();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ride Share Confirmation");
+            alert.setHeaderText("You are about to cancel this ride.");
+            alert.setContentText("Ride on: " + ride.getDate().toString() + " with " +
+                    ride.getAvailableSeats() + " seats.");
+            Optional<ButtonType> action = alert.showAndWait();
+            if (action.isPresent() && action.get() == ButtonType.OK) {
+                createPopUpStage(SceneType.REASON, 300, 200);
+                generalData.getNotifications().get(account.getUniversityID()).setUnbookRide(Session.getInstance().getReason());
+                ride.removePassenger(account);
+                checkMyRides();
+                ridesTable.setItems(FXCollections.observableArrayList(myRides));
             }
-        });
+        }
     }
 }

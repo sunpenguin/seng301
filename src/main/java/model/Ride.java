@@ -66,6 +66,29 @@ public class Ride {
         }
     }
 
+    /**
+     * Currently, it will set the ride back to shared regardless of the ride creator.
+     *
+     * @param account
+     */
+    public void removePassenger(Account account) {
+        if (passengers.contains(account.getUniversityID())) {
+            passengers.remove(account.getUniversityID());
+            full = false;
+            availableSeats += 1;
+        }
+    }
+
+    /**
+     * To be called when the driver wants to cancel a ride they have created.
+     */
+    public void cancelRide() {
+        availableSeats += passengers.size();
+        passengers = new ArrayList<>();
+        shared = false;
+        full = false;
+    }
+
     public int getAvailableSeats() {
         return availableSeats;
     }

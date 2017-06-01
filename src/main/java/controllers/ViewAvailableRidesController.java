@@ -118,7 +118,7 @@ public class ViewAvailableRidesController extends Controller {
     private void viewRideDetails() {
         if (ridesTable.getSelectionModel().getSelectedItem() != null) {
             Session.getInstance().setRide((Ride) ridesTable.getSelectionModel().getSelectedItem());
-            createPopUpStage(SceneType.VIEW_SINGLE_RIDE_DETAILS, 1000, 800);
+            createPopUpStage(SceneType.VIEW_SINGLE_RIDE_DETAILS, 1000, 750);
             setUpRidesTable();
         }
     }
@@ -127,7 +127,7 @@ public class ViewAvailableRidesController extends Controller {
         ridesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 Session.getInstance().setRide((Ride) newSelection);
-                createPopUpStage(SceneType.VIEW_SINGLE_RIDE_DETAILS, 1000, 800);
+                createPopUpStage(SceneType.VIEW_SINGLE_RIDE_DETAILS, 1000, 750);
             }
         });
     }

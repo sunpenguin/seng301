@@ -16,6 +16,8 @@ public class Session {
     private StopPoint stopPoint;
     private Ride ride;
 
+    private String reason = "";
+
     private Account currentAccount;
 
     private static Session instance = new Session();
@@ -57,6 +59,14 @@ public class Session {
 
     public void setCurrentAccount(Account currentAccount) {
         this.currentAccount = currentAccount;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public static void reset() {

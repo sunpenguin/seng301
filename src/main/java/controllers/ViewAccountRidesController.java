@@ -108,7 +108,7 @@ public class ViewAccountRidesController extends Controller {
                 super.updateItem(item, empty) ;
                 if (item == null) {
                     setStyle("");
-                } else if (item.isShared()) {
+                } else if (item.isShared() || item.isFull()) {
                     setStyle("-fx-background-color: green;");
                 } else {
                     setStyle("-fx-background-color: indianred;");
@@ -145,7 +145,7 @@ public class ViewAccountRidesController extends Controller {
                         super.updateItem(item, empty);
                         if (item == null) {
                             setStyle("");
-                        } else if (item.isShared()) {
+                        } else if (item.isShared() || item.isFull()) {
                             setStyle("-fx-background-color: green;");
                         } else {
                             setStyle("-fx-background-color: indianred;");
@@ -161,30 +161,31 @@ public class ViewAccountRidesController extends Controller {
         if (ridesTable.getSelectionModel().getSelectedItem() != null) {
             Ride ride = (Ride) ridesTable.getSelectionModel().getSelectedItem();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Ride Share Confirmation");
+            alert.setTitle("Ride Share Cancellation");
             alert.setHeaderText("You are about to cancel this ride.");
             alert.setContentText("Ride on: " + ride.getDate().toString() + " with " +
                     ride.getAvailableSeats() + " seats.");
             Optional<ButtonType> action = alert.showAndWait();
-            if (!ride.isShared() && action.get() == ButtonType.OK) {
+            if (!ride.isShared() && !ride.isFull() && action.get() == ButtonType.OK) {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setTitle("Ride Share Cancellation");
                 errorAlert.setHeaderText("This ride is already not shared!");
                 errorAlert.showAndWait();
             } else if (action.isPresent() && action.get() == ButtonType.OK) {
-                ride.setShared(false);
+                createPopUpStage(SceneType.REASON, 300, 200);
                 if (ride.getPassengers().size() > 0) {
                     for (String accountName : ride.getPassengers()) {
-                        generalData.getNotifications().get(accountName).setUnbookRide(true);
+                        generalData.getNotifications().get(accountName).setRideCancel(Session.getInstance().getReason());
                     }
                 }
+                ride.cancelRide();
                 ridesTable.setRowFactory(r -> new TableRow<Ride>() {
                     @Override
                     public void updateItem(Ride item, boolean empty) {
                         super.updateItem(item, empty);
                         if (item == null) {
                             setStyle("");
-                        } else if (item.isShared()) {
+                        } else if (item.isShared() || item.isFull()) {
                             setStyle("-fx-background-color: green;");
                         } else {
                             setStyle("-fx-background-color: indianred;");
@@ -197,7 +198,7 @@ public class ViewAccountRidesController extends Controller {
 
     @FXML
     private void openRideCreator() {
-        createPopUpStage(SceneType.ADD_TRIPS, 1000, 800);
+        createPopUpStage(SceneType.ADD_TRIPS, 1000, 750);
         setUpRidesTable();
     }
 }
