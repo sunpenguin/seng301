@@ -11,11 +11,13 @@ import utils.Session;
 
 
 /**
- * The controller class for the FXML file "addVehicleForm.fxml".
+ * Controller class for adding a new vehicle to the current account.
+ *
  * @author Sunguin Peng
  * @see controllers.Controller
  */
 public class AddVehicleController extends Controller {
+
     @FXML private TextField typeText;
     @FXML private TextField modelText;
     @FXML private TextField colourText;

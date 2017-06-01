@@ -11,7 +11,7 @@ public enum SceneType {
     VIEW_ROUTES("viewRoutes.fxml"), VIEW_SINGLE_RIDE_DETAILS("viewSingleRideDetails.fxml"),
     VIEW_STOP_POINTS("viewStopPoints.fxml"), VIEW_VEHICLES("viewVehicles.fxml"),
     VIEW_NOTIFICATIONS("notificationPopUp.fxml"), VIEW_MY_RIDES("viewMyRides.fxml"), REASON("rideReason.fxml"),
-    EDIT_ACCOUNT("editAccountDetails.fxml");
+    EDIT_ACCOUNT("editAccountDetails.fxml"), EDIT_VEHICLE("editVehicleDetails.fxml");
 
     private String filePath;
 

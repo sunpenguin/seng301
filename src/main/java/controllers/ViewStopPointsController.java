@@ -47,7 +47,7 @@ public class ViewStopPointsController extends Controller {
 //                Session.getInstance().setStopPoint((StopPoint) newSelection);
 //                createPopUpStage(SceneType.VIEW_AVAILABLE_RIDES, 1000, 800);
                 StopPoint stopPoint = (StopPoint) newSelection;
-                distanceText.setText(String.valueOf(stopPoint.getDistance()) + " L/100km");
+                distanceText.setText(String.valueOf(stopPoint.getDistance()) + "km");
             }
         });
     }

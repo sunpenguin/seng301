@@ -3,6 +3,7 @@ package utils;
 import model.Account;
 import model.Ride;
 import model.StopPoint;
+import model.Vehicle;
 
 import java.time.LocalTime;
 
@@ -17,6 +18,8 @@ public class Session {
     private Ride ride;
 
     private String reason = "";
+
+    private Vehicle vehicle;
 
     private Account currentAccount;
 
@@ -67,6 +70,14 @@ public class Session {
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public static void reset() {

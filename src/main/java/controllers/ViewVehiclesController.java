@@ -1,9 +1,8 @@
 package controllers;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -67,6 +66,20 @@ public class ViewVehiclesController extends Controller {
     private void addVehicle() {
         createPopUpStage(SceneType.ADD_VEHICLE, 1000, 750);
         vehiclesTable.setItems(FXCollections.observableArrayList(account.getVehicles().values()));
+    }
+
+    @FXML
+    private void editVehicle() {
+        if (vehiclesTable.getSelectionModel().getSelectedItem() != null) {
+            Session.getInstance().setVehicle((Vehicle) vehiclesTable.getSelectionModel().getSelectedItem());
+            replaceSceneContent(SceneType.EDIT_VEHICLE);
+            vehiclesTable.refresh();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Edit Vehicle Error");
+            alert.setHeaderText("There was a problem opening you vehicle details.");
+            alert.setContentText("Please select a vehicle from the table and try again.");
+        }
     }
 }
 
