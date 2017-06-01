@@ -27,9 +27,10 @@
    <children>
       <TableView fx:id="ridesTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
          <columns>
-            <TableColumn fx:id="dateColumn" editable="false" minWidth="0.0" prefWidth="402.0" resizable="false" text="Date" />
-            <TableColumn fx:id="timeColumn" editable="false" prefWidth="237.0" resizable="false" text="Time" />
-            <TableColumn fx:id="directionColumn" editable="false" prefWidth="280.0" resizable="false" text="Direction" />
+            <TableColumn fx:id="dateColumn" editable="false" minWidth="0.0" prefWidth="294.0" resizable="false" text="Date" />
+            <TableColumn fx:id="timeColumn" editable="false" prefWidth="212.0" resizable="false" text="Time" />
+            <TableColumn fx:id="directionColumn" editable="false" prefWidth="259.0" resizable="false" text="Direction" />
+            <TableColumn fx:id="costColumn" editable="false" prefWidth="154.0" resizable="false" text="Cost" />
          </columns>
          <GridPane.margin>
             <Insets left="25.0" right="25.0" />

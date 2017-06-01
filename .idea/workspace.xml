@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fdabaf8-05aa-40f6-b9e6-f1db9691443c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/maps.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controllers/AddStopPointController.class" afterPath="$PROJECT_DIR$/target/classes/controllers/AddStopPointController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/core/Main.class" afterPath="$PROJECT_DIR$/target/classes/core/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/model/StopPoint.class" afterPath="$PROJECT_DIR$/target/classes/model/StopPoint.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/AddStopPointController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddStopPointController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/SceneType.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/SceneType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/AddRidesController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/AddRidesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/EditVehicleDetailsController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/EditVehicleDetailsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/ViewAccountRidesController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/ViewAccountRidesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/ViewAvailableRidesController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/ViewAvailableRidesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/ViewStopPointsController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/ViewStopPointsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/core/Main.java" afterPath="$PROJECT_DIR$/src/main/java/core/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Notification.java" afterPath="$PROJECT_DIR$/src/main/java/model/Notification.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Ride.java" afterPath="$PROJECT_DIR$/src/main/java/model/Ride.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/StopPoint.java" afterPath="$PROJECT_DIR$/src/main/java/model/StopPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/addStopPoint.fxml" afterPath="$PROJECT_DIR$/src/main/resources/addStopPoint.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data.json" afterPath="$PROJECT_DIR$/src/main/resources/data.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/menuBar.fxml" afterPath="$PROJECT_DIR$/src/main/resources/menuBar.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/viewAccountRides.fxml" afterPath="$PROJECT_DIR$/src/main/resources/viewAccountRides.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/viewAvailableRides.fxml" afterPath="$PROJECT_DIR$/src/main/resources/viewAvailableRides.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/viewStopPoints.fxml" afterPath="$PROJECT_DIR$/src/main/resources/viewStopPoints.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/addStopPoint.fxml" afterPath="$PROJECT_DIR$/target/classes/addStopPoint.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,55 +39,70 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/ride_sharing_system$Main.coverage" NAME="Main Coverage Results" MODIFIED="1495187401471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="AddStopPointController.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/java/controllers/AddStopPointController.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="810">
+                    <caret line="81" column="12" lean-forward="false" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="77" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ViewStopPointsController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ViewStopPointsController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ViewStopPointsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+            <state relative-caret-position="624">
+              <caret line="61" column="44" lean-forward="false" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddStopPointController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/AddStopPointController.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/core/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="63" column="86" lean-forward="false" selection-start-line="63" selection-start-column="86" selection-end-line="63" selection-end-column="86" />
+            <state relative-caret-position="228">
+              <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditVehicleDetailsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/EditVehicleDetailsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StopPoint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/StopPoint.java">
+      <file leaf-file-name="Notification.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Notification.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1137">
-              <caret line="79" column="34" lean-forward="false" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="maps.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/maps.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="-1960">
+              <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+              <folding>
+                <element signature="e#6914#6915#0" expanded="true" />
+                <element signature="e#6947#6948#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,19 +162,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/core/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/ViewMyRidesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/RideReasonController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/ViewRoutesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/ViewAvailableRidesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/ViewAccountRidesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Ride.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/ViewAccountDetailsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/EditAccountDetailsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/AddVehicleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/Session.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/ViewStopPointsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/EditVehicleDetailsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/ViewVehiclesController.java" />
         <option value="$PROJECT_DIR$/src/test/java/steps/AddRideStepDefinition.java" />
         <option value="$PROJECT_DIR$/src/test/java/steps/AddVehicleStepDefinition.java" />
@@ -168,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Account.java" />
         <option value="$PROJECT_DIR$/src/test/java/unitTests/model/RideTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Vehicle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Notification.java" />
         <option value="$PROJECT_DIR$/src/test/java/steps/NotificationsStepDefinition.java" />
         <option value="$PROJECT_DIR$/src/test/java/features/notifications.feature" />
         <option value="$PROJECT_DIR$/src/main/java/model/Licence.java" />
@@ -184,8 +202,17 @@
         <option value="$PROJECT_DIR$/src/test/java/steps/EditAccountStepDefinition.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/SceneType.java" />
         <option value="$PROJECT_DIR$/src/main/resources/maps.html" />
-        <option value="$PROJECT_DIR$/src/main/java/model/StopPoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/AddStopPointController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/StopPoint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Ride.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/ViewAvailableRidesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/ViewAccountRidesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/AddRidesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/EditVehicleDetailsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/core/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Notification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/ViewStopPointsController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/menuBar.fxml" />
       </list>
     </option>
   </component>
@@ -955,7 +982,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496331269158</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Pausing Story 2 of backlog 2&#10;Pausing Story 8 of backlog 2&#10;&#10;Google Maps somewhat functional&#10;&#10;-----------------------------CURRENTLY CUCUMBER TESTS AND UNIT TEST CHECKS---------------------------------&#10;- Progress: Remaining Stories to write tests for 8, 10, 11, 12&#10;- Remaining Stories to complete 8, 11, 12 and some of 2">
+      <created>1496345046945</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1496345046945</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1057,7 +1091,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Getting ready for a day of refactoring&#10;&#10;Next steps: refactor trips so that they create all rides that aren't shared. The user can then share each ride." />
     <MESSAGE value="Maybe Broken&#10;- Fixed a bunch of things to get correct things&#10;&#10;Next steps: contrinue to refactor trips so that they create all rides that aren't shared. The user can then share each ride." />
     <MESSAGE value="CLEANED UP ALL TRASH&#10;- got rid of my original interpretation of trip and now creates rides properly&#10;- tables take user to correct places&#10;&#10;Next steps: When a ride is selected, display details and book ride" />
     <MESSAGE value="Pretty much finished backlog 1&#10;&#10;Next steps: Finish Book ride to be cleaner, fix structure of accounts." />
@@ -1082,7 +1115,8 @@
     <MESSAGE value="Pausing Story 2 of backlog 2&#10;Pausing Story 8 of backlog 2&#10;&#10;Only have Google Map stories to go (and the image)&#10;&#10;- Vehicles can now be edited&#10;&#10;-----------------------------CURRENTLY CUCUMBER TESTS AND UNIT TEST CHECKS---------------------------------&#10;- Progress: Begin writing tests for backlog 2" />
     <MESSAGE value="Pausing Story 2 of backlog 2&#10;Pausing Story 8 of backlog 2&#10;&#10;Only have Google Map stories to go (and the image)&#10;&#10;-----------------------------CURRENTLY CUCUMBER TESTS AND UNIT TEST CHECKS---------------------------------&#10;- Progress: Remaining Stories to write tests for 7, 8, 9, 10, 11, 12&#10;- Remaining Stories to complete 8, 11, 12 and some of 2" />
     <MESSAGE value="Pausing Story 2 of backlog 2&#10;Pausing Story 8 of backlog 2&#10;&#10;Only have Google Map stories to go (and the image)&#10;&#10;-----------------------------CURRENTLY CUCUMBER TESTS AND UNIT TEST CHECKS---------------------------------&#10;- Progress: Remaining Stories to write tests for 8, 10, 11, 12&#10;- Remaining Stories to complete 8, 11, 12 and some of 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pausing Story 2 of backlog 2&#10;Pausing Story 8 of backlog 2&#10;&#10;Only have Google Map stories to go (and the image)&#10;&#10;-----------------------------CURRENTLY CUCUMBER TESTS AND UNIT TEST CHECKS---------------------------------&#10;- Progress: Remaining Stories to write tests for 8, 10, 11, 12&#10;- Remaining Stories to complete 8, 11, 12 and some of 2" />
+    <MESSAGE value="Pausing Story 2 of backlog 2&#10;Pausing Story 8 of backlog 2&#10;&#10;Google Maps somewhat functional&#10;&#10;-----------------------------CURRENTLY CUCUMBER TESTS AND UNIT TEST CHECKS---------------------------------&#10;- Progress: Remaining Stories to write tests for 8, 10, 11, 12&#10;- Remaining Stories to complete 8, 11, 12 and some of 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pausing Story 2 of backlog 2&#10;Pausing Story 8 of backlog 2&#10;&#10;Google Maps somewhat functional&#10;&#10;-----------------------------CURRENTLY CUCUMBER TESTS AND UNIT TEST CHECKS---------------------------------&#10;- Progress: Remaining Stories to write tests for 8, 10, 11, 12&#10;- Remaining Stories to complete 8, 11, 12 and some of 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1095,69 +1129,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ViewVehiclesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="79" column="84" lean-forward="true" selection-start-line="79" selection-start-column="84" selection-end-line="79" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/AddRideStepDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="84" column="97" lean-forward="false" selection-start-line="84" selection-start-column="97" selection-end-line="84" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/AddVehicleStepDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-691">
-          <caret line="25" column="100" lean-forward="false" selection-start-line="25" selection-start-column="100" selection-end-line="25" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/SeeRidesGivenStopPointStepDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="77" column="55" lean-forward="false" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/BookRideStepDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="60" column="97" lean-forward="false" selection-start-line="60" selection-start-column="97" selection-end-line="60" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/ViewRideDetailsStepDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="49" column="97" lean-forward="false" selection-start-line="49" selection-start-column="97" selection-end-line="49" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/ShareRideStepDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="37" column="55" lean-forward="false" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/features/addRide.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/features/bookRide.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1270,14 +1241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/core/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="112" column="24" lean-forward="true" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Account.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1343,14 +1306,6 @@
             <element signature="e#1259#1260#0" expanded="false" />
             <element signature="e#1293#1294#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Notification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-851">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1461,22 +1416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ViewStopPointsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/addStopPoint.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1488,34 +1427,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/StopPoint.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/maps.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1137">
-          <caret line="79" column="34" lean-forward="false" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
+        <state relative-caret-position="263">
+          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
+        <state relative-caret-position="-342">
           <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/StopPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="83" column="27" lean-forward="false" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/viewAvailableRides.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ViewAccountRidesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="72" column="111" lean-forward="true" selection-start-line="72" selection-start-column="111" selection-end-line="72" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Ride.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="40" column="83" lean-forward="false" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/AddRidesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2736">
+          <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/NotificationPopUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/core/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/EditVehicleDetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Notification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1960">
+          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding>
+            <element signature="e#6914#6915#0" expanded="true" />
+            <element signature="e#6947#6948#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ViewAvailableRidesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="122" column="61" lean-forward="false" selection-start-line="122" selection-start-column="61" selection-end-line="122" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/AddStopPointController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="63" column="86" lean-forward="false" selection-start-line="63" selection-start-column="86" selection-end-line="63" selection-end-column="86" />
+        <state relative-caret-position="810">
+          <caret line="81" column="12" lean-forward="false" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/maps.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/menuBar.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ViewStopPointsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="61" column="44" lean-forward="false" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
           <folding />
         </state>
       </provider>

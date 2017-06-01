@@ -13,6 +13,7 @@ public class StopPoint implements Serializable {
     private LocalTime time;
 
     private double distance;
+    private double cost;
 
     /**
      * The constructor only requires an address
@@ -72,12 +73,19 @@ public class StopPoint implements Serializable {
         this.time = time;
     }
 
-    // --new--
     public double getDistance() {
         return distance;
     }
 
     public void setDistance(double distance) {
         this.distance = distance;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 }

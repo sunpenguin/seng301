@@ -6,11 +6,14 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Account;
+import model.GeneralData;
+import model.Ride;
 import model.Vehicle;
 import utils.Checkers;
 import utils.Session;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Controller class for editing vehicle details
@@ -29,6 +32,7 @@ public class EditVehicleDetailsController extends Controller {
 
     private Account currentUser;
     private Vehicle vehicle;
+    private GeneralData generalData;
 
     /**
      * The method to load files from the abstract class.
@@ -40,6 +44,7 @@ public class EditVehicleDetailsController extends Controller {
         vehicle = Session.getInstance().getVehicle();
 
         loadVehicleDetails();
+        generalData = getParent().getGeneralData();
     }
 
     // Fix session class
@@ -64,6 +69,7 @@ public class EditVehicleDetailsController extends Controller {
     private void editVehicle() {
         try {
             checkVehicleEdits();
+            updatePrices();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Edit Vehicle");
@@ -78,6 +84,15 @@ public class EditVehicleDetailsController extends Controller {
             alert.setHeaderText("There was an error Editing your vehicle.");
             alert.setContentText("Please check your fields and try again.");
             alert.showAndWait();
+        }
+    }
+
+    private void updatePrices() {
+        List<Ride> rides = generalData.getRides().get(currentUser.getUniversityID());
+        for (Ride ride : rides) {
+            if (ride.getVehicle().getLicencePlate().equals(vehicle.getLicencePlate())) {
+                ride.updateCosts();
+            }
         }
     }
 

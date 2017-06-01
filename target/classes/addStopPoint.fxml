@@ -3,22 +3,26 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
 
 <GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddStopPointController">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="373.0" minWidth="-Infinity" prefWidth="256.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="558.0" minWidth="10.0" prefWidth="499.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="373.0" minWidth="-Infinity" prefWidth="235.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="618.0" minWidth="10.0" prefWidth="451.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="558.0" minWidth="10.0" prefWidth="254.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="254.0" minHeight="10.0" prefHeight="241.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <Label text="Register New Stop Point" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
@@ -31,17 +35,17 @@
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </GridPane.margin>
       </Label>
-      <Button fx:id="addStopPointButton" mnemonicParsing="false" onAction="#addStopPoint" text="Register New Stop Point" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+      <Button fx:id="addStopPointButton" mnemonicParsing="false" onAction="#addStopPoint" text="Register New Stop Point" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
          <GridPane.margin>
-            <Insets right="25.0" />
+            <Insets bottom="25.0" right="25.0" />
          </GridPane.margin>
       </Button>
-      <TextField fx:id="streetText" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <TextField fx:id="streetText" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
       </TextField>
-      <TextField fx:id="suburbText" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <TextField fx:id="suburbText" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets right="25.0" />
          </GridPane.margin>
@@ -51,6 +55,32 @@
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </GridPane.margin>
       </Label>
+      <WebView fx:id="map" prefHeight="159.0" prefWidth="413.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="25.0" />
+         </GridPane.margin>
+      </WebView>
+      <Button mnemonicParsing="false" onAction="#calculateDistance" prefHeight="31.0" prefWidth="180.0" text="Calculate Distance" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="25.0" right="25.0" />
+         </GridPane.margin>
+      </Button>
+      <Label text="Distance calculated (km)" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="50.0" />
+         </GridPane.margin>
+      </Label>
+      <Text fx:id="distanceText" strokeType="OUTSIDE" strokeWidth="0.0" text="Distance to University" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets top="50.0" />
+         </GridPane.margin>
+      </Text>
+      <Button mnemonicParsing="false" onAction="#showPoint" prefWidth="180.0" text="Show Point on Map" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets right="25.0" />
+         </GridPane.margin>
+      </Button>
+      <TextArea fx:id="instructionsTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" text="Steps:" wrapText="true" GridPane.columnIndex="2" />
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

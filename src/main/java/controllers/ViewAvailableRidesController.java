@@ -29,6 +29,7 @@ public class ViewAvailableRidesController extends Controller {
     @FXML private TableColumn dateColumn;
     @FXML private TableColumn timeColumn;
     @FXML private TableColumn directionColumn;
+    @FXML private TableColumn costColumn;
     @FXML private CheckBox toUniCheckBox;
     @FXML private CheckBox fromUniCheckBox;
 
@@ -88,7 +89,7 @@ public class ViewAvailableRidesController extends Controller {
                 String result = "00:00";
                 for (StopPoint sp : ride.getRoute().getRouteStops()) {
                     if (sp.getAddress().equals(stopPoint.getAddress())
-                            || sp.getSuburb().equals(stopPoint.getAddress())) {
+                            && sp.getSuburb().equals(stopPoint.getSuburb())) {
                         result = sp.getTime().format(DateTimeFormatter.ofPattern("HH:mm"));
                         break;
                     }
@@ -108,6 +109,22 @@ public class ViewAvailableRidesController extends Controller {
                     direction = new SimpleStringProperty("From University");
                 }
                 return direction;
+            }
+        });
+
+        costColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Ride, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue call(TableColumn.CellDataFeatures param) {
+                Ride ride = (Ride) param.getValue();
+                String result = "00.00";
+                for (StopPoint sp : ride.getRoute().getRouteStops()) {
+                    if (sp.getAddress().equals(stopPoint.getAddress())
+                            && sp.getSuburb().equals(stopPoint.getSuburb())) {
+                        result = String.valueOf(sp.getCost());
+                        break;
+                    }
+                }
+                return new SimpleStringProperty(result);
             }
         });
 

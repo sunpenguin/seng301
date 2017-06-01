@@ -36,6 +36,13 @@ public class Ride {
         passengers = new ArrayList();
     }
 
+    public void updateCosts() {
+        for (StopPoint stopPoint : route.getRouteStops()) {
+            double cost = vehicle.getPerformance() * stopPoint.getDistance() * 0.1;
+            stopPoint.setCost(cost);
+        }
+    }
+
     /**
      * The method to add passengers. The boolean for full becomes true when there are no more available seats.
      */

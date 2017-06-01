@@ -32,11 +32,6 @@
                       <MenuItem mnemonicParsing="false" onAction="#openStopPoints" text="View Stop Points" />
                     </items>
                   </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#killMe" text="About" />
-                  </items>
-                </Menu>
               </menus>
                <padding>
                   <Insets left="5.0" top="5.0" />

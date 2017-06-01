@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import model.GeneralData;
 import model.StopPoint;
 import utils.Session;
@@ -20,15 +22,24 @@ public class ViewStopPointsController extends Controller {
     @FXML private TextField searchField;
     @FXML private ComboBox searchByComboBox;
     @FXML private Text distanceText;
+    @FXML private WebView map;
 
     private GeneralData generalData;
     private StopPointsSearcher stopPointsSearcher;
+
+    private WebEngine engine;
+    private String mapLocation = getClass().getClassLoader().getResource(SceneType.MAP.getFilePath()).toExternalForm();
+
 
     public void load() {
         generalData = getParent().getGeneralData();
         stopPointsSearcher = new StopPointsSearcher(generalData.getStopPoints().values());
 
         distanceText.setText("Select a Stop Point!");
+
+        engine = map.getEngine();
+        engine.load(mapLocation);
+        engine.setJavaScriptEnabled(true);
 
         streetNameColumn.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Address"));
         streetSuburbColumn.setCellValueFactory(new PropertyValueFactory<StopPoint, String>("Suburb"));
@@ -44,10 +55,11 @@ public class ViewStopPointsController extends Controller {
     private void setListener() {
         stopPointsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-//                Session.getInstance().setStopPoint((StopPoint) newSelection);
-//                createPopUpStage(SceneType.VIEW_AVAILABLE_RIDES, 1000, 800);
                 StopPoint stopPoint = (StopPoint) newSelection;
                 distanceText.setText(String.valueOf(stopPoint.getDistance()) + "km");
+
+                String query = "geocodeAddress('" + stopPoint.getAddress() + "');";
+                engine.executeScript(query);
             }
         });
     }

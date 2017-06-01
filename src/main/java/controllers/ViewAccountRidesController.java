@@ -2,6 +2,7 @@ package controllers;
 
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.util.Callback;
 import model.*;
 import utils.Session;
 
+import java.text.DecimalFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,10 +66,11 @@ public class ViewAccountRidesController extends Controller {
             @Override
             public ObservableValue call(TableColumn.CellDataFeatures param) {
                 Ride ride = (Ride) param.getValue();
+                DecimalFormat decimalFormat = new DecimalFormat("#.00");
                 List<StopPoint> stopPoints = ride.getRoute().getRouteStops();
                 String direction = "The course for this route is as below:\n";
                 for (StopPoint stopPoint : stopPoints) {
-                    direction += stopPoint.getAddress() + ", " + stopPoint.getSuburb() + "\n";
+                    direction += stopPoint.getAddress() + ": $" + decimalFormat.format(stopPoint.getCost()) + "\n";
                 }
                 return new SimpleStringProperty(direction);
             }

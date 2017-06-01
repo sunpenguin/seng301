@@ -15,6 +15,8 @@ public class Notification {
     private boolean unbookRide = false;
     private String unbookReason = "";
 
+    private boolean rideChange = false;
+
     public Notification(Account account) {
         this.account = account;
     }
@@ -45,6 +47,12 @@ public class Notification {
             unbookReason = "";
             none = false;
         }
+        if (rideChange) {
+            result += "A ride you have booked may have changed prices.\n";
+            rideChange = false;
+            none = false;
+        }
+
         if (none) {
             result += "Nothing has been changed since your last log in.\n";
         }
@@ -169,5 +177,9 @@ public class Notification {
     public void setUnbookRide(String unbookReason) {
         this.unbookRide = true;
         this.unbookReason += unbookReason + "\n";
+    }
+
+    public void setRideChange() {
+        rideChange = true;
     }
 }

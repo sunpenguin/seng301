@@ -11,11 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import model.Account;
-import model.GeneralData;
-import model.Notification;
-import model.Vehicle;
-import utils.Session;
+import model.*;
 
 import java.io.*;
 import java.lang.reflect.Array;

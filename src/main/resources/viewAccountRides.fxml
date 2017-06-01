@@ -46,7 +46,7 @@
             <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </Label>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+      <ButtonBar prefHeight="31.0" prefWidth="559.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
         <buttons>
             <Button alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#openRideCreator" text="Create Ride(s)" />
             <Button mnemonicParsing="false" onAction="#cancelSelectedRide" text="Cancel Ride" />
