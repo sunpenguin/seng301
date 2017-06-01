@@ -9,7 +9,7 @@ public enum SceneType {
     TIME_SETTER_RIDE_POP_UP("timeSetterRide.fxml"), VIEW_ACCOUNT_DETAILS("viewAccountDetails.fxml"),
     VIEW_ACCOUNT_RIDES("viewAccountRides.fxml"), VIEW_AVAILABLE_RIDES("viewAvailableRides.fxml"),
     VIEW_ROUTES("viewRoutes.fxml"), VIEW_SINGLE_RIDE_DETAILS("viewSingleRideDetails.fxml"),
-    VIEW_STOP_POINTS("viewStopPoints.fxml"), VIEW_VEHICLES("viewVehicles.fxml");
+    VIEW_STOP_POINTS("viewStopPoints.fxml"), VIEW_VEHICLES("viewVehicles.fxml"), VIEW_NOTIFICATIONS("notificationPopUp.fxml");
 
     private String filePath;
 

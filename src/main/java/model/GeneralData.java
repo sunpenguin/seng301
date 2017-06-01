@@ -13,12 +13,14 @@ public class GeneralData {
     private Map<String, Route> routes;
     private Map<String, List<Ride>> rides;
     private String currentTrip;
+    private Map<String, Notification> notifications;
 
     public GeneralData() {
         accountMap = new HashMap<>();
         stopPoints = new HashMap<>();
         routes = new HashMap<>();
         rides = new HashMap<>();
+        notifications = new HashMap<>(); // Key is uniID
     }
 
     public void addAccount(Account account) {
@@ -60,5 +62,9 @@ public class GeneralData {
 
     public Map<String, List<Ride>> getRides() {
         return rides;
+    }
+
+    public Map<String, Notification> getNotifications() {
+        return notifications;
     }
 }

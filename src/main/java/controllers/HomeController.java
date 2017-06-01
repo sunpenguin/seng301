@@ -6,6 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import model.Account;
 import model.GeneralData;
+import model.Notification;
 import utils.Session;
 
 /**
@@ -37,6 +38,8 @@ public class HomeController extends Controller {
                 } else {
                     getParent().setPassengerSettings(false);
                 }
+
+                createPopUpStage(SceneType.VIEW_NOTIFICATIONS, 600, 400);
 
                 replaceSceneContent(SceneType.VIEW_ACCOUNT_DETAILS);
             } else {
