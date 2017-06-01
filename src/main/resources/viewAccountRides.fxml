@@ -60,6 +60,11 @@
          </font>
       </Text>
       <Button mnemonicParsing="false" onAction="#openRideCreator" text="Create Rides" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Label text="Legend: Green means the ride is shared." GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="150.0" />
+         </GridPane.margin>
+      </Label>
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

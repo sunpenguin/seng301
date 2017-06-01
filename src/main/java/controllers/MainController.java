@@ -36,13 +36,13 @@ public class MainController extends Controller {
     }
 
     @FXML
-    private void openHome() {
-//        replaceSceneContent("home.fxml");
+    private void openAccount() {
+        replaceSceneContent(SceneType.VIEW_ACCOUNT_DETAILS);
     }
 
     @FXML
-    private void openAccount() {
-        replaceSceneContent(SceneType.VIEW_ACCOUNT_DETAILS);
+    private void openMyBookedRides() {
+        replaceSceneContent(SceneType.VIEW_MY_RIDES);
     }
 
     @FXML

@@ -12,6 +12,7 @@ import javafx.util.Callback;
 import model.*;
 import utils.Session;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ import java.util.Optional;
 /**
  * The controller class for viewing rides created by the user.
  */
-public class ViewAccountRidesController extends Controller {
+public class ViewMyRidesController extends Controller {
 
     @FXML private TableView ridesTable;
     @FXML private TableColumn nameColumn;
@@ -31,17 +32,28 @@ public class ViewAccountRidesController extends Controller {
 
     private Account account;
     private GeneralData generalData;
+    private List<Ride> myRides;
 
     public void load() {
         account = Session.getInstance().getCurrentAccount();
         generalData = getParent().getGeneralData();
 
-        if (generalData.getRides().containsKey(account.getUniversityID()) && generalData.getRides().get(account.getUniversityID()).size() > 0){
-            setUpRidesTable();
-        } else {
-            generalData.getRides().put(account.getUniversityID(), new ArrayList<>());
+        myRides = new ArrayList<>();
+        List<Ride> allRides = new ArrayList<>();
+
+        for (List<Ride> rides : generalData.getRides().values()) {
+            allRides.addAll(rides);
         }
-        setListeners();
+
+        for (Ride ride : allRides) {
+            if (ride.isShared() && ride.getPassengers().contains(account.getUniversityID())) {
+                myRides.add(ride);
+            }
+        }
+
+        if (myRides.size() > 0) {
+            setUpRidesTable();
+        }
     }
 
     private void setUpRidesTable() {
@@ -101,23 +113,26 @@ public class ViewAccountRidesController extends Controller {
             }
         });
 
-        ridesTable.setItems(FXCollections.observableArrayList(generalData.getRides().get(account.getUniversityID())));
+        ridesTable.setItems(FXCollections.observableArrayList(myRides));
 
         ridesTable.setRowFactory(ride -> new TableRow<Ride>() {
             @Override
             public void updateItem(Ride item, boolean empty) {
-                super.updateItem(item, empty) ;
+                super.updateItem(item, empty);
                 if (item == null) {
                     setStyle("");
-                } else if (item.isShared()) {
+                } else if (item.getDate().isBefore(LocalDate.now().plusDays(1))) {
                     setStyle("-fx-background-color: green;");
-                } else {
+                } else if (!item.isShared()) {
                     setStyle("-fx-background-color: indianred;");
                 }
             }
         });
     }
 
+    /**
+     * Listeners from another scene. Change first!
+     */
     private void setListeners() {
         ridesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
@@ -156,11 +171,5 @@ public class ViewAccountRidesController extends Controller {
                 }
             }
         });
-    }
-
-    @FXML
-    private void openRideCreator() {
-        createPopUpStage(SceneType.ADD_TRIPS, 1000, 800);
-        setUpRidesTable();
     }
 }

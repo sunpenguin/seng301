@@ -137,4 +137,8 @@ public class Ride {
     public void setDriverID(String driverID) {
         this.driverID = driverID;
     }
+
+    public List<String> getPassengers() {
+        return passengers;
+    }
 }

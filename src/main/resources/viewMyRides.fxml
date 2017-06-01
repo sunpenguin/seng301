@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViewAccountRidesController">
+<GridPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViewMyRidesController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="755.0" minWidth="10.0" prefWidth="121.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="755.0" minWidth="10.0" prefWidth="289.0" />
@@ -22,15 +19,9 @@
    <rowConstraints>
       <RowConstraints maxHeight="225.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="640.0" minHeight="10.0" prefHeight="566.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="640.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="75.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Button disable="true" mnemonicParsing="false" text="Search Rides" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </Button>
       <TableView fx:id="ridesTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
         <columns>
           <TableColumn fx:id="nameColumn" editable="false" prefWidth="109.0" resizable="false" text="Name" />
@@ -43,26 +34,14 @@
             <Insets left="25.0" right="25.0" />
          </GridPane.margin>
       </TableView>
-      <Label disable="true" text="Search By" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-         </GridPane.margin>
-      </Label>
-      <ComboBox disable="true" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField disable="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets right="25.0" />
-         </GridPane.margin>
-      </TextField>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="My Rides" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="My Booked Rides" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Button mnemonicParsing="false" onAction="#openRideCreator" text="Create Rides" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-      <Label text="Legend: Green means the ride is shared." GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+      <Label prefHeight="21.0" prefWidth="752.0" text="Legend: Green means the ride is done. Red is a cancelled ride. No colour are rides you have booked in the future." GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <GridPane.margin>
-            <Insets right="150.0" />
+            <Insets />
          </GridPane.margin>
       </Label>
    </children>

@@ -14,6 +14,7 @@ import javafx.util.Callback;
 import model.*;
 import utils.Session;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +56,7 @@ public class ViewAvailableRidesController extends Controller {
         }
 
         for (Ride ride : rides) {
-            if (ride.isShared() && !ride.isFull()) {
+            if (ride.isShared() && !ride.isFull() && ride.getDate().isBefore(LocalDate.now().plusDays(1))) {
                 for (StopPoint sp : ride.getRoute().getRouteStops()) {
                     if (sp.getAddress().equals(stopPoint.getAddress())
                             || sp.getSuburb().equals(stopPoint.getAddress())) {
