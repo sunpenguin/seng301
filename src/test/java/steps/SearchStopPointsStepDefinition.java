@@ -95,6 +95,33 @@ public class SearchStopPointsStepDefinition {
         Assert.assertEquals(1, searcher.getSearchStopPoints().size());
     }
 
+    @Given("^I want to search for stop point \"([^\"]*)\"$")
+    public void iWantToSearchForStopPoint(String spName) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        setSearcher();
+        Assert.assertTrue(sp2.getAddress().contains(spName));
+    }
+
+    @When("^I search with \"([^\"]*)\" as the address$")
+    public void iSearchWithAsTheAddress(String spName) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        addressToSearch = spName;
+    }
+
+    @Then("^the results will be displayed$")
+    public void theResultsWillBeDisplayed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        setSearcher();
+        searcher.searchByStreetName(addressToSearch);
+        Assert.assertEquals(1, searcher.getSearchStopPoints().size());
+    }
+
+    @Then("^a map of the location will be shown$")
+    public void aMapOfTheLocationWillBeShown() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        Assert.assertEquals("15 Steed Road", searcher.getSearchStopPoints().get(0).getAddress());
+    }
+
     private void createPassenger() {
 //        (String universityID, String password, String email, String vehicleName, String address, Integer homeNumber, Integer mobileNumber)
         account = new Account("driver", "password", "driver@uclive.ac.nz",

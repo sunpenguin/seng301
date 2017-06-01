@@ -101,4 +101,27 @@ public class RideTest {
 
         Assert.assertTrue(testRide1.isShared());
     }
+
+    @Test
+    public void costs1() {
+        testRide1.getRoute().getRouteStops().get(0).setDistance(10);
+        testRide1.updateCosts();
+
+        Assert.assertEquals(10, testRide1.getRoute().getRouteStops().get(0).getCost(), 0.001);
+    }
+
+    @Test
+    public void costs2() {
+        testRide1.getRoute().getRouteStops().get(0).setDistance(1000);
+        testRide1.updateCosts();
+
+        Assert.assertEquals(1000, testRide1.getRoute().getRouteStops().get(0).getCost(), 0.001);
+    }
+    @Test
+    public void costs3() {
+        testRide1.getRoute().getRouteStops().get(0).setDistance(1);
+        testRide1.updateCosts();
+
+        Assert.assertEquals(1, testRide1.getRoute().getRouteStops().get(0).getCost(), 0.001);
+    }
 }

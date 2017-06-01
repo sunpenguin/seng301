@@ -12,7 +12,7 @@
         "steps": [
           {
             "result": {
-              "duration": 181610109,
+              "duration": 173230428,
               "status": "passed"
             },
             "line": 3,
@@ -30,7 +30,7 @@
           },
           {
             "result": {
-              "duration": 11574560,
+              "duration": 13310354,
               "status": "passed"
             },
             "line": 4,
@@ -48,7 +48,7 @@
           },
           {
             "result": {
-              "duration": 1148301,
+              "duration": 1216041,
               "status": "passed"
             },
             "line": 5,
@@ -66,7 +66,7 @@
           },
           {
             "result": {
-              "duration": 1596618,
+              "duration": 2193964,
               "status": "passed"
             },
             "line": 6,
@@ -94,7 +94,7 @@
         "steps": [
           {
             "result": {
-              "duration": 271782,
+              "duration": 289846,
               "status": "passed"
             },
             "line": 9,
@@ -112,7 +112,7 @@
           },
           {
             "result": {
-              "duration": 1129826,
+              "duration": 854349,
               "status": "passed"
             },
             "line": 10,
@@ -130,7 +130,7 @@
           },
           {
             "result": {
-              "duration": 177356,
+              "duration": 142049,
               "status": "passed"
             },
             "line": 11,
@@ -148,7 +148,7 @@
           },
           {
             "result": {
-              "duration": 2992069,
+              "duration": 2400059,
               "status": "passed"
             },
             "line": 12,
@@ -186,7 +186,7 @@
         "steps": [
           {
             "result": {
-              "duration": 365798,
+              "duration": 311605,
               "status": "passed"
             },
             "line": 3,
@@ -204,7 +204,7 @@
           },
           {
             "result": {
-              "duration": 114543,
+              "duration": 106742,
               "status": "passed"
             },
             "line": 4,
@@ -222,7 +222,7 @@
           },
           {
             "result": {
-              "duration": 100174,
+              "duration": 69382,
               "status": "passed"
             },
             "line": 5,
@@ -240,7 +240,7 @@
           },
           {
             "result": {
-              "duration": 783324,
+              "duration": 719279,
               "status": "passed"
             },
             "line": 6,
@@ -268,7 +268,7 @@
         "steps": [
           {
             "result": {
-              "duration": 266445,
+              "duration": 267266,
               "status": "passed"
             },
             "line": 9,
@@ -286,7 +286,7 @@
           },
           {
             "result": {
-              "duration": 149440,
+              "duration": 118649,
               "status": "passed"
             },
             "line": 10,
@@ -304,7 +304,7 @@
           },
           {
             "result": {
-              "duration": 758281,
+              "duration": 822737,
               "status": "passed"
             },
             "line": 11,
@@ -332,7 +332,7 @@
         "steps": [
           {
             "result": {
-              "duration": 252076,
+              "duration": 277530,
               "status": "passed"
             },
             "line": 14,
@@ -350,7 +350,7 @@
           },
           {
             "result": {
-              "duration": 41465,
+              "duration": 36950,
               "status": "passed"
             },
             "line": 15,
@@ -362,7 +362,7 @@
           },
           {
             "result": {
-              "duration": 76361,
+              "duration": 62813,
               "status": "passed"
             },
             "line": 16,
@@ -400,7 +400,7 @@
         "steps": [
           {
             "result": {
-              "duration": 355944,
+              "duration": 311605,
               "status": "passed"
             },
             "line": 3,
@@ -418,7 +418,7 @@
           },
           {
             "result": {
-              "duration": 288204,
+              "duration": 146155,
               "status": "passed"
             },
             "line": 4,
@@ -436,7 +436,7 @@
           },
           {
             "result": {
-              "duration": 1592103,
+              "duration": 1190587,
               "status": "passed"
             },
             "line": 5,
@@ -464,7 +464,7 @@
         "steps": [
           {
             "result": {
-              "duration": 275478,
+              "duration": 275888,
               "status": "passed"
             },
             "line": 8,
@@ -482,7 +482,7 @@
           },
           {
             "result": {
-              "duration": 238118,
+              "duration": 164629,
               "status": "passed"
             },
             "line": 9,
@@ -500,7 +500,7 @@
           },
           {
             "result": {
-              "duration": 155597,
+              "duration": 156418,
               "status": "passed"
             },
             "line": 10,
@@ -518,7 +518,7 @@
           },
           {
             "result": {
-              "duration": 186799,
+              "duration": 149439,
               "status": "passed"
             },
             "line": 11,
@@ -556,7 +556,7 @@
         "steps": [
           {
             "result": {
-              "duration": 456529,
+              "duration": 322280,
               "status": "passed"
             },
             "line": 3,
@@ -574,7 +574,7 @@
           },
           {
             "result": {
-              "duration": 392893,
+              "duration": 259466,
               "status": "passed"
             },
             "line": 4,
@@ -592,7 +592,7 @@
           },
           {
             "result": {
-              "duration": 361692,
+              "duration": 345270,
               "status": "passed"
             },
             "line": 5,
@@ -620,7 +620,7 @@
         "steps": [
           {
             "result": {
-              "duration": 254539,
+              "duration": 241812,
               "status": "passed"
             },
             "line": 8,
@@ -638,7 +638,7 @@
           },
           {
             "result": {
-              "duration": 156419,
+              "duration": 117006,
               "status": "passed"
             },
             "line": 9,
@@ -656,7 +656,7 @@
           },
           {
             "result": {
-              "duration": 187620,
+              "duration": 167503,
               "status": "passed"
             },
             "line": 10,
@@ -674,7 +674,7 @@
           },
           {
             "result": {
-              "duration": 311195,
+              "duration": 277530,
               "status": "passed"
             },
             "line": 11,
@@ -706,7 +706,7 @@
         "steps": [
           {
             "result": {
-              "duration": 128091,
+              "duration": 126448,
               "status": "passed"
             },
             "line": 3,
@@ -724,7 +724,7 @@
           },
           {
             "result": {
-              "duration": 985724,
+              "duration": 765670,
               "status": "passed"
             },
             "line": 4,
@@ -742,7 +742,7 @@
           },
           {
             "result": {
-              "duration": 1038685,
+              "duration": 1177450,
               "status": "passed"
             },
             "line": 5,
@@ -770,7 +770,7 @@
         "steps": [
           {
             "result": {
-              "duration": 222106,
+              "duration": 247150,
               "status": "passed"
             },
             "line": 8,
@@ -788,7 +788,7 @@
           },
           {
             "result": {
-              "duration": 1519846,
+              "duration": 1545300,
               "status": "passed"
             },
             "line": 9,
@@ -806,7 +806,7 @@
           },
           {
             "result": {
-              "duration": 966839,
+              "duration": 904025,
               "status": "passed"
             },
             "line": 10,
@@ -836,6 +836,110 @@
     "elements": [
       {
         "line": 2,
+        "name": "Calculate Cost",
+        "description": "",
+        "id": "calculate-cost-for-rides;calculate-cost",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 209790,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "I have a vehicle \"car\" with performance \"6\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 18
+                },
+                {
+                  "val": "6",
+                  "offset": 41
+                }
+              ],
+              "location": "CalculateCostStepDefinition.iHaveAVehicleWithPerformance(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 79235,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I want to go from stop point \"SP1\" to university",
+            "match": {
+              "arguments": [
+                {
+                  "val": "SP1",
+                  "offset": 30
+                }
+              ],
+              "location": "CalculateCostStepDefinition.iWantToGoFromStopPointToUniversity(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 992292,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I create a ride using \"SP1\" with 4 distance",
+            "match": {
+              "arguments": [
+                {
+                  "val": "SP1",
+                  "offset": 23
+                },
+                {
+                  "val": "4",
+                  "offset": 33
+                }
+              ],
+              "location": "CalculateCostStepDefinition.iCreateARideUsingWithDistance(String,int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 123985,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the cost of the ride from the stop point \"SP1\" will be $\"2.40\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "SP1",
+                  "offset": 42
+                },
+                {
+                  "val": "2.40",
+                  "offset": 57
+                }
+              ],
+              "location": "CalculateCostStepDefinition.theCostOfTheRideFromTheStopPointWillBe$(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Calculate Cost for Rides",
+    "description": "",
+    "id": "calculate-cost-for-rides",
+    "keyword": "Feature",
+    "uri": "calculateCost.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
         "name": "Cancel a Ride with Passengers",
         "description": "",
         "id": "cancel-a-ride-as-a-driver;cancel-a-ride-with-passengers",
@@ -844,7 +948,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2558120,
+              "duration": 2435777,
               "status": "passed"
             },
             "line": 3,
@@ -866,7 +970,7 @@
           },
           {
             "result": {
-              "duration": 121112,
+              "duration": 123985,
               "status": "passed"
             },
             "line": 4,
@@ -884,7 +988,7 @@
           },
           {
             "result": {
-              "duration": 159292,
+              "duration": 148208,
               "status": "passed"
             },
             "line": 5,
@@ -912,7 +1016,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1122436,
+              "duration": 700804,
               "status": "passed"
             },
             "line": 8,
@@ -938,7 +1042,7 @@
           },
           {
             "result": {
-              "duration": 110027,
+              "duration": 52139,
               "status": "passed"
             },
             "line": 9,
@@ -956,7 +1060,7 @@
           },
           {
             "result": {
-              "duration": 79236,
+              "duration": 35307,
               "status": "passed"
             },
             "line": 10,
@@ -974,7 +1078,7 @@
           },
           {
             "result": {
-              "duration": 161756,
+              "duration": 61992,
               "status": "passed"
             },
             "line": 11,
@@ -1016,7 +1120,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1562132,
+              "duration": 1315804,
               "status": "passed"
             },
             "line": 3,
@@ -1038,7 +1142,7 @@
           },
           {
             "result": {
-              "duration": 133838,
+              "duration": 100995,
               "status": "passed"
             },
             "line": 4,
@@ -1056,7 +1160,7 @@
           },
           {
             "result": {
-              "duration": 91552,
+              "duration": 64456,
               "status": "passed"
             },
             "line": 5,
@@ -1074,7 +1178,7 @@
           },
           {
             "result": {
-              "duration": 279172,
+              "duration": 181051,
               "status": "passed"
             },
             "line": 6,
@@ -1112,7 +1216,7 @@
         "steps": [
           {
             "result": {
-              "duration": 109206,
+              "duration": 92374,
               "status": "passed"
             },
             "line": 3,
@@ -1124,7 +1228,7 @@
           },
           {
             "result": {
-              "duration": 85804,
+              "duration": 49266,
               "status": "passed"
             },
             "line": 4,
@@ -1142,7 +1246,7 @@
           },
           {
             "result": {
-              "duration": 1064549,
+              "duration": 160935,
               "status": "passed"
             },
             "line": 5,
@@ -1180,7 +1284,7 @@
           },
           {
             "result": {
-              "duration": 88679,
+              "duration": 43929,
               "status": "passed"
             },
             "line": 6,
@@ -1208,7 +1312,7 @@
         "steps": [
           {
             "result": {
-              "duration": 139586,
+              "duration": 123574,
               "status": "passed"
             },
             "line": 9,
@@ -1226,7 +1330,7 @@
           },
           {
             "result": {
-              "duration": 76362,
+              "duration": 45571,
               "status": "passed"
             },
             "line": 10,
@@ -1244,7 +1348,7 @@
           },
           {
             "result": {
-              "duration": 209379,
+              "duration": 179409,
               "status": "passed"
             },
             "line": 11,
@@ -1282,7 +1386,7 @@
           },
           {
             "result": {
-              "duration": 440106,
+              "duration": 270961,
               "status": "passed"
             },
             "line": 12,
@@ -1312,7 +1416,7 @@
           },
           {
             "result": {
-              "duration": 227854,
+              "duration": 204863,
               "status": "passed"
             },
             "line": 13,
@@ -1350,7 +1454,7 @@
         "steps": [
           {
             "result": {
-              "duration": 391662,
+              "duration": 305858,
               "status": "passed"
             },
             "line": 3,
@@ -1368,7 +1472,7 @@
           },
           {
             "result": {
-              "duration": 126859,
+              "duration": 88267,
               "status": "passed"
             },
             "line": 4,
@@ -1386,7 +1490,7 @@
           },
           {
             "result": {
-              "duration": 183514,
+              "duration": 163398,
               "status": "passed"
             },
             "line": 5,
@@ -1404,7 +1508,7 @@
           },
           {
             "result": {
-              "duration": 154776,
+              "duration": 160114,
               "status": "passed"
             },
             "line": 6,
@@ -1436,7 +1540,7 @@
         "steps": [
           {
             "result": {
-              "duration": 192957,
+              "duration": 188852,
               "status": "passed"
             },
             "line": 9,
@@ -1458,7 +1562,7 @@
           },
           {
             "result": {
-              "duration": 59119,
+              "duration": 52550,
               "status": "passed"
             },
             "line": 10,
@@ -1476,7 +1580,7 @@
           },
           {
             "result": {
-              "duration": 81699,
+              "duration": 66919,
               "status": "passed"
             },
             "line": 11,
@@ -1510,6 +1614,244 @@
     "elements": [
       {
         "line": 2,
+        "name": "Edit Performance",
+        "description": "",
+        "id": "editing-a-vehicle;edit-performance",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 294362,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "I have a vehicle \"car\" with 15 performance",
+            "match": {
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 18
+                },
+                {
+                  "val": "15",
+                  "offset": 28
+                }
+              ],
+              "location": "EditVehicleStepDefinition.iHaveAVehicleWithPerformance(String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 78825,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I edit the performance from 15 to 10",
+            "match": {
+              "arguments": [
+                {
+                  "val": "15",
+                  "offset": 28
+                },
+                {
+                  "val": "10",
+                  "offset": 34
+                }
+              ],
+              "location": "EditVehicleStepDefinition.iEditThePerformanceFromTo(int,int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 63225,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the vehicle \"car\" will have a performance of 10",
+            "match": {
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 13
+                },
+                {
+                  "val": "10",
+                  "offset": 45
+                }
+              ],
+              "location": "EditVehicleStepDefinition.theVehicleWillHaveAPerformanceOf(String,int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "Edit Seats",
+        "description": "",
+        "id": "editing-a-vehicle;edit-seats",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 226622,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I have a vehicle \"car\" with 1 seat",
+            "match": {
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 18
+                },
+                {
+                  "val": "1",
+                  "offset": 28
+                }
+              ],
+              "location": "EditVehicleStepDefinition.iHaveAVehicleWithSeat(String,int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 135481,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I edit the seats from 1 to 10",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 22
+                },
+                {
+                  "val": "10",
+                  "offset": 27
+                }
+              ],
+              "location": "EditVehicleStepDefinition.iEditTheSeatsFromTo(int,int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 89910,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the vehicle \"car\" will have 10 seats",
+            "match": {
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 13
+                },
+                {
+                  "val": "10",
+                  "offset": 28
+                }
+              ],
+              "location": "EditVehicleStepDefinition.theVehicleWillHaveSeats(String,int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "Edit Registration",
+        "description": "",
+        "id": "editing-a-vehicle;edit-registration",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 159292,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I have a vehicle \"car\" with registration expiry \"12/12/2016\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 18
+                },
+                {
+                  "val": "12/12/2016",
+                  "offset": 49
+                }
+              ],
+              "location": "EditVehicleStepDefinition.iHaveAVehicleWithRegistrationExpiry(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 438875,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I edit the expiry date from \"12/12/2016\" to \"12/12/2019\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "12/12/2016",
+                  "offset": 29
+                },
+                {
+                  "val": "12/12/2019",
+                  "offset": 45
+                }
+              ],
+              "location": "EditVehicleStepDefinition.iEditTheExpiryDateFromTo(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 57066,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the vehicle \"car\" will have a registration expiry of \"12/12/2019\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "car",
+                  "offset": 13
+                },
+                {
+                  "val": "12/12/2019",
+                  "offset": 54
+                }
+              ],
+              "location": "EditVehicleStepDefinition.theVehicleWillHaveARegistrationExpiryOf(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Editing a Vehicle",
+    "description": "",
+    "id": "editing-a-vehicle",
+    "keyword": "Feature",
+    "uri": "editVehicle.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
         "name": "Log in with an account",
         "description": "",
         "id": ";log-in-with-an-account",
@@ -1518,7 +1860,7 @@
         "steps": [
           {
             "result": {
-              "duration": 201989,
+              "duration": 179820,
               "status": "passed"
             },
             "line": 3,
@@ -1540,7 +1882,7 @@
           },
           {
             "result": {
-              "duration": 128502,
+              "duration": 65277,
               "status": "passed"
             },
             "line": 4,
@@ -1562,7 +1904,7 @@
           },
           {
             "result": {
-              "duration": 66098,
+              "duration": 99353,
               "status": "passed"
             },
             "line": 5,
@@ -1590,7 +1932,7 @@
         "steps": [
           {
             "result": {
-              "duration": 88268,
+              "duration": 77183,
               "status": "passed"
             },
             "line": 8,
@@ -1608,7 +1950,7 @@
           },
           {
             "result": {
-              "duration": 87857,
+              "duration": 61583,
               "status": "passed"
             },
             "line": 9,
@@ -1630,7 +1972,7 @@
           },
           {
             "result": {
-              "duration": 35717,
+              "duration": 32022,
               "status": "passed"
             },
             "line": 10,
@@ -1652,7 +1994,7 @@
         "steps": [
           {
             "result": {
-              "duration": 118648,
+              "duration": 83341,
               "status": "passed"
             },
             "line": 13,
@@ -1674,7 +2016,7 @@
           },
           {
             "result": {
-              "duration": 100584,
+              "duration": 56245,
               "status": "passed"
             },
             "line": 14,
@@ -1696,7 +2038,7 @@
           },
           {
             "result": {
-              "duration": 13958,
+              "duration": 16832,
               "status": "passed"
             },
             "line": 15,
@@ -1728,7 +2070,7 @@
         "steps": [
           {
             "result": {
-              "duration": 298468,
+              "duration": 392894,
               "status": "passed"
             },
             "line": 3,
@@ -1750,7 +2092,7 @@
           },
           {
             "result": {
-              "duration": 146154,
+              "duration": 94015,
               "status": "passed"
             },
             "line": 4,
@@ -1768,7 +2110,7 @@
           },
           {
             "result": {
-              "duration": 197884,
+              "duration": 128090,
               "status": "passed"
             },
             "line": 5,
@@ -1796,7 +2138,7 @@
         "steps": [
           {
             "result": {
-              "duration": 387146,
+              "duration": 248792,
               "status": "passed"
             },
             "line": 8,
@@ -1818,7 +2160,7 @@
           },
           {
             "result": {
-              "duration": 97711,
+              "duration": 43928,
               "status": "passed"
             },
             "line": 9,
@@ -1836,7 +2178,7 @@
           },
           {
             "result": {
-              "duration": 162577,
+              "duration": 121522,
               "status": "passed"
             },
             "line": 10,
@@ -1864,7 +2206,7 @@
         "steps": [
           {
             "result": {
-              "duration": 333775,
+              "duration": 274656,
               "status": "passed"
             },
             "line": 13,
@@ -1886,7 +2228,7 @@
           },
           {
             "result": {
-              "duration": 51729,
+              "duration": 45981,
               "status": "passed"
             },
             "line": 14,
@@ -1904,7 +2246,7 @@
           },
           {
             "result": {
-              "duration": 111259,
+              "duration": 135891,
               "status": "passed"
             },
             "line": 15,
@@ -1942,7 +2284,7 @@
         "steps": [
           {
             "result": {
-              "duration": 192546,
+              "duration": 141639,
               "status": "passed"
             },
             "line": 3,
@@ -1960,7 +2302,7 @@
           },
           {
             "result": {
-              "duration": 1361375,
+              "duration": 845727,
               "status": "passed"
             },
             "line": 4,
@@ -1972,7 +2314,7 @@
           },
           {
             "result": {
-              "duration": 444623,
+              "duration": 261519,
               "status": "passed"
             },
             "line": 5,
@@ -1994,7 +2336,7 @@
         "steps": [
           {
             "result": {
-              "duration": 121932,
+              "duration": 86215,
               "status": "passed"
             },
             "line": 8,
@@ -2012,7 +2354,7 @@
           },
           {
             "result": {
-              "duration": 66508,
+              "duration": 84983,
               "status": "passed"
             },
             "line": 9,
@@ -2030,7 +2372,7 @@
           },
           {
             "result": {
-              "duration": 819041,
+              "duration": 226212,
               "status": "passed"
             },
             "line": 10,
@@ -2058,7 +2400,7 @@
         "steps": [
           {
             "result": {
-              "duration": 118648,
+              "duration": 379756,
               "status": "passed"
             },
             "line": 13,
@@ -2076,7 +2418,7 @@
           },
           {
             "result": {
-              "duration": 75130,
+              "duration": 53782,
               "status": "passed"
             },
             "line": 14,
@@ -2094,7 +2436,7 @@
           },
           {
             "result": {
-              "duration": 426970,
+              "duration": 183925,
               "status": "passed"
             },
             "line": 15,
@@ -2109,6 +2451,76 @@
               "location": "SearchStopPointsStepDefinition.iTypeInAndSearchBySuburb(String)"
             },
             "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 17,
+        "name": "",
+        "description": "",
+        "id": "searching-stop-points;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 270140,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I want to search for stop point \"Steed\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Steed",
+                  "offset": 33
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iWantToSearchForStopPoint(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 57066,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I search with \"Steed\" as the address",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Steed",
+                  "offset": 15
+                }
+              ],
+              "location": "SearchStopPointsStepDefinition.iSearchWithAsTheAddress(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 164219,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the results will be displayed",
+            "match": {
+              "location": "SearchStopPointsStepDefinition.theResultsWillBeDisplayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 31612,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "a map of the location will be shown",
+            "match": {
+              "location": "SearchStopPointsStepDefinition.aMapOfTheLocationWillBeShown()"
+            },
+            "keyword": "And "
           }
         ]
       }
@@ -2132,7 +2544,7 @@
         "steps": [
           {
             "result": {
-              "duration": 288615,
+              "duration": 239349,
               "status": "passed"
             },
             "line": 3,
@@ -2150,7 +2562,7 @@
           },
           {
             "result": {
-              "duration": 206095,
+              "duration": 165040,
               "status": "passed"
             },
             "line": 4,
@@ -2162,7 +2574,7 @@
           },
           {
             "result": {
-              "duration": 1519846,
+              "duration": 964786,
               "status": "passed"
             },
             "line": 5,
@@ -2194,7 +2606,7 @@
         "steps": [
           {
             "result": {
-              "duration": 263981,
+              "duration": 229086,
               "status": "passed"
             },
             "line": 3,
@@ -2212,7 +2624,7 @@
           },
           {
             "result": {
-              "duration": 1752626,
+              "duration": 1205777,
               "status": "passed"
             },
             "line": 4,
@@ -2224,7 +2636,7 @@
           },
           {
             "result": {
-              "duration": 1265307,
+              "duration": 959449,
               "status": "passed"
             },
             "line": 5,
@@ -2256,7 +2668,7 @@
         "steps": [
           {
             "result": {
-              "duration": 257413,
+              "duration": 272193,
               "status": "passed"
             },
             "line": 3,
@@ -2274,7 +2686,7 @@
           },
           {
             "result": {
-              "duration": 329259,
+              "duration": 284920,
               "status": "passed"
             },
             "line": 4,
@@ -2292,7 +2704,7 @@
           },
           {
             "result": {
-              "duration": 24632,
+              "duration": 27096,
               "status": "passed"
             },
             "line": 5,
@@ -2314,7 +2726,7 @@
         "steps": [
           {
             "result": {
-              "duration": 244276,
+              "duration": 343628,
               "status": "passed"
             },
             "line": 8,
@@ -2332,7 +2744,7 @@
           },
           {
             "result": {
-              "duration": 216769,
+              "duration": 215537,
               "status": "passed"
             },
             "line": 9,
@@ -2350,7 +2762,7 @@
           },
           {
             "result": {
-              "duration": 27507,
+              "duration": 16832,
               "status": "passed"
             },
             "line": 10,
@@ -2382,7 +2794,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4197435,
+              "duration": 723385,
               "status": "passed"
             },
             "line": 3,
@@ -2404,7 +2816,7 @@
           },
           {
             "result": {
-              "duration": 2650493,
+              "duration": 66919,
               "status": "passed"
             },
             "line": 4,
@@ -2422,7 +2834,7 @@
           },
           {
             "result": {
-              "duration": 236065,
+              "duration": 33665,
               "status": "passed"
             },
             "line": 5,
@@ -2450,7 +2862,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1103961,
+              "duration": 936048,
               "status": "passed"
             },
             "line": 8,
@@ -2472,7 +2884,7 @@
           },
           {
             "result": {
-              "duration": 81289,
+              "duration": 84983,
               "status": "passed"
             },
             "line": 9,
@@ -2490,7 +2902,7 @@
           },
           {
             "result": {
-              "duration": 86626,
+              "duration": 48444,
               "status": "passed"
             },
             "line": 10,
@@ -2528,7 +2940,7 @@
         "steps": [
           {
             "result": {
-              "duration": 306679,
+              "duration": 266445,
               "status": "passed"
             },
             "line": 3,
@@ -2546,7 +2958,7 @@
           },
           {
             "result": {
-              "duration": 1151585,
+              "duration": 1063318,
               "status": "passed"
             },
             "line": 4,
@@ -2558,7 +2970,7 @@
           },
           {
             "result": {
-              "duration": 697930,
+              "duration": 689720,
               "status": "passed"
             },
             "line": 5,
