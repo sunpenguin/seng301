@@ -3,7 +3,11 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import model.GeneralData;
 import model.StopPoint;
@@ -19,8 +23,13 @@ public class AddStopPointController extends Controller {
     @FXML private TextField streetText;
     @FXML private TextField suburbText;
     @FXML private Button addStopPointButton;
+    @FXML private WebView map;
+    @FXML private Text distanceText;
+    @FXML private TextArea instructionsTextArea;
 
     private GeneralData generalData;
+    private WebEngine engine;
+    private String mapLocation = getClass().getClassLoader().getResource(SceneType.MAP.getFilePath()).toExternalForm();
 
     /**
      * The method to load files from the abstract class.
@@ -29,6 +38,17 @@ public class AddStopPointController extends Controller {
      */
     public void load() {
         generalData = getParent().getGeneralData();
+        engine = map.getEngine();
+        engine.load(mapLocation);
+        engine.setJavaScriptEnabled(true);
+
+        setInformation();
+    }
+
+    private void setInformation() {
+        String information = "Step 1: Wait for Maps to load.\nStep 2: Enter fields.\nStep 3: Show Point on Map\n" +
+                "Step 4: Calculate Distance\nStep 5: Create Stop Point";
+        instructionsTextArea.setText(information);
     }
 
     /**
@@ -38,22 +58,36 @@ public class AddStopPointController extends Controller {
      */
     @FXML
     private void addStopPoint() {
-         if (streetText.getText() == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Add Stop Point Error");
-            alert.setHeaderText("The street field must have the name of the street for your stop point.");
-            alert.showAndWait();
-        } else if (suburbText.getText() == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Add Stop Point Error");
-            alert.setHeaderText("The suburb field must have the suburb of your chosen stop point.");
-            alert.showAndWait();
-        } else {
-            generalData.addStopPoint(
-                    streetText.getText() + suburbText.getText(),
-                    new StopPoint(streetText.getText(), suburbText.getText()));
+         try {
+            StopPoint stopPointToAdd = new StopPoint(streetText.getText(), suburbText.getText());
+            calculateDistance();
+            stopPointToAdd.setDistance(Double.parseDouble(distanceText.getText())/1000);
+            generalData.addStopPoint(streetText.getText() + suburbText.getText(), stopPointToAdd);
+
             Stage stage = (Stage) addStopPointButton.getScene().getWindow();
             stage.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Add Stop Point Error");
+            alert.setHeaderText("There was an error!");
+            alert.setContentText("Please check the steps and try again!");
+            alert.showAndWait();
         }
+    }
+
+    @FXML
+    private void showPoint() {
+        if (!streetText.getText().isEmpty()) {
+            String query = "geocodeAddress('" + streetText.getText() + "');";
+            engine.executeScript(query);
+        }
+    }
+
+    @FXML
+    private void calculateDistance() {
+        String query = "calculateDistance();";
+        String distance = String.valueOf((engine.executeScript(query)));
+        distanceText.setText(distance);
     }
 }
