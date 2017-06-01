@@ -96,7 +96,7 @@ public class SearchStopPointsStepDefinition {
     }
 
     private void createPassenger() {
-//        (String universityID, String password, String email, String name, String address, Integer homeNumber, Integer mobileNumber)
+//        (String universityID, String password, String email, String vehicleName, String address, Integer homeNumber, Integer mobileNumber)
         account = new Account("driver", "password", "driver@uclive.ac.nz",
                 "Dan", "20 Howard Street", 1234567, 64278182123L);
     }

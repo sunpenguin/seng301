@@ -29,6 +29,8 @@ public class Licence {
         LocalDate now = LocalDate.now();
         if (expiry.isBefore(now)) {
             expired = true;
+        } else {
+            expired = false;
         }
     }
 

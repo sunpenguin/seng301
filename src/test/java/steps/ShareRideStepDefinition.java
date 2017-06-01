@@ -35,9 +35,9 @@ public class ShareRideStepDefinition {
         route = new Route("Test Route", new ArrayList<>(Arrays.asList(sp1, sp2)));
 //        (String type, String model, String colour, String licencePlate, int year, int seats)
         car = new Vehicle("Car", "G6", "Red", "ABC123", 1881, 50, 10,
-                LocalDate.parse("12/12/2017"), LocalDate.parse("12/12/2017"));
+                LocalDate.parse("12/12/2017", formatter), LocalDate.parse("12/12/2017", formatter));
 
-//        (String name, Route route, int direction, LocalDate date, Vehicle vehicle, int availableSeats, String driverID)
+//        (String vehicleName, Route route, int direction, LocalDate date, Vehicle vehicle, int availableSeats, String driverID)
         ride = new Ride("Test Ride", route, 0, LocalDate.parse("15/12/2020", formatter),
                 car, 30, "jax12");
     }

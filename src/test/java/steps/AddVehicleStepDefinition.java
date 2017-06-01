@@ -23,7 +23,7 @@ public class AddVehicleStepDefinition {
 
     private void createCar(String carName) {
         car = new Vehicle(carName, "Newest", "Blue", "XD101XD", 2017, 3,
-                1, LocalDate.parse("12/12/2020"), LocalDate.parse("12/12/2020"));
+                1, LocalDate.parse("12/12/2020", formatter), LocalDate.parse("12/12/2020", formatter));
     }
 
     @Given("^that I am a \"([^\"]*)\"$")
@@ -73,7 +73,7 @@ public class AddVehicleStepDefinition {
 
     private void createDriver() {
 //        (String universityID, String password, String email,
-//                String name, String address, Integer homeNumber, Integer mobileNumber, Licence licence)
+//                String vehicleName, String address, Integer homeNumber, Integer mobileNumber, Licence licence)
         account = new Account("driver", "password", "driver@uclive.ac.nz",
                 "Dan", "20 Howard Street", 1234567, 64278182123L,
                 new Licence("Full for over 2 years", "YXF87231",

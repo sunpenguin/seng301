@@ -58,7 +58,7 @@ public class Account {
     }
 
     public void upgrade(Licence licence) {
-        if (!licence.isExpired() && !type.equals("Driver")) {
+        if (!type.equals("Driver")) {
             this.licence = licence;
             vehicles = new HashMap<>();
             type = "Driver";

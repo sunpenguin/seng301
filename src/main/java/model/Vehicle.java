@@ -90,7 +90,6 @@ public class Vehicle {
         this.seats = seats;
     }
 
-    //------------From here are the new things I need to set-------------------------------------------//
     public LocalDate getExpiryWOF() {
         return expiryWOF;
     }

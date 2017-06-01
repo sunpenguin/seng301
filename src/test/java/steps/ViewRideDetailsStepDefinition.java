@@ -47,7 +47,7 @@ public class ViewRideDetailsStepDefinition {
 
     private void createVehicle() {
         car = new Vehicle("car", "G6", "Red", "ABC123", 1881, 50, 10,
-                LocalDate.parse("12/12/2017"), LocalDate.parse("12/12/2017"));
+                LocalDate.parse("12/12/2017", formatter), LocalDate.parse("12/12/2017", formatter));
     }
 
     private void createRoutePreset() {

@@ -1,8 +1,5 @@
 package model;
 
-import javafx.scene.control.Alert;
-import utils.Session;
-
 import java.time.LocalDate;
 
 /**
@@ -80,7 +77,7 @@ public class Notification {
             LocalDate expiry;
             for (Vehicle vehicle: account.getVehicles().values()) {
                 expiry = vehicle.getExpiryWOF();
-                if (account.getLicence().isExpired()) {
+                if (now.isAfter(expiry)) {
                     result = notificationCreator("WOFExpired");
                 } else if (now.plusWeeks(1).isAfter(expiry)) {
                     result = notificationCreator("WOF1Week");
@@ -101,7 +98,7 @@ public class Notification {
             LocalDate expiry;
             for (Vehicle vehicle: account.getVehicles().values()) {
                 expiry = vehicle.getExpiryRegistration();
-                if (account.getLicence().isExpired()) {
+                if (now.isAfter(expiry)) {
                     result = notificationCreator("RegistrationExpired");
                 } else if (now.plusWeeks(1).isAfter(expiry)) {
                     result = notificationCreator("Registration1Week");

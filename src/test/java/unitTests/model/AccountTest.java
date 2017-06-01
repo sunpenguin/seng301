@@ -75,7 +75,7 @@ public class AccountTest {
     @Test
     public void upgradePassengerToDriver() {
         passenger = new Account("passenger", "password", "passenger@uclive.ac.nz",
-                "Daniella", "40 Howard Street", 1234567, 64278182123L, driverLicence);
+                "Daniella", "40 Howard Street", 1234567, 64278182123L);
 
         passenger.upgrade(driverLicence);
 
@@ -92,5 +92,41 @@ public class AccountTest {
 
         Assert.assertEquals("Driver", driver.getType());
         Assert.assertEquals("YXF87231", driver.getLicence().getNumber());
+    }
+
+    @Test
+    public void gettingGeneralData() {
+        driver = new Account("driver", "password", "driver@uclive.ac.nz",
+                "Dan", "20 Howard Street", 1234567, 64278182123L, driverLicence);
+        generalData.getAccountMap().put(driver.getUniversityID(), driver);
+
+        passenger = new Account("passenger", "password", "passenger@uclive.ac.nz",
+                "Daniella", "40 Howard Street", 1234567, 64278182123L, driverLicence);
+        generalData.getAccountMap().put(passenger.getUniversityID(), passenger);
+
+        if (generalData.getAccountMap().containsKey("driver")) {
+            Account account = generalData.getAccountMap().get("driver");
+            Assert.assertEquals("Dan", account.getName());
+        }
+    }
+
+    @Test
+    public void gettingNoGeneralData() {
+        driver = new Account("driver", "password", "driver@uclive.ac.nz",
+                "Dan", "20 Howard Street", 1234567, 64278182123L, driverLicence);
+        generalData.getAccountMap().put(driver.getUniversityID(), driver);
+
+        passenger = new Account("passenger", "password", "passenger@uclive.ac.nz",
+                "Daniella", "40 Howard Street", 1234567, 64278182123L, driverLicence);
+        generalData.getAccountMap().put(passenger.getUniversityID(), passenger);
+
+        Account account;
+        if (generalData.getAccountMap().containsKey("drive")) {
+            account = generalData.getAccountMap().get("drive");
+            Assert.assertEquals("Dan", account.getName());
+        } else {
+            account = generalData.getAccountMap().get("driver");
+            Assert.assertFalse(account.getUniversityID().equals("drive"));
+        }
     }
 }

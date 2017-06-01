@@ -30,7 +30,7 @@ public class RideTest {
     public void setUp() {
         createDriver();
         car = new Vehicle("Car", "VoltsWagon Beetle", "Red", "G00DC4R", 2016, 2, 10,
-                LocalDate.parse("12/12/2017"), LocalDate.parse("12/12/2017"));
+                LocalDate.parse("12/12/2017", formatter), LocalDate.parse("12/12/2017", formatter));
         sp1 = new StopPoint("Address", "Suburb");
         sp2 = new StopPoint("Random Address", "Random Suburb");
         List<StopPoint> stopPoints= Arrays.asList(sp1, sp2);

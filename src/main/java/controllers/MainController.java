@@ -2,9 +2,13 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import model.GeneralData;
 import utils.Session;
 
+import java.io.IOException;
 import java.util.Optional;
+
+import static core.Main.save;
 
 /**
  * The main controller class that manages the top menu.
@@ -18,12 +22,13 @@ public class MainController extends Controller {
     @FXML private MenuItem vehicleMenuItem;
 
     private boolean menuToggle = true;
+    private GeneralData generalData;
 
     /**
      * Initial loader from the abstract class
      */
     public void load() {
-        //nothing to load
+        generalData = getParent().getGeneralData();
     }
 
     public void toggleMenuDisable() {
@@ -46,7 +51,7 @@ public class MainController extends Controller {
     }
 
     @FXML
-    private void logOut() {
+    private void logOut() throws IOException{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Log Out Confirmation");
         alert.setHeaderText("You are about log out.");
@@ -56,6 +61,7 @@ public class MainController extends Controller {
             Session.reset();
             getParent().toggleMenuDisable();
             replaceSceneContent(SceneType.LOG_IN_SCREEN);
+            save(generalData);
         }
     }
 

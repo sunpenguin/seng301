@@ -82,7 +82,7 @@ public class AddRideStepDefinition {
 
     private void createVehicle(String name) {
         car = new Vehicle(name, "G6", "Red", "ABC123", 1881, 50, 10,
-                LocalDate.parse("12/12/2017"), LocalDate.parse("12/12/2017"));
+                LocalDate.parse("12/12/2017", formatter), LocalDate.parse("12/12/2017", formatter));
     }
 
     private void createRoute(String name) {
@@ -93,7 +93,7 @@ public class AddRideStepDefinition {
 
     private void createDriver() {
 //        (String universityID, String password, String email,
-//                String name, String address, Integer homeNumber, Integer mobileNumber, Licence licence)
+//                String vehicleName, String address, Integer homeNumber, Integer mobileNumber, Licence licence)
         account = new Account("driver", "password", "driver@uclive.ac.nz",
                 "Dan", "20 Howard Street", 1234567, 64278182123L,
                 new Licence("Full for over 2 years", "YXF87231",
@@ -102,7 +102,7 @@ public class AddRideStepDefinition {
     }
 
     private void createPassenger() {
-//        (String universityID, String password, String email, String name, String address, Integer homeNumber, Integer mobileNumber)
+//        (String universityID, String password, String email, String vehicleName, String address, Integer homeNumber, Integer mobileNumber)
         account = new Account("driver", "password", "driver@uclive.ac.nz",
         "Dan", "20 Howard Street", 1234567, 64278182123L);
     }
