@@ -16,20 +16,11 @@ public class StopPoint implements Serializable {
     private double cost;
 
     /**
-     * The constructor only requires an address
-     * @param address
-     */
-    public StopPoint(String address)  {
-        this.address = address;
-    }
-
-    /**
      * The proper constructor after developing a search mechanism
      * @param street The name of the street
      * @param suburb The suburb of the street
      */
     public StopPoint(String street, String suburb) {
-        // TODO: Change address to be called street
         address = street;
         this.suburb = suburb;
         time = LocalTime.parse("00:00");
@@ -43,7 +34,6 @@ public class StopPoint implements Serializable {
      * @param time The time of the pickup
      */
     public StopPoint(String street, String suburb, String time) {
-        // TODO: Change address to be called street
         address = street;
         this.suburb = suburb;
         this.time = LocalTime.parse(time);

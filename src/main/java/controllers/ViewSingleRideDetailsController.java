@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import model.*;
 import utils.Session;
 
+import java.text.DecimalFormat;
 import java.util.Optional;
 
 /**
@@ -28,6 +29,7 @@ public class ViewSingleRideDetailsController extends Controller {
 
     private GeneralData generalData;
     private Account driverAccount;
+    private DecimalFormat format = new DecimalFormat("#.00");
 
     public void load() {
         generalData = getParent().getGeneralData();
@@ -45,7 +47,7 @@ public class ViewSingleRideDetailsController extends Controller {
 
         String direction = "The course for this route is as below:\n";
         for (StopPoint stopPoint : rideToDisplay.getRoute().getRouteStops()) {
-            direction += stopPoint.getAddress() + ", " + stopPoint.getSuburb() + "\n";
+            direction += stopPoint.getAddress() + ", $" + format.format(stopPoint.getCost()) + "\n";
         }
         routeText.setText(direction);
         Integer stops = rideToDisplay.getRoute().getRouteStops().size();
@@ -61,8 +63,16 @@ public class ViewSingleRideDetailsController extends Controller {
         alert.setContentText("Ride on: " + ride.getDate().toString() + " with " +
                         ride.getAvailableSeats() + " seats.");
         Optional<ButtonType> action = alert.showAndWait();
-        if (action.get() == ButtonType.OK) {
+        if (action.get() == ButtonType.OK && !driverAccount.getUniversityID().equals(Session.getInstance().getCurrentAccount().getUniversityID())) {
             Session.getInstance().getRide().addPassenger(Session.getInstance().getCurrentAccount());
+        } else if (action.get().equals(ButtonType.CANCEL) || action.get().equals(ButtonType.CLOSE)) {
+
+        } else {
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Ride Passenger Error");
+            error.setHeaderText("Ride Booking Error");
+            error.setContentText("You cannot book your own ride!");
+            error.showAndWait();
         }
 
         Stage stage = (Stage) bookRideButton.getScene().getWindow();

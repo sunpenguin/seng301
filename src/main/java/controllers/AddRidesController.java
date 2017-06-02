@@ -14,6 +14,7 @@ import utils.Copy;
 import utils.Session;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +61,7 @@ public class AddRidesController extends Controller {
      * The method to load files from the abstract class.
      * This method loads the general data and sets up the combo boxes.
      * A listener is also added so that the list is updated when a different route is selected.
+     *
      * @see controllers.Controller
      */
     public void load() {
@@ -132,6 +134,7 @@ public class AddRidesController extends Controller {
         } else {
             if (recurrentBox.isSelected()) {
                 allDaysCheck();
+                recurrentDateCheck();
             }
             createNewRides();
 
@@ -144,6 +147,19 @@ public class AddRidesController extends Controller {
             Stage stage = (Stage) createRideButton.getScene().getWindow();
             stage.close();
         }
+    }
+
+    private boolean recurrentDateCheck() {
+        LocalDate licenceExpiry = account.getLicence().getExpiry();
+        LocalDate wofExpiry = account.getVehicles().get(vehicleComboBox.getValue()).getExpiryWOF();
+        LocalDate regExpiry = account.getVehicles().get(vehicleComboBox.getValue()).getExpiryRegistration();
+
+        if (licenceExpiry.isBefore(expiryDateText.getValue()) &&
+                wofExpiry.isBefore(expiryDateText.getValue()) &&
+                regExpiry.isBefore(expiryDateText.getValue())) {
+            return true;
+        }
+        return false;
     }
 
     private void createNewRides() {

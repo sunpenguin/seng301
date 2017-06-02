@@ -11,7 +11,6 @@ import model.Licence;
 import utils.Checkers;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 /**
  * The controller class for creating accounts.
@@ -37,12 +36,11 @@ public class AccountCreationController extends Controller {
     private Licence licenceToAdd;
     private GeneralData generalData;
     private String content;
-    private boolean passwordMatch;
 
     public void load() {
         generalData = getParent().getGeneralData();
         registerAccountButton.setDisable(true);
-        // Load ComboBox
+        // Load ComboBox with selected items
         licenceTypeCheckBox.setItems(FXCollections.observableArrayList(
                 "Restricted",
                 "Full for less than 2 Years",
@@ -79,12 +77,6 @@ public class AccountCreationController extends Controller {
     private void setPasswordCheckText(Color colour, String message) {
         passwordCheckText.setFill(colour);
         passwordCheckText.setText(message);
-
-        if (colour.equals(Color.RED)) {
-            passwordMatch = false;
-        } else if (colour.equals(Color.GREEN)) {
-            passwordMatch = true;
-        }
     }
 
     /**

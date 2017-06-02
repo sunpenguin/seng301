@@ -1,9 +1,11 @@
 package steps;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import model.*;
+import org.junit.Assert;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -20,6 +22,7 @@ public class BookRideStepDefinition {
     Vehicle car;
     Ride ride;
     GeneralData generalData = new GeneralData();
+    String rideName;
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -42,11 +45,62 @@ public class BookRideStepDefinition {
         rideToBook.addPassenger(passenger);
     }
 
+    @Given("^that I want to book ride \"([^\"]*)\" with (\\d+) person$")
+    public void thatIWantToBookRideWithPerson(String rideName, int size) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        for (int i = 0; i < size; i++) {
+            createPassenger();
+        }
+        this.rideName = rideName;
+    }
+
+    @Given("^\"([^\"]*)\" was created by me$")
+    public void wasCreatedByMe(String uniID) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        createRide2(rideName, uniID);
+        ride.addPassenger(passenger);
+        driver = new Account(uniID, "password", uniID+"@uclive.ac.nz",
+                "Dan", "20 Howard Street", 1234567, 64278182123L,
+                new Licence("Full for over 2 years", "YXF87231",
+                        LocalDate.parse("12/12/2015", formatter),
+                        LocalDate.parse("12/12/2020", formatter)));
+
+        generalData.getRides().put(driver.getUniversityID(), new ArrayList<>(Arrays.asList(ride)));
+        Ride rideToBook = generalData.getRides().get(driver.getUniversityID()).get(0);
+        rideToBook.shareRide();
+    }
+
+    @When("^I try to book \"([^\"]*)\"$")
+    public void iTryToBook(String rideName) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        Ride rideToBook = generalData.getRides().get(driver.getUniversityID()).get(0);
+        Assert.assertEquals(rideName, rideToBook.getName());
+        if (!driver.getUniversityID().equals(rideToBook.getDriverID())) {
+            rideToBook.addPassenger(driver);
+        }
+
+    }
+
+    @Then("^\"([^\"]*)\" will still only be booked by (\\d+) person$")
+    public void willStillOnlyBeBookedByPerson(String rideName, int size) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        Ride rideToBook = generalData.getRides().get(driver.getUniversityID()).get(0);
+        Assert.assertEquals(rideName, rideToBook.getName());
+        Assert.assertEquals(size, rideToBook.getPassengers().size());
+    }
+
     private void createRide(String rideName) {
         createRoute();
         createVehicle();
         ride = new Ride(rideName, route, 0, LocalDate.parse("15/12/2020", formatter),
-                car, 30, "jax12");
+                car, 2, "jax12");
+    }
+
+    private void createRide2(String rideName, String driverID) {
+        createRoute();
+        createVehicle();
+        ride = new Ride(rideName, route, 0, LocalDate.parse("15/12/2020", formatter),
+                car, 2, driverID);
     }
 
     private void createRoute() {
