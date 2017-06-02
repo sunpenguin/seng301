@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The controller class for the FXML file "addRoute.fxml".
+ * The controller class for the adding routes to the GeneralData
  * @author Sunguin Peng
  * @see controllers.Controller
  */

@@ -15,7 +15,9 @@ import utils.Checkers;
 
 
 /**
- * The controller class for the FXML file "addStopPoint.fxml".
+ * The controller class for adding stop points to GeneralData.
+ * Also has a map to go with it
+ *
  * @author Sunguin Peng
  * @see controllers.Controller
  */
@@ -76,6 +78,9 @@ public class AddStopPointController extends Controller {
         }
     }
 
+    /**
+     * Using the street text and suburb text, it will query the geocodes from Google and try to find the best match.
+     */
     @FXML
     private void showPoint() {
         if (!streetText.getText().isEmpty()) {
@@ -84,6 +89,9 @@ public class AddStopPointController extends Controller {
         }
     }
 
+    /**
+     * Uses Google Maps to calculate the distance between the most recent marker placed and the university
+     */
     @FXML
     private void calculateDistance() {
         String query = "calculateDistance();";

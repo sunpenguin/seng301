@@ -10,7 +10,7 @@ import model.Notification;
 import utils.Session;
 
 /**
- * The controller class for the FXML file "home.fxml", the home page that appears when the app is first launched.
+ * The controller class for the home page that appears when the app is first launched.
  * @author Sunguin Peng
  * @see controllers.Controller
  */
