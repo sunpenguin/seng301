@@ -79,7 +79,7 @@ public class AddStopPointController extends Controller {
     @FXML
     private void showPoint() {
         if (!streetText.getText().isEmpty()) {
-            String query = "geocodeAddress('" + streetText.getText() + "');";
+            String query = "geocodeAddress('" + streetText.getText() + " " + suburbText.getText() + "');";
             engine.executeScript(query);
         }
     }
